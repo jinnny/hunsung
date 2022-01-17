@@ -1,0 +1,188 @@
+/**
+ * Created by Eunjin Yang on 2020. 11. 21
+ * Github : https://github.com/jinnny
+ */
+@mixin responsive($media, $i) {
+  @if $i == 'min'{
+    @media (min-width: $media) {
+      @content;
+    }
+  } @else {
+    @media (max-width: $media) {
+      @content;
+    }
+  }
+}
+//사용법
+//.test {
+//  @include responsive(900px, min) {
+//   color: blue;
+//  }
+//}
+
+@mixin clearfix {
+  &::after {
+    content: '';
+    display: block;
+    clear: both;
+  }
+}
+//사용법
+//.test {
+// @include clearfix();
+// }
+//
+@mixin prefix($property, $value, $prefixes: ()) {
+  @each $prefix in $prefixes {
+    -#{$prefix}-#{$property}: $value;
+  }
+  #{$property}: $value;
+}
+//사용법
+//.test {
+//  @include prefix(transform, rotate(90deg), ('webkit', 'ms'));
+//}
+
+@mixin transition {
+  transition: all 0.2s ease;
+}
+//
+
+
+// 문장 ellipsis 처리
+@mixin textClamp($line) {
+  display: block;
+  display: -webkit-box;
+  -webkit-line-clamp: $line;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  word-break:break-all;
+  word-wrap:break-word;
+  white-space: normal;
+  box-sizing:border-box;
+  /* autoprefixer: ignore next */
+  -webkit-box-orient: vertical;
+}
+
+@mixin textClamOne() {
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  word-break: break-all;
+  /* autoprefixer: ignore next */
+  -webkit-box-orient: vertical;
+}
+
+// iOS smooth scroll
+@mixin setWebkitTouchScroll {
+  -webkit-overflow-scrolling: touch;
+}
+
+// webkit scrollbar 숨김 처리
+@mixin setHideScrollbar() {
+  &::-webkit-scrollbar {
+    display: none;
+  }
+  &::-webkit-scrollbar {
+    background-color: transparent;
+  }
+  &::-webkit-scrollbar-track {
+    background-color: transparent;
+  }
+  &::-webkit-scrollbar-thumb {
+    background-color: transparent;
+  }
+}
+
+
+@mixin hidden-text {
+  position: absolute;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  margin: -1px;
+  width: 1px;
+  height: 1px;
+}
+
+$breakpoints: (
+        '1250': (max-width: 1250px),
+        '1200': (max-width: 1200px),
+        '990': (max-width: 990px),
+        '900': (max-width: 900px),
+        '765': (max-width: 765px),
+        '600': (max-width: 600px),
+        '500': (max-width: 500px),
+        '450': (max-width: 450px),
+        '400': (max-width: 400px),
+        '350': (max-width: 350px),
+) !default;
+
+
+@mixin respond-to($breakpoint: 990, $value: 'max-width') {
+  @media screen and (#{$value}:#{$breakpoint}px){
+    @content;
+  }
+}
+
+@mixin zoomUpPrepare($delay: 0.5) {
+  opacity: 0;
+  transform: translate3d(0,100px,0) scale(.6);
+  transition-property: opacity,transform;
+  transition-timing-function: cubic-bezier(.175,.885,.32,1.275);
+  transition-duration: 1s;
+  transition-delay: #{$delay}s;
+}
+
+@mixin zoomUp {
+  opacity: 1;
+  transform: translateZ(0) scale(1);
+}
+
+@mixin fadeLeftPrepare($delay: 0.5, $duration: 1) {
+  opacity: 0;
+  transition-property: opacity,transform;
+  transition-timing-function: ease-in-out;
+  transition-duration:  #{$duration}s;
+  transition-delay: #{$delay}s;
+  transform: translate3d(100px,0,0);
+}
+
+@mixin fadeLeft {
+  opacity: 1;
+  transform: translateZ(0);
+}
+
+@mixin fadeRightPrepare($delay: 0.5, $duration: 1) {
+  opacity: 0;
+  transition-property: opacity,transform;
+  transition-timing-function: ease-in-out;
+  transition-duration: #{$duration}s;
+  transition-delay: #{$delay}s;
+  transform: translate3d(-100px,0,0);
+}
+
+@mixin fadeRight {
+  opacity: 1;
+  transform: translateZ(0);
+}
+
+@mixin fadeInPrepare($delay: 0.5) {
+  opacity: 0;
+  transition-property: opacity;
+  transition-timing-function: ease-in-out;
+  transition-duration: 2s;
+  transition-delay: #{$delay}s;
+}
+
+@mixin fadeIn {
+  opacity: 1;
+}
+
+.blind {
+  position: absolute;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  margin: -1px;
+  width: 1px;
+  height: 1px;
+}

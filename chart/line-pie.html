@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LINE PIE</title>
+    <style>
+
+        * {
+            margin: 0;
+            box-sizing: border-box;
+        }
+        div {
+            width: 76px;
+            height: 76px;
+            margin: 100px;
+        }
+        
+        /* 317px */
+        circle {
+            fill: transparent;
+            stroke: #333;
+            stroke-width: 5;
+            
+            /* 테두리 점선 */
+            /*stroke-dasharray: 10px; - 점선도 10px 간격도 10px */ 
+            stroke-dasharray: 317px;
+            stroke-dashoffset: 50px;
+            stroke-linecap: round;
+            transform: rotate(-90deg); /* 시작상단으로 돌리기 위해 사용 */
+            transform-origin: center center; /* 반드시 작성 */
+            transition: stroke-dasharray 0.5s ease-in-out, stroke-dashoffset 0.5s ease-in-out;
+        }
+
+    </style>
+</head>
+<body>
+    <!-- stroke-dasharray="calc(40 * calc(2*3.14*10) / 100) calc(2*3.14*10)" -->
+    <!-- 
+        fill="#fff"
+                stroke="#000"
+                stroke-width="5"
+                stroke-dasharray="90 100"
+                transform="rotate(-90deg)"
+                stroke-dasharray="50 100"
+                stroke-linecap="round"
+                style="transition: stroke-dasharray 0.5s ease-in-out, stroke-dashoffset 0.5s ease-in-out;"
+     -->
+    <div>
+        <svg viewBox="0 0 76 76" xmlns="http://www.w3.org/2000/svg">
+            <circle
+                r="34.5"
+                cx="38"
+                cy="38"
+            ></circle>
+            <!-- <circle r="32" cx="38" cy="38" stroke="#000" stroke-width="5" fill="#fff" style="stroke-dasharray: 50 100; transition: stroke-dasharray 0.5s ease-in-out, stroke-dashoffset 0.5s ease-in-out;" stroke-linecap="round"/> -->
+        </svg>
+    </div>
+    
+</body>
+</html>
