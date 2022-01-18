@@ -1,0 +1,108 @@
+.sign-in {
+  display: flex;
+  height: 100vh;
+  align-items: center;
+  &-bg {
+    border-radius: 40px;
+    box-shadow: 10px 0 20px 0 rgba(39, 70, 127, 0.05);
+    background-color: #e3f6ff;
+    background-repeat: no-repeat;
+    background-image: url("/images/E/img_login.png");
+    background-size: 100%;
+    background-position: 50% 50%;
+  }
+  &-content {
+    width: 50%;
+    height: 100%;
+    &:not(.sign-in-bg) {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    &-layout {
+      width: 380px;
+    }
+  }
+  &__title {
+    @include setText(60,500);
+    color: #000;
+    margin-bottom: 40px;
+  }
+  &-part {
+    margin-bottom: 24px;
+  }
+  &__label {
+    display: block;
+    margin-bottom: 12px;
+    @include setText(16);
+  }
+  &__input {
+    width: 100%;
+    padding: 0 18px;
+    height: 54px;
+    border-radius: 8px;
+    border: solid 1px #e6e6e6;
+    background-color: $neutral-white-ffffff;
+    &::-webkit-input-placeholder {
+      color: $gray;
+    }
+    &:-ms-input-placeholder {
+      color: $gray;
+    }
+    &::placeholder {
+      color: $gray;
+    }
+    &:focus {
+      outline: none;
+      border: solid 1px $primary-blue-4-c-8-cff;
+      background-color: $neutral-white-ffffff;
+    }
+    &:active {
+      border: solid 1px $primary-blue-4-c-8-cff;
+      background-color: $neutral-white-ffffff;
+    }
+  }
+  &__button {
+    margin: 24px 0 30px;
+    width: 100%;
+    border-radius: 27px;
+    height: 54px;
+    color: $neutral-white-ffffff;
+    @include setText(18,600);
+    text-transform: uppercase;
+    background-image: linear-gradient(to right, #85defb, #659cff 100%);
+    position: relative;
+    overflow: hidden;
+    .text {
+      position: relative;
+      z-index: 1;
+    }
+    &:hover {
+      &:before {
+        width: 100%;
+      }
+    }
+    &:before {
+      transition: width .5s;
+      content: '';
+      width: 0;
+      height: 100%;
+      display: block;
+      border-radius: 27px;
+      background-color: rgba(39, 70, 127, 0.25);
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+  }
+  &__link {
+    @include setText(14);
+    display: block;
+    text-align: center;
+    color: #5b8ffe;
+    text-decoration: underline;
+    &:hover {
+      color: #3163cd;
+    }
+  }
+}

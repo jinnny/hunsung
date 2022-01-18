@@ -16,7 +16,7 @@
     padding: 0;
     box-sizing: border-box;
     font-family: 'PretendardR';
-    transition: .3s;
+    /*transition: .3s;*/
 }
 li {
     list-style: none;
@@ -257,7 +257,7 @@ button {
     background-image: url(../../images/E/DRAWER_FILL/icon-24-x-24-fill-setting_hover/icon-24-x-24-fill-setting.webp);
 }
 #drawer-main-menu-component > li:not(.active):hover span {
-    color: #32373c;   
+    color: #32373c;
 }
 #drawer-main-menu-component > li:not(.active):hover .drawer-right-arrow-icon-component {
     background-image: url(../../images/E/DRAWER_FILL/icon-10-x-10-line-arrow-right_hover/icon-10-x-10-line-arrow-right.webp) !important;

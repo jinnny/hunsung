@@ -5,12 +5,9 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>list</title>
-
   <!-- CSS FILES.. -->
   <link rel="stylesheet" href="common/css/style_e.css">
   <link rel="stylesheet" href="common/scss/style.css">
-
-
 </head>
 <body>
 
@@ -436,27 +433,145 @@
 
 <!-- CONTENT AREA -->
 <section id="content-component">
-  <div class="select-box-gray-component">
-    <span>금일 기준</span><img src="images/E/FEED/icon-8-x-8-line-arrow-down/icon-8-x-8-line-arrow-down.webp" alt="ARROW DOWN" title="ARROW DOWN">
-
-    <div class="select-box-blue-option-container-component">
-      <div class="select-box-blue-option-component">
-        <span>금일 기준</span>
+  <article class="list-content">
+    <header class="list-header">
+      <h2 class="list-header__title">특판 관리</h2>
+      <div class="list-header-right">
+        <button class="list-button filter outline">검색 조건 설정</button>
+        <button class="list-button add">상품 등록</button>
+        <div class="list-button-more-area">
+          <button class="list-button-more js-list-button-more"><span class="blind">더보기</span></button>
+          <div class="list-button-more-content">
+            <a href="" class="list-button-more__item js-list-more-item">재고 히스토리</a>
+            <a href="" class="list-button-more__item js-list-more-item">가격 히스토리</a>
+            <a href="" class="list-button-more__item js-list-more-item">연동 히스토리</a>
+            <a href="" class="list-button-more__item js-list-more-item">엑셀 설정</a>
+            <button class="list-button-more__item js-list-more-item">연동 설정</button>
+          </div>
+        </div>
       </div>
-      <div class="select-box-blue-option-component">
-        <span>주간 기준</span>
+    </header>
+    <div class="list-top-filter">
+      <div class="list-filter-part">
+        <div class="select-box js-select">
+          <strong class="select-box__label">일자 구분</strong><span class="select-box__icon"></span>
+          <div class="select-box-list">
+            <span class="select-box__item js-select-item">등록 일자</span>
+            <span class="select-box__item js-select-item">수정 일자</span>
+            <span class="select-box__item js-select-item">최종 전송일</span>
+            <span class="select-box__item js-select-item">재고 수정일</span>
+            <span class="select-box__item js-select-item">품절 마감일</span>
+          </div>
+        </div>
+        <div class="input-group">
+          <input type="text" placeholder="Start date" aria-label="First name" class="js-start-date filter-input__date">
+          <span class="filter-input__separator">~</span>
+          <input type="text" placeholder="End date" aria-label="Last name" class="js-end-date filter-input__date">
+        </div>
+        <div class="date-button-area">
+          <button class="date-button js-date-button" data-date="0">오늘</button>
+          <button class="date-button js-date-button" data-date="7">일주일</button>
+          <button class="date-button js-date-button" data-date="90">3개월</button>
+          <button class="date-button js-date-button" data-date="180">6개월</button>
+          <button class="date-button js-date-button" data-date="365">1년</button>
+        </div>
       </div>
-      <div class="select-box-blue-option-component">
-        <span>월간 기준</span>
+      <div class="list-filter-part">
+        <div class="select-box js-select js-select-filter">
+          <strong class="select-box__label">검색 구분</strong><span class="select-box__icon"></span>
+          <div class="select-box-list">
+            <span class="select-box__item js-select-item">품목코드</span>
+            <span class="select-box__item js-select-item">품목명</span>
+            <span class="select-box__item js-select-item">모델코드</span>
+            <span class="select-box__item js-select-item">속성명</span>
+            <span class="select-box__item js-select-item">인쇄상태</span>
+            <span class="select-box__item js-select-item">재고수량</span>
+            <span class="select-box__item js-select-item" data-category="authentication">인증정보</span>
+          </div>
+        </div>
+        <input type="text" class="filter-input__search" placeholder="검색 내용을 입력해 주세요.">
+        <div class="filter-part-button-area">
+          <button class="part-button add js-part-add"><span class="blind">추가</span></button>
+        </div>
+      </div>
+      <div class="list-filter-line"></div>
+      <div class="list-filter-button-area">
+        <button type="button" class="filter-button reset outline">초기화</button>
+        <button type="submit" class="filter-button search js-search-button">검색</button>
       </div>
     </div>
-  </div>
+    <div class="list-table-top">
+      <div class="table-top-left">
+        <span class="table-top__total">검색 <b>1000</b>건</span>
+        <div class="select-box js-select table-box">
+          <strong class="select-box__label">25개씩</strong><span class="select-box__icon"></span>
+          <div class="select-box-list">
+            <span class="select-box__item js-select-item">30개씩</span>
+            <span class="select-box__item js-select-item">35개씩</span>
+          </div>
+        </div>
+      </div>
+      <div class="table-top-right">
+        <button class="table-to-button js-table-button-item">품목 전송</button>
+        <button class="table-to-button js-table-button-erp">ERP 전송</button>
+        <button class="table-to-button js-table-button-re">리바트 전송</button>
+      </div>
+    </div>
+    <table class="list-table">
+      <thead class="list-table-head">
+        <tr>
+          <th class="list-table-th list-table-item table-check">
+            <input type="checkbox" class="input__input-checkbox">
+          </th>
+          <th class="list-table-th list-table-item table-alert">알림</th>
+          <th class="list-table-th list-table-item table-code">품목코드</th>
+          <th class="list-table-th list-table-item table-code">바코드</th>
+          <th class="list-table-th list-table-item table-img">이미지</th>
+          <th class="list-table-th list-table-item table-name">품목명</th>
+          <th class="list-table-th list-table-item table-print">인쇄상태</th>
+          <th class="list-table-th list-table-item table-shop">쇼핑몰</th>
+          <th class="list-table-th list-table-item table-price">출고가</th>
+          <th class="list-table-th list-table-item table-stock">재고</th>
+          <th class="list-table-th list-table-item">거래처</th>
+          <th class="list-table-th list-table-item">비고</th>
+        </tr>
+      </thead>
+      <tbody class="list-table-body">
+        <tr>
+          <td class="list-table-td list-table-item table-check">
+            <input type="checkbox" class="input__input-checkbox">
+          </td>
+          <td class="list-table-td list-table-item table-alert">
+            <span class="icon-alert"></span>
+          </td>
+          <td class="list-table-td list-table-item table-code">
+            <div class="list-table__content small">1234567891012</div>
+          </td>
+          <td class="list-table-td list-table-item table-code">
+            <div class="list-table__content small">A001923HJUIO</div>
+          </td>
+          <td class="list-table-td list-table-item table-img"><div class="img-box"></div></td>
+          <td class="list-table-td list-table-item table-name"></td>
+          <td class="list-table-td list-table-item table-print"></td>
+          <td class="list-table-td list-table-item table-shop"></td>
+          <td class="list-table-td list-table-item table-price"></td>
+          <td class="list-table-td list-table-item table-stock"></td>
+          <td class="list-table-td list-table-item"></td>
+          <td class="list-table-td list-table-item"></td>
+        </tr>
+      </tbody>
+    </table>
+  </article>
+
 </section>
 <!-- CONTENT AREA END -->
 
 
 <!-- JAVASCRIPT FILES.. -->
 <script src="common/js/jquery-3.6.0.min.js"></script>
+<script src="common/js/datepicker.min.js"></script>
+<script src="common/js/datepicker.ko-KR.js"></script>
+<script src="common/js/list.js"></script>
 
 
 <!-- jQuery .. -->

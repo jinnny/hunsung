@@ -11,7 +11,7 @@
 
 </head>
 <body>
-    
+
     <!-- LNB BUTTON -->
     <div id="lnb-component"></div>
 
@@ -445,8 +445,8 @@
                 </div>
             </div>
             <svg id="areaChart" xmlns="http://www.w3.org/2000/svg">
-                
-                
+
+
 
                 <g>
                     <text class="yText">100,000</text>
@@ -500,7 +500,7 @@
                     <path class="areaLineChart"></path>
                 </g>
 
-                
+
             </svg>
         </div>
         <div class="dashboard-feed-component">
@@ -677,6 +677,7 @@
     <script>
 
         $(function(){
+          $('*').css('transition', '.3s')
 
             setAreaChart();
 
@@ -698,9 +699,9 @@
                     .attr("viewBox", "0 0 " + $(".dashboard-feed-component:nth-child(1)").width() + " " + ($(".dashboard-feed-component:nth-child(1)").height() - 88))
                     // .css({
                     //     width: $(".dashboard-feed-component:nth-child(1)").width() + 'px',
-                    //     height: ($(".dashboard-feed-component:nth-child(1)").height() - 88) + 'px'  
+                    //     height: ($(".dashboard-feed-component:nth-child(1)").height() - 88) + 'px'
                     // });
-                
+
                 $("#titleTopLine").attr("x2", $(".dashboard-feed-component:nth-child(1)").width());
 
                 $(".titleText").eq(0).attr("x", ($(".dashboard-feed-component:nth-child(1)").width() - ($(".titleText").eq(0)[0].getBoundingClientRect().width + 72)));
@@ -738,7 +739,7 @@
                     max = 100000,
                     minHeight = 250,
                     maxHeight = 50;
-                
+
                 var areaHeightPercentData0 = [];
                 var areaHeightPercentData1 = [];
 
@@ -768,7 +769,7 @@
 
                 for(var i = 1; i < areaHeightData0.length; i++) {
                     var html = 111 + (($(".dashboard-feed-component:nth-child(1)").width() - 70) / 12 * i) + ' ' + areaHeightData0[i] + ' ';
-                    
+
                     d += html;
                 }
 
@@ -779,18 +780,18 @@
 
                 for(var i = 1; i < areaHeightData1.length; i++) {
                     var html = 111 + (($(".dashboard-feed-component:nth-child(1)").width() - 70) / 12 * i) + ' ' + areaHeightData1[i] + ' ';
-                    
+
                     d += html;
                 }
 
                 $($(".areaLineChart").eq(1))
                     .attr("d", d);
 
-                
+
 
             }
-            
-            
+
+
 
 
 
@@ -833,7 +834,7 @@
             }
 
 
-            if($(window).width() <= 800) {    
+            if($(window).width() <= 800) {
                 setMobileDrawerComponentHeight();
             } else {
                 setDrawerComponentHeight();
@@ -853,13 +854,13 @@
             // }
 
             $(window).resize(function(event){
-                
+
                 if($(this).width() <= 1100) {
                     $("#drawer-component, #header-component, #content-component").addClass("active");
                     $("#lnb-component").addClass("active");
                 }
 
-                if($(this).width() <= 800) {    
+                if($(this).width() <= 800) {
                     setMobileDrawerComponentHeight();
                 } else {
                     setDrawerComponentHeight();
@@ -876,7 +877,7 @@
             });
             $(window).scroll(function(){
 
-                if($(window).width() <= 800) {    
+                if($(window).width() <= 800) {
                     setMobileDrawerComponentHeight();
                 } else {
                     setDrawerComponentHeight();
@@ -898,11 +899,11 @@
                     var dasharray = 217 * linePieChartData[index] / 100;
                     // console.log(dasharray, (217 - dasharray), linePieChartData[index]);
 
-                
+
                     $($(this).find(".gradient-circle")).css({
                         strokeDasharray: dasharray + " " + 217 ,
                         transform: 'rotate(-270deg)',
-                        
+
                     });
                 });
             }
@@ -918,7 +919,7 @@
                     height: $("#content-component").height() + 70 + 60 + 'px',
                 });
             }
-            
+
 
             $("#drawer-main-menu-component > li").click(function(event){
                 event.preventDefault();
@@ -928,7 +929,7 @@
 
                     if($("#drawer-main-menu-component > li.active").find(".drawer-sub-menu-component")[0])
                         $("#drawer-main-menu-component > li.active").find(".drawer-sub-menu-component").addClass("active").parent().parent().addClass("active");
-                    
+
                 } else {
 
                     if($("#drawer-main-menu-component > li.active").find(".drawer-sub-menu-component")[0])
@@ -966,7 +967,7 @@
                 }
             });
 
-            
+
 
             $(".notice-list-title-container-component button").click(function(){
                 $(".notice-list-check-close-item-component.check").each(function(i, index){
@@ -987,7 +988,7 @@
 
         });
 
-        
+
     </script>
 
 </body>

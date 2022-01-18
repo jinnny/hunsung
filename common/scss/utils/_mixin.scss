@@ -1,7 +1,3 @@
-/**
- * Created by Eunjin Yang on 2020. 11. 21
- * Github : https://github.com/jinnny
- */
 @mixin responsive($media, $i) {
   @if $i == 'min'{
     @media (min-width: $media) {
@@ -185,4 +181,11 @@ $breakpoints: (
   margin: -1px;
   width: 1px;
   height: 1px;
+}
+
+// 폰트 스타일 생성
+@mixin setText($font-size: 16, $font-weight: 500, $line-height: normal) {
+  font-size: #{$font-size}px;
+  font-weight: $font-weight;
+  line-height: #{$line-height};
 }

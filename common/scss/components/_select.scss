@@ -1,0 +1,92 @@
+.select-box {
+  flex: none;
+  width: 200px;
+  height: 36px;
+  padding: 7px 12px;
+  border-radius: 4px;
+  box-shadow: 0 1px 3px 0 rgba(39, 70, 127, 0.05);
+  border: solid 1px #e1e3e9;
+  background-color: $neutral-white-ffffff;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+  margin-right: 15px;
+  &.table-box {
+    width: 50px;
+    border: none;
+    padding: 0;
+    background-color: transparent;
+    box-shadow: none;
+    .select-box__label {
+      font-size: 12px;
+      color: $neutral-gray-6-a-6-c-75;
+    }
+    .select-box__icon {
+      width: 8px;
+      height: 8px;
+      background-size: 8px;
+    }
+    .select-box-list {
+      width: 108px;
+    }
+    .select-box__item {
+    }
+  }
+  &.is--open {
+    z-index: 11;
+    .select-box-list {
+      display: block;
+    }
+    .select-box__icon {
+      transform: rotate(-180deg);
+    }
+  }
+  &__icon {
+    width: 10px;
+    height: 10px;
+    display: inline-block;
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    background-image: icon(arrowDown, '6A6C75');
+  }
+  &__label {
+    color: $neutral-gray-b-3-b-7-c-5;
+    @include setText(13,400);
+    &.is--selected {
+      color: $neutral-black-32373-c;
+    }
+  }
+  &-list {
+    display: none;
+    width: 100%;
+    left: 0;
+    top: 44px;
+    position: absolute;
+    padding: 5px 0;
+    border-radius: 5px;
+    box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.05);
+    border: solid 1px $neutral-gray-dadde-4;
+    background-color: $neutral-white-ffffff;
+  }
+  &__item {
+    width: 100%;
+    padding: 0 12px;
+    height: 36px;
+    cursor: pointer;
+    display: block;
+    @include setText(14,500, 32px);
+    background-repeat: no-repeat;
+    background-position: 95% 50%;
+    &:hover {
+      color: $primary-blue-4-c-8-cff;
+      background-color: $primary-pastel-blue-f-4-f-8-ff;
+    }
+    &.is--selected {
+      color: $primary-blue-4-c-8-cff;
+      background-color: $primary-pastel-blue-f-4-f-8-ff;
+      background-image: icon(selectCheck, $iconDefaultColor);
+    }
+  }
+}
