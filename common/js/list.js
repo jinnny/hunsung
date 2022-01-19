@@ -15,7 +15,7 @@ $(function () {
       $(this).toggleClass('is--open')
     });
     $(document).on( 'click' , '.js-select-item', function() {
-      $(this).parents('js-select').removeClass('is--open')
+      $(this).parents('.js-select').addClass('is--selected')
       $(this).addClass('is--selected').siblings().removeClass('is--selected');
       $($(this).parent().parent().find('.select-box__label')).text($(this).text());
       $($(this).parent().parent().find('.select-box__label')).addClass('is--selected');
@@ -175,25 +175,6 @@ $(function () {
       event.preventDefault()
 
       if(validationCheck()) {
-        var form = {
-          name: '',
-          phone: '',
-          address: ''
-        }
-        form.name = $('.js-input-name').val()
-        form.phone = $('.js-input-phone1').val() + $('.js-input-phone2').val() + $('.js-input-phone3').val()
-        form.address = $('.js-select-address1').val() + ' ' + $('.js-select-address2').val() + ' ' + $('.js-select-address3').val()
-        $.ajax({
-          url: API_URI + '/api/'+ SITE_KEY + '/interest/2/enroll',
-          contentType: 'application/json; charset=utf-8',
-          type:'post',
-          data: JSON.stringify(form)
-        }).done(function (data) {
-          alert('관심고객 등록이 완료되었습니다.\n 힐스테이트 창원 센트럴에 대한 관심에 감사드립니다.');
-          location.reload()
-        }).fail(function (jqXHR) {
-          alert(jqXHR.responseJSON.errorMsg)
-        })
       }
     })
 
@@ -207,6 +188,49 @@ $(function () {
     }
   }
 
+  const listHandler = () => {
+    // 리스트 이미지 클릭시
+    $('.js-img-box').on('click', function (){
+      $(this).next('.js-img-layer').addClass('is--show')
+    })
+    $('.js-layer-bg').on('click', function () {
+      $(this).parents('.js-img-layer').removeClass('is--show')
+    })
+    // 더보기버튼
+    $('.js-list-more-button').on('click', function (){
+      $(this).toggleClass('is--open').siblings().removeClass('is--open')
+      $(this).parents('.list-table-content').siblings().toggleClass('is--open')
+      $(this).parents('.list-table-li').siblings().toggleClass('is--open')
+    })
+    //all check 버튼
+    $('.js-input-checkbox-all').on('click', function() {
+      if($(this).prop('checked')) {
+        $('.js-input-checkbox').prop('checked',true);
+        } else {
+        $('.js-input-checkbox').prop('checked',false);
+      }
+    })
+    //check
+    $('.js-input-checkbox').on('click', function() {
+      if ($(this).is(':checked')) {
+        let isAllChecked = 0;
+
+        $('.js-input-checkbox').each(function() {
+          if (!this.checked)
+            isAllChecked = 1;
+        });
+
+        if (isAllChecked === 0) {
+          $('.js-input-checkbox-all').prop('checked', true);
+        }
+      }
+      else {
+        $('.js-input-checkbox-all').prop('checked', false);
+      }
+    })
+  }
+
+  listHandler()
   searchList()
   filterPartHandler()
   listMoreHandler()

@@ -52,6 +52,10 @@
         opacity: .3;
         background-color: transparent;
       }
+      &.highlighted {
+        background-color: transparent;
+        color: $neutral-black-32373-c;
+      }
       &.picked {
         color: $neutral-white-ffffff;
         background-color: $secondary-green-2-fd-0-a-3;
@@ -78,10 +82,14 @@
         &:hover {
           background-color: $secondary-green-f-1-fbf-8;
         }
+        &.highlighted {
+          background-color: transparent;
+          color: $neutral-black-32373-c;
+        }
         &.picked {
           background-color: $neutral-white-100;
           color: $secondary-green-2-fd-0-a-3;
-          background-image: icon(selectCheck, '2fd0a3');
+          background-image: icon(selectCheck, '$iconGreenColor');
         }
       }
     }

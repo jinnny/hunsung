@@ -13,6 +13,40 @@
   justify-content: space-between;
   cursor: pointer;
   margin-right: 15px;
+  &.round {
+    border-radius: 14px;
+    &.small {
+      width: 90px;
+      height: 28px;
+      margin-right: 0;
+      box-shadow: none;
+      border: solid 1px $neutral-gray-dadde-4;
+    }
+    &.green {
+      &.is--selected {
+        border-color: $secondary-green-2-fd-0-a-3;
+        .select-box__label {
+          &.is--selected {
+            color: $secondary-green-2-fd-0-a-3;
+          }
+        }
+        .select-box__icon {
+          background-image: icon(arrowDown, $iconGreenColor);
+        }
+      }
+      .select-box__item {
+        &:hover {
+          color: $secondary-green-2-fd-0-a-3;
+          background-color: $secondary-green-f-1-fbf-8;
+        }
+        &.is--selected {
+          color: $secondary-green-2-fd-0-a-3;
+          background-color: $secondary-green-f-1-fbf-8;;
+          background-image: icon(selectCheck, $iconGreenColor);
+        }
+      }
+    }
+  }
   &.table-box {
     width: 50px;
     border: none;
