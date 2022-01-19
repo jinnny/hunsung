@@ -274,13 +274,46 @@ $(function () {
         error: function(jqXHR,textStatus,errorThrown) {
         }
       });
-
-
     })
   }
 
+  const layerPopupHandler = () => {
+    //layerpopup open
+    $('.js-open-popup').on('click', function () {
+      $('.js-layer-popup').addClass('is--show')
+    })
+    // 다음 클릭
+    $('.js-next-layer-button').on('click', function () {
+      const popupContent = $(this).parents('.js-layer-popup-content')
+      popupContent.addClass('is--next-popup')
+      popupContent.find('.js-layer-popup-close').fadeOut(100)
+      popupContent.find('.js-layer-popup-prev').fadeIn(100)
+      popupContent.find('.js-next-content').fadeIn(100)
+      popupContent.find('.js-next-title').fadeIn(100)
+      popupContent.find('.js-first-title').fadeOut(100)
+      popupContent.find('.js-first-content').fadeOut(100)
+    })
+    //닫기클릭
+    $('.js-layer-popup-close').on('click', function () {
+      $('.js-layer-popup').removeClass('is--show')
+    })
+    // 이전클릭
+    $('.js-layer-popup-prev').on('click', function () {
+      const popupContent = $(this).parents('.js-layer-popup-content')
+      popupContent.removeClass('is--next-popup')
+      popupContent.find('.js-layer-popup-close').fadeIn(100)
+      popupContent.find('.js-layer-popup-prev').fadeOut(100)
+      popupContent.find('.js-next-content').fadeOut(100)
+      popupContent.find('.js-next-title').fadeOut(100)
+      popupContent.find('.js-first-title').fadeIn(100)
+      popupContent.find('.js-first-content').fadeIn(100)
+    })
+  }
+
+
   listHandler()
   searchList()
+  layerPopupHandler()
   filterPartHandler()
   listMoreHandler()
   datePickerHandler()

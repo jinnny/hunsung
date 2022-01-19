@@ -1,0 +1,205 @@
+.layer-popup {
+  position: fixed;
+  z-index: 111;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100%;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  &.is--show {
+    display: flex;
+  }
+  &-bg {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.4);
+  }
+  &-content {
+    width: 960px;
+    height: 536px;
+    border-radius: 10px;
+    box-shadow: 0 0 20px 0 rgba(39, 70, 127, 0.3);
+    background-color: $neutral-white-ffffff;
+    position: relative;
+    z-index: 11;
+    overflow: hidden;
+    transition: width 0.1s, height 0.1s;
+    &-content {
+      padding: 30px;
+      .next-content {
+        position: relative;
+        display: none;
+      }
+    }
+    &.is--next-popup {
+      width: 700px;
+      height: 360px;
+    }
+    &.small {
+
+    }
+  }
+  &-header {
+    position: relative;
+    background-color: #343e50;
+    padding: 19px 24px;
+    display: flex;
+    align-items: center;
+    .layer-popup__ {
+      &title {
+        font-size: 18px;
+        font-weight: 600;
+        color: $neutral-white-ffffff;
+        .next-title {
+          display: none;
+        }
+      }
+      &close-button {
+        top: 17px;
+        right: 24px;
+        width: 24px;
+        height: 24px;
+        position: absolute;
+        background-repeat: no-repeat;
+        background-position: 50% 50%;
+        background-color: transparent;
+        background-image: icon(close, 'fff');
+      }
+      &prev-button {
+        display: none;
+        width: 24px;
+        height: 24px;
+        margin-right: 15px;
+        background-repeat: no-repeat;
+        background-position: 50% 50%;
+        background-color: transparent;
+        background-image: icon(back, 'fff');
+      }
+    }
+  }
+}
+
+.table {
+  color: $neutral-black-32373-c;
+  font-size: 13px;
+  border-collapse: collapse;
+  width: 100%;
+  & + .table__subject {
+    margin-top: 30px;
+  }
+  &__subject {
+    display: block;
+    font-size: 15px;
+    font-weight: 600;
+    margin-bottom: 15px;
+  }
+  th {
+    background-color: $neutral-gray-f-6-f-7-fc;
+    height: 46px;
+    font-weight: normal;
+  }
+  td {
+    height: 46px;
+    font-weight: 600;
+  }
+  .px-8 {
+    padding: 0 8px;
+  }
+  .px-16 {
+    padding: 0 16px;
+  }
+  &.vertical {
+    text-align: left;
+    border-top: 1px solid $neutral-gray-dadde-4;
+    border-bottom: 1px solid $neutral-gray-dadde-4;
+    tr {
+      border-bottom: 1px solid $neutral-gray-edeff-4;
+      &:last-child {
+        border-bottom: none;
+      }
+    }
+    th {
+      width: 140px;
+    }
+    td {
+
+    }
+    &.other-type {
+      .left--fix {
+        width: 160px;
+        border-right: 1px solid $neutral-gray-edeff-4;
+      }
+      td {
+        height: 60px;
+        padding-top: 18px;
+        padding-bottom: 18px;
+      }
+    }
+  }
+  &.horizontal {
+    text-align: center;
+    box-sizing: content-box;
+    border-top: 1px solid $neutral-gray-dadde-4;
+    border-bottom: 1px solid $neutral-gray-dadde-4;
+    th, td {
+      box-sizing: content-box;
+    }
+    th {
+      height: auto;
+      padding-top: 12px;
+      padding-bottom: 12px;
+    }
+    td {
+      padding-top: 18px;
+      padding-bottom: 18px;
+    }
+    .width-- {
+      &shipping {
+        width: 98px;
+      }
+      &product {
+        width: 154px;
+      }
+      &amount {
+        width: 88px;
+      }
+      &price {
+        width: 120px;
+      }
+      &date {
+        width: 138px;
+      }
+      &number {
+        width: 74px;
+      }
+    }
+  }
+
+  &-button {
+    font-size: 12px;
+    font-weight: 500;
+    text-align: center;
+    color: $primary-blue-4-c-8-cff;
+    padding: 5px;
+    border-radius: 3px;
+    border: solid 1px $primary-blue-4-c-8-cff;
+    background-color: $neutral-white-ffffff;
+    &.position-top {
+      position: absolute;
+      top: -5px;
+      right: 0;
+    }
+    &:hover {
+      color: $primary-blue-3-b-78-e-5;
+      border-color: $primary-blue-3-b-78-e-5;
+    }
+    &.wide {
+      padding: 5px 12px;
+    }
+  }
+}
