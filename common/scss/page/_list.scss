@@ -1,3 +1,14 @@
+.header-page-info {
+  font-size: 14px;
+  color: $neutral-gray-9499-ab;
+  margin: 21px 0 0 20px;
+  display: inline-block;
+  &__current {
+    color: $primary-blue-4-c-8-cff;
+    text-decoration: underline;
+    font-weight: normal;
+  }
+}
 .list-content {
   padding: 1.7% 1.6%;
   input {
@@ -285,12 +296,13 @@
 .list-table {
   width: 100%;
   border-collapse: collapse;
-  border: none;
   font-size: 13px;
   color: $neutral-black-32373-c;
   border-radius: 6px;
-  box-shadow: 0 0 12px 0 rgba(0, 0, 0, 0.03);
   background-color: $neutral-white-ffffff;
+  border-bottom: 1px solid $neutral-gray-edeff-4;
+  margin-bottom: 30px;
+
   &__content {
     width: inherit;
     word-break: break-all;
@@ -345,6 +357,7 @@
     border-radius: 6px;
     box-shadow: 0 0 12px 0 rgba(0, 0, 0, 0.03);
     background-color: $neutral-white-ffffff;
+    padding-bottom: 30px;
   }
   &-head {
     background-color: #edf4ff;

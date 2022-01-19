@@ -39,7 +39,7 @@
     padding: 0 17px 17px;
     li {
       @include setText(13,500);
-      color: #808596;
+      color: $blue-grey;
       width: 38px;
       height: 38px;
       border-radius: 50%;
@@ -121,6 +121,21 @@
     background-image: icon(arrowRight, '9499AB');
     &:hover {
       background-image: icon(arrowRight, '000');
+    }
+  }
+}
+
+.swal-button {
+  &.red {
+    background: $secondary-red-ff-4-d-75;
+    &:not([disabled]):hover {
+      background: $secondary-red-400;
+    }
+  }
+  &.primary {
+    background: $primary-blue-4-c-8-cff;
+    &:not([disabled]):hover {
+      background: $secondary-navy-27467-f
     }
   }
 }

@@ -1,0 +1,928 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>list</title>
+  <!-- CSS FILES.. -->
+  <link rel="stylesheet" href="common/css/style_e.css">
+  <link rel="stylesheet" href="common/scss/style.css">
+</head>
+<body>
+
+<!-- LNB BUTTON -->
+<div id="lnb-component"></div>
+
+
+<!-- DRAWER AREA -->
+<nav id="drawer-component">
+
+  <div id="drawer-logo-component">
+    <a id="drawer-logo-link-component" href="#">
+      <img src="images/E/LOGO/logo-hyunsung.webp" alt="LOGO" title="LOGO">
+      <p id="drawer-logo-p-component">Hyunsung system</p>
+    </a>
+  </div>
+
+  <ul id="drawer-main-menu-component">
+    <li class="active">
+      <div class="drawer-menu-list-icon-component"></div>
+      <span>1. Dashboard</span>
+    </li>
+    <li>
+      <div class="drawer-menu-list-icon-component"></div>
+      <span>2. Products</span>
+      <div class="drawer-right-arrow-icon-component"></div>
+
+      <ul class="drawer-sub-menu-component">
+        <li>
+          <img src="images/E/DRAWER_FILL/icon-24-x-24-line-arrow-back_sub/icon-24-x-24-line-arrow-back.webp" alt="SUB"
+               title="SUB">
+          <span>2. Products</span>
+        </li>
+        <li>
+          <span>2-1. menu01</span>
+        </li>
+        <li>
+          <span>2-2. menu02</span>
+        </li>
+        <li>
+          <span>2-3. menu03</span>
+        </li>
+        <li>
+          <span>2-4. menu04</span>
+        </li>
+      </ul>
+    </li>
+    <li>
+      <div class="drawer-menu-list-icon-component"></div>
+      <span>3. Listings</span>
+      <div class="drawer-right-arrow-icon-component"></div>
+      <ul class="drawer-sub-menu-component">
+        <li>
+          <img src="images/E/DRAWER_FILL/icon-24-x-24-line-arrow-back_sub/icon-24-x-24-line-arrow-back.webp" alt="SUB"
+               title="SUB">
+          <span>3. Listings</span>
+        </li>
+        <li>
+          <span>3-1. menu01</span>
+        </li>
+        <li>
+          <span>3-2. menu02</span>
+        </li>
+        <li>
+          <span>3-3. menu03</span>
+        </li>
+        <li>
+          <span>3-4. menu04</span>
+        </li>
+      </ul>
+    </li>
+    <li>
+      <div class="drawer-menu-list-icon-component"></div>
+      <span>4. Orders</span>
+      <div class="drawer-right-arrow-icon-component"></div>
+      <ul class="drawer-sub-menu-component">
+        <li>
+          <img src="images/E/DRAWER_FILL/icon-24-x-24-line-arrow-back_sub/icon-24-x-24-line-arrow-back.webp" alt="SUB"
+               title="SUB">
+          <span>4. Orders</span>
+        </li>
+        <li>
+          <span>4-1. menu01</span>
+        </li>
+        <li>
+          <span>4-2. menu02</span>
+        </li>
+        <li>
+          <span>4-3. menu03</span>
+        </li>
+        <li>
+          <span>4-4. menu04</span>
+        </li>
+      </ul>
+    </li>
+    <li>
+      <div class="drawer-menu-list-icon-component"></div>
+      <span>5. Reports</span>
+      <div class="drawer-right-arrow-icon-component"></div>
+      <ul class="drawer-sub-menu-component">
+        <li>
+          <img src="images/E/DRAWER_FILL/icon-24-x-24-line-arrow-back_sub/icon-24-x-24-line-arrow-back.webp" alt="SUB"
+               title="SUB">
+          <span>5. Reports</span>
+        </li>
+        <li>
+          <span>5-1. menu01</span>
+        </li>
+        <li>
+          <span>5-2. menu02</span>
+        </li>
+        <li>
+          <span>5-3. menu03</span>
+        </li>
+        <li>
+          <span>5-4. menu04</span>
+        </li>
+      </ul>
+    </li>
+    <li>
+      <div class="drawer-menu-list-icon-component"></div>
+      <span>6. 도면관리</span>
+      <div class="drawer-right-arrow-icon-component"></div>
+      <ul class="drawer-sub-menu-component">
+        <li>
+          <img src="images/E/DRAWER_FILL/icon-24-x-24-line-arrow-back_sub/icon-24-x-24-line-arrow-back.webp" alt="SUB"
+               title="SUB">
+          <span>6. 도면관리</span>
+        </li>
+        <li>
+          <span>6-1. menu01</span>
+        </li>
+        <li>
+          <span>6-2. menu02</span>
+        </li>
+        <li>
+          <span>6-3. menu03</span>
+        </li>
+        <li>
+          <span>6-4. menu04</span>
+        </li>
+      </ul>
+    </li>
+    <li>
+      <div class="drawer-menu-list-icon-component"></div>
+      <span>7. 공정현황</span>
+      <div class="drawer-right-arrow-icon-component"></div>
+      <ul class="drawer-sub-menu-component">
+        <li>
+          <img src="images/E/DRAWER_FILL/icon-24-x-24-line-arrow-back_sub/icon-24-x-24-line-arrow-back.webp" alt="SUB"
+               title="SUB">
+          <span>7. 공정현황</span>
+        </li>
+        <li>
+          <span>7-1. menu01</span>
+        </li>
+        <li>
+          <span>7-2. menu02</span>
+        </li>
+        <li>
+          <span>7-3. menu03</span>
+        </li>
+        <li>
+          <span>7-4. menu04</span>
+        </li>
+      </ul>
+    </li>
+    <li>
+      <div class="drawer-menu-list-icon-component"></div>
+      <span>8. 재고현황</span>
+      <div class="drawer-right-arrow-icon-component"></div>
+
+      <ul class="drawer-sub-menu-component">
+        <li>
+          <img src="images/E/DRAWER_FILL/icon-24-x-24-line-arrow-back_sub/icon-24-x-24-line-arrow-back.webp" alt="SUB"
+               title="SUB">
+          <span>8. 재고현황</span>
+        </li>
+        <li>
+          <span>8-1. menu01</span>
+        </li>
+        <li>
+          <span>8-2. menu02</span>
+        </li>
+        <li>
+          <span>8-3. menu03</span>
+        </li>
+        <li>
+          <span>8-4. menu04</span>
+        </li>
+      </ul>
+    </li>
+    <li>
+      <div class="drawer-menu-list-icon-component"></div>
+      <span>9. 매출현황</span>
+      <div class="drawer-right-arrow-icon-component"></div>
+
+      <ul class="drawer-sub-menu-component">
+        <li>
+          <img src="images/E/DRAWER_FILL/icon-24-x-24-line-arrow-back_sub/icon-24-x-24-line-arrow-back.webp" alt="SUB"
+               title="SUB">
+          <span>9. 매출현황</span>
+        </li>
+        <li>
+          <span>9-1. menu01</span>
+        </li>
+        <li>
+          <span>9-2. menu02</span>
+        </li>
+        <li>
+          <span>9-3. menu03</span>
+        </li>
+        <li>
+          <span>9-4. menu04</span>
+        </li>
+      </ul>
+    </li>
+    <li>
+      <div class="drawer-menu-list-icon-component"></div>
+      <span>10. 설정</span>
+      <div class="drawer-right-arrow-icon-component"></div>
+
+      <ul class="drawer-sub-menu-component">
+        <li>
+          <img src="images/E/DRAWER_FILL/icon-24-x-24-line-arrow-back_sub/icon-24-x-24-line-arrow-back.webp" alt="SUB"
+               title="SUB">
+          <span>10. 설정</span>
+        </li>
+        <li>
+          <span>10-1. menu01</span>
+        </li>
+        <li>
+          <span>10-2. menu02</span>
+        </li>
+        <li>
+          <span>10-3. menu03</span>
+        </li>
+        <li>
+          <span>10-4. menu04</span>
+        </li>
+      </ul>
+    </li>
+  </ul>
+
+
+  <footer>© Hyunsung company.<br>All Rights Reserved</footer>
+
+</nav>
+<!-- DRAWER AREA END -->
+
+
+<!-- HEADER AREA -->
+<header id="header-component">
+  <article class="container-component">
+
+    <div class="dashboard-title-component">대시보드</div>
+
+    <div class="dashboard-notice-list-component">
+      <ul>
+        <li>
+          <span>N</span>
+          <span>[업그레이드] 2021년 3분기 업그레이드 안내</span>
+          <span>1시간 전</span>
+        </li>
+      </ul>
+      <div class="btn-dashboard-notice-list-close">
+        <img src="images/E/HEADER/icon-10-x-10-line-delete/icon-10-x-10-line-delete.webp" alt="DELETE" title="DELETE">
+      </div>
+    </div>
+
+    <div class="dashboard-right-container-component">
+      <div class="notice-container-component">
+        <div class="notice-count-component">99+</div>
+        <img src="images/E/HEADER/icon-30-x-30-notice/icon-30-x-30-notice.webp" alt="NOTICE" title="NOTICE">
+      </div>
+      <div class="notice-list-container-component">
+        <div class="notice-list-title-container-component">
+          <div class="notice-list-title-component">
+            <div class="notice-list-left-title-component">
+              <p>받은 알림</p>
+              <span>2</span>
+            </div>
+            <div class="notice-list-right-title-component">
+              <button>모두 확인</button>
+            </div>
+          </div>
+          <p><span>최근 30일 동안</span>의 알림만 보관됩니다.</p>
+        </div>
+        <div class="notice-list-check-close-container-component">
+          <div class="notice-list-check-close-item-component check">
+            <div class="notice-list-check-close-title-container">
+              <div class="notice-list-check-close-left-title-component">
+                알림 내용 내용알림 내용 내용
+              </div>
+              <div class="notice-list-check-close-right-title-component">
+                <button>확인</button>
+              </div>
+              <div class="notice-list-date-time-container-component">
+                <span>2021.11.21</span>
+                <span>|</span>
+                <span>오후 3시 30분</span>
+              </div>
+            </div>
+          </div>
+          <div class="notice-list-check-close-item-component check">
+            <div class="notice-list-check-close-title-container">
+              <div class="notice-list-check-close-left-title-component">
+                알림 내용 내용알림 내용 내용 내용이 아주 길 경우 두줄 까지 노출 놀출
+              </div>
+              <div class="notice-list-check-close-right-title-component">
+                <button>확인</button>
+              </div>
+              <div class="notice-list-date-time-container-component">
+                <span>2021.11.21</span>
+                <span>|</span>
+                <span>오후 3시 30분</span>
+              </div>
+            </div>
+          </div>
+          <div class="notice-list-check-close-item-component">
+            <div class="notice-list-check-close-title-container">
+              <div class="notice-list-check-close-left-title-component">
+                확인한 알림의 경우 우측에 삭제 버튼 노출
+              </div>
+              <div class="notice-list-check-close-right-title-component">
+                <button><img src="images/E/HEADER/icon-12-x-12-line-delete/icon-12-x-12-line-delete.webp" alt="DELETE"
+                             title="DELETE"></button>
+              </div>
+              <div class="notice-list-date-time-container-component">
+                <span>2021.11.21</span>
+                <span>|</span>
+                <span>오후 3시 30분</span>
+              </div>
+            </div>
+          </div>
+          <div class="notice-list-check-close-item-component">
+            <div class="notice-list-check-close-title-container">
+              <div class="notice-list-check-close-left-title-component">
+                알림은 시간순으로 노출 (최신이 상단에)
+              </div>
+              <div class="notice-list-check-close-right-title-component">
+                <button><img src="images/E/HEADER/icon-12-x-12-line-delete/icon-12-x-12-line-delete.webp" alt="DELETE"
+                             title="DELETE"></button>
+              </div>
+              <div class="notice-list-date-time-container-component">
+                <span>2021.11.21</span>
+                <span>|</span>
+                <span>오후 3시 30분</span>
+              </div>
+            </div>
+          </div>
+          <div class="notice-list-check-close-item-component">
+            <div class="notice-list-check-close-title-container">
+              <div class="notice-list-check-close-left-title-component">
+                알림 내용 내용알림 내용 내용
+              </div>
+              <div class="notice-list-check-close-right-title-component">
+                <button><img src="images/E/HEADER/icon-12-x-12-line-delete/icon-12-x-12-line-delete.webp" alt="DELETE"
+                             title="DELETE"></button>
+              </div>
+              <div class="notice-list-date-time-container-component">
+                <span>2021.11.21</span>
+                <span>|</span>
+                <span>오후 3시 30분</span>
+              </div>
+            </div>
+          </div>
+          <div class="notice-list-check-close-item-component">
+            <div class="notice-list-check-close-title-container">
+              <div class="notice-list-check-close-left-title-component">
+                알림은 시간순으로 노출 (최신이 상단에)
+              </div>
+              <div class="notice-list-check-close-right-title-component">
+                <button><img src="images/E/HEADER/icon-12-x-12-line-delete/icon-12-x-12-line-delete.webp" alt="DELETE"
+                             title="DELETE"></button>
+              </div>
+              <div class="notice-list-date-time-container-component">
+                <span>2021.11.21</span>
+                <span>|</span>
+                <span>오후 3시 30분</span>
+              </div>
+            </div>
+          </div>
+          <div class="notice-list-check-close-item-component">
+            <div class="notice-list-check-close-title-container">
+              <div class="notice-list-check-close-left-title-component">
+                알림 내용 내용알림 내용 내용
+              </div>
+              <div class="notice-list-check-close-right-title-component">
+                <button><img src="images/E/HEADER/icon-12-x-12-line-delete/icon-12-x-12-line-delete.webp" alt="DELETE"
+                             title="DELETE"></button>
+              </div>
+              <div class="notice-list-date-time-container-component">
+                <span>2021.11.21</span>
+                <span>|</span>
+                <span>오후 3시 30분</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="select-box-blue-component">
+        <span>관리자 님</span><img src="images/E/HEADER/icon-8-x-8-line-arrow-down/icon-8-x-8-line-arrow-down.webp"
+                               alt="ARROW DOWN" title="ARROW DOWN">
+
+        <div class="select-box-blue-option-container-component">
+          <div class="select-box-blue-option-component">
+            <div class="select-box-blue-option-img"></div>
+            <span>정보 변경</span>
+          </div>
+          <div class="select-box-blue-option-component">
+            <div class="select-box-blue-option-img"></div>
+            <span>로그아웃</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </article>
+</header>
+<!-- HEADER AREA END -->
+
+
+<!-- CONTENT AREA -->
+<section id="content-component">
+  <article class="list-content">
+    <header class="list-header">
+      <h2 class="list-header__title">특판 관리</h2>
+      <div class="list-header-right">
+        <button class="list-button filter outline">검색 조건 설정</button>
+        <button class="list-button add">상품 등록</button>
+        <div class="list-button-more-area">
+          <button class="list-button-more js-list-button-more"><span class="blind">더보기</span></button>
+          <div class="list-button-more-content">
+            <a href="" class="list-button-more__item js-list-more-item">재고 히스토리</a>
+            <a href="" class="list-button-more__item js-list-more-item">가격 히스토리</a>
+            <a href="" class="list-button-more__item js-list-more-item">연동 히스토리</a>
+            <a href="" class="list-button-more__item js-list-more-item">엑셀 설정</a>
+            <button class="list-button-more__item js-list-more-item">연동 설정</button>
+          </div>
+        </div>
+      </div>
+    </header>
+    <!-- 필터-->
+    <div class="list-top-filter">
+      <div class="list-filter-part">
+        <div class="select-box js-select">
+          <strong class="select-box__label">일자 구분</strong><span class="select-box__icon"></span>
+          <div class="select-box-list">
+            <span class="select-box__item js-select-item">등록 일자</span>
+            <span class="select-box__item js-select-item">수정 일자</span>
+            <span class="select-box__item js-select-item">최종 전송일</span>
+            <span class="select-box__item js-select-item">재고 수정일</span>
+            <span class="select-box__item js-select-item">품절 마감일</span>
+          </div>
+        </div>
+        <div class="input-group">
+          <input type="text" placeholder="Start date" aria-label="First name" class="js-start-date filter-input__date">
+          <span class="filter-input__separator">~</span>
+          <input type="text" placeholder="End date" aria-label="Last name" class="js-end-date filter-input__date">
+        </div>
+        <div class="date-button-area">
+          <button class="date-button js-date-button" data-date="0">오늘</button>
+          <button class="date-button js-date-button" data-date="7">일주일</button>
+          <button class="date-button js-date-button" data-date="90">3개월</button>
+          <button class="date-button js-date-button" data-date="180">6개월</button>
+          <button class="date-button js-date-button" data-date="365">1년</button>
+        </div>
+        <div class="date-button-select-area">
+          <div class="select-box js-select js-select-filter round small green">
+            <strong class="select-box__label">기간 선택</strong><span class="select-box__icon"></span>
+            <div class="select-box-list">
+              <span class="select-box__item js-select-item js-date-button" data-date="0">오늘</span>
+              <span class="select-box__item js-select-item js-date-button" data-date="7">일주일</span>
+              <span class="select-box__item js-date-button" data-date="90">3개월</span>
+              <span class="select-box__item js-select-item js-date-button" data-date="180">6개월</span>
+              <span class="select-box__item js-select-item js-date-button" data-date="365">1년</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="list-filter-part">
+        <div class="select-box js-select js-select-filter">
+          <strong class="select-box__label">검색 구분</strong><span class="select-box__icon"></span>
+          <div class="select-box-list">
+            <span class="select-box__item js-select-item">품목코드</span>
+            <span class="select-box__item js-select-item">품목명</span>
+            <span class="select-box__item js-select-item">모델코드</span>
+            <span class="select-box__item js-select-item">속성명</span>
+            <span class="select-box__item js-select-item">인쇄상태</span>
+            <span class="select-box__item js-select-item">재고수량</span>
+            <span class="select-box__item js-select-item" data-category="authentication">인증정보</span>
+          </div>
+        </div>
+        <input type="text" class="filter-input__search" placeholder="검색 내용을 입력해 주세요.">
+        <div class="filter-part-button-area">
+          <button class="part-button add js-part-add"><span class="blind">추가</span></button>
+        </div>
+      </div>
+      <div class="list-filter-line"></div>
+      <div class="list-filter-button-area">
+        <button type="button" class="filter-button reset outline">초기화</button>
+        <button type="submit" class="filter-button search js-search-button">검색</button>
+      </div>
+    </div>
+    <!-- 필터-->
+    <div class="list-table-top">
+      <div class="table-top-left">
+        <span class="table-top__total">검색 <b>1000</b>건</span>
+        <div class="select-box js-select table-box">
+          <strong class="select-box__label">25개씩</strong><span class="select-box__icon"></span>
+          <div class="select-box-list">
+            <span class="select-box__item js-select-item">30개씩</span>
+            <span class="select-box__item js-select-item">35개씩</span>
+          </div>
+        </div>
+      </div>
+      <div class="table-top-right">
+        <button class="table-to-button js-table-button-item">품목 전송</button>
+        <button class="table-to-button js-table-button-erp">ERP 전송</button>
+        <button class="table-to-button js-table-button-re">리바트 전송</button>
+      </div>
+    </div>
+    <!-- 리스트테이블영역-->
+    <div class="list-table-bottom">
+      <div class="list-table">
+        <ul class="list-table-head">
+          <li class="list-table-th list-table-item table-check">
+            <input type="checkbox" class="input__input-checkbox js-input-checkbox-all">
+          </li>
+          <li class="list-table-th list-table-item table-alert">알림</li>
+          <li class="list-table-th list-table-item table-code">품목코드</li>
+          <li class="list-table-th list-table-item table-code">바코드</li>
+          <li class="list-table-th list-table-item table-img">이미지</li>
+          <li class="list-table-th list-table-item table-name">품목명</li>
+          <li class="list-table-th list-table-item table-print">인쇄상태</li>
+          <li class="list-table-th list-table-item table-shop">쇼핑몰</li>
+          <li class="list-table-th list-table-item table-price">출고가</li>
+          <li class="list-table-th list-table-item table-stock">재고</li>
+          <li class="list-table-th list-table-item table-company">거래처</li>
+          <li class="list-table-th list-table-item table-etc">비고</li>
+        </ul>
+        <ul class="list-table-body">
+          <li class="list-table-li">
+            <div class="list-table-content">
+              <div class="list-table-td list-table-item table-check">
+                <input type="checkbox" class="input__input-checkbox js-input-checkbox">
+              </div>
+              <div class="list-table-td list-table-item table-alert">
+                <span class="icon-alert"></span>
+              </div>
+              <div class="list-table-td list-table-item table-code">
+                <div class="list-table__content small">1234567891012</div>
+              </div>
+              <div class="list-table-td list-table-item table-code">
+                <div class="list-table__content small">A001923HJUIO</div>
+              </div>
+              <div class="list-table-td list-table-item table-img">
+                <div class="img-box js-img-box">
+                  <img src="./images/E/COMMON/img-sample.png" alt="" class="img-box__img">
+                </div>
+                <div class="img-expand-layer js-img-layer">
+                  <div class="img-expand-layer-bg js-layer-bg"></div>
+                  <div class="img-box__expand-img-area">
+                    <img src="./images/E/COMMON/img-sample.png" alt="" class="img-box__expand-img">
+                  </div>
+                </div>
+              </div>
+              <div class="list-table-td list-table-item table-name">
+                <div class="list-table__content table-name__content">
+                  <mark class="label-category label">세트</mark>
+                  <p class="list-item__title">가나다라마바사아자차카타파하가가가가가가가가가</p>
+                  <button class="list-item__more-button js-list-more-button"></button>
+                </div>
+              </div>
+              <div class="list-table-td list-table-item table-print">
+                <mark class="label-print label">인쇄중</mark>
+              </div>
+              <div class="list-table-td list-table-item table-shop">
+                <img src="images/E/COMMON/invalid-name.png" alt="" class="shop__img">
+              </div>
+              <div class="list-table-td list-table-item table-price">
+                <p class="list-table__content small">5,666,999,000</p>
+              </div>
+              <div class="list-table-td list-table-item table-stock">
+                <p class="list-table__content small">100,000</p>
+              </div>
+              <div class="list-table-td list-table-item table-company">
+                <p class="list-table__content small">가가가가가가가가가가가가가가가가가가가</p>
+              </div>
+              <div class="list-table-td list-table-item table-etc">
+                <p class="list-table__content small">기타</p>
+              </div>
+            </div>
+            <div class="list-table-content child">
+              <div class="list-table-td list-table-item table-check"></div>
+              <div class="list-table-td list-table-item table-alert"></div>
+              <div class="list-table-td list-table-item table-code"></div>
+              <div class="list-table-td list-table-item table-code"></div>
+              <div class="list-table-td list-table-item table-img">
+                <div class="img-box js-img-box">
+                  <img src="./images/E/COMMON/img-sample.png" alt="" class="img-box__img">
+                </div>
+                <div class="img-expand-layer js-img-layer">
+                  <div class="img-expand-layer-bg js-layer-bg"></div>
+                  <div class="img-box__expand-img-area">
+                    <img src="./images/E/COMMON/img-sample.png" alt="" class="img-box__expand-img">
+                  </div>
+                </div>
+              </div>
+              <div class="list-table-td list-table-item table-name">
+                <div class="list-table__content table-name__content">
+                  <mark class="label-category label green">단품</mark>
+                  <p class="list-item__title">가나다라마바사아자차카타파하가가가가가가가가가</p>
+                </div>
+              </div>
+              <div class="list-table-td list-table-item table-print">
+                <mark class="label-print label">인쇄중</mark>
+              </div>
+              <div class="list-table-td list-table-item table-shop"></div>
+              <div class="list-table-td list-table-item table-price">
+                <p class="list-table__content small">5,666,999,000</p>
+              </div>
+              <div class="list-table-td list-table-item table-stock">
+                <p class="list-table__content small">100,000</p>
+              </div>
+              <div class="list-table-td list-table-item table-company">
+                <p class="list-table__content small">가가가가가가가가가가가가가가가가가가가</p>
+              </div>
+              <div class="list-table-td list-table-item table-etc">
+              </div>
+            </div>
+            <div class="list-table-content child">
+              <div class="list-table-td list-table-item table-check"></div>
+              <div class="list-table-td list-table-item table-alert"></div>
+              <div class="list-table-td list-table-item table-code"></div>
+              <div class="list-table-td list-table-item table-code"></div>
+              <div class="list-table-td list-table-item table-img">
+                <div class="img-box js-img-box">
+                  <img src="./images/E/COMMON/img-sample.png" alt="" class="img-box__img">
+                </div>
+                <div class="img-expand-layer js-img-layer">
+                  <div class="img-expand-layer-bg js-layer-bg"></div>
+                  <div class="img-box__expand-img-area">
+                    <img src="./images/E/COMMON/img-sample.png" alt="" class="img-box__expand-img">
+                  </div>
+                </div>
+              </div>
+              <div class="list-table-td list-table-item table-name">
+                <div class="list-table__content table-name__content">
+                  <mark class="label-category label green">단품</mark>
+                  <p class="list-item__title">가나다라마바사아자차카타파하가가가가가가가가가</p>
+                </div>
+              </div>
+              <div class="list-table-td list-table-item table-print">
+                <mark class="label-print label blue">인쇄완료</mark>
+              </div>
+              <div class="list-table-td list-table-item table-shop"></div>
+              <div class="list-table-td list-table-item table-price">
+                <p class="list-table__content small">5,666,999,000</p>
+              </div>
+              <div class="list-table-td list-table-item table-stock">
+                <p class="list-table__content small">100,000</p>
+              </div>
+              <div class="list-table-td list-table-item table-company">
+                <p class="list-table__content small">가가가가가가가가가가가가가가가가가가가</p>
+              </div>
+              <div class="list-table-td list-table-item table-etc">
+              </div>
+            </div>
+          </li>
+          <li class="list-table-li">
+            <div class="list-table-content">
+              <div class="list-table-td list-table-item table-check">
+                <input type="checkbox" class="input__input-checkbox js-input-checkbox">
+              </div>
+              <div class="list-table-td list-table-item table-alert">
+                <span class="icon-alert"></span>
+              </div>
+              <div class="list-table-td list-table-item table-code">
+                <div class="list-table__content small">1234567891012</div>
+              </div>
+              <div class="list-table-td list-table-item table-code">
+                <div class="list-table__content small">A001923HJUIO</div>
+              </div>
+              <div class="list-table-td list-table-item table-img">
+                <div class="img-box js-img-box">
+                  <img src="./images/E/COMMON/img-sample.png" alt="" class="img-box__img">
+                </div>
+                <div class="img-expand-layer js-img-layer">
+                  <div class="img-expand-layer-bg js-layer-bg"></div>
+                  <div class="img-box__expand-img-area">
+                    <img src="./images/E/COMMON/img-sample.png" alt="" class="img-box__expand-img">
+                  </div>
+                </div>
+              </div>
+              <div class="list-table-td list-table-item table-name">
+                <div class="list-table__content table-name__content">
+                  <mark class="label-category label green">단품</mark>
+                  <p class="list-item__title">가나다라마바사아자차카타파하가가가가가가가가가</p>
+                </div>
+              </div>
+              <div class="list-table-td list-table-item table-print">
+                <mark class="label-print label blue">인쇄완료</mark>
+              </div>
+              <div class="list-table-td list-table-item table-shop">
+                <img src="images/E/COMMON/invalid-name.png" alt="" class="shop__img">
+              </div>
+              <div class="list-table-td list-table-item table-price">
+                <p class="list-table__content small">5,666,999,000</p>
+              </div>
+              <div class="list-table-td list-table-item table-stock">
+                <p class="list-table__content small">100,000</p>
+              </div>
+              <div class="list-table-td list-table-item table-company">
+                <p class="list-table__content small">가가가가가가가가가가가가가가가가가가가</p>
+              </div>
+              <div class="list-table-td list-table-item table-etc">
+                <p class="list-table__content small">기타</p>
+              </div>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </article>
+
+</section>
+<!-- CONTENT AREA END -->
+
+
+<!-- JAVASCRIPT FILES.. -->
+<script src="common/js/jquery-3.6.0.min.js"></script>
+<script src="common/js/datepicker.min.js"></script>
+<script src="common/js/datepicker.ko-KR.js"></script>
+<script src="common/js/sweetalert.min.js"></script>
+<script src="common/js/list.js"></script>
+<script>
+  $(function () {
+    swal({
+      title: '세션만료!',
+      text: '로그아웃 되었습니다.',
+      icon: 'info',
+      content: {
+        element: 'input',
+        attributes: {
+          placeholder: 'Type your password',
+          type: 'password'
+        }
+      },
+      closeOnClickOutside: false,
+      buttons: {
+        cancle: {
+          text: '페이지 머물기',
+          value: false,
+          className: 'red'
+        },
+        confirm: {
+          text: '로그인창으로',
+          value: true,
+          className: 'primary'
+        }
+      }
+    });
+    // swal({
+    //   title: 'success',
+    //   text: 'success',
+    //   icon: 'success',
+    //   button: 'ok',
+    // });
+    // swal({
+    //   title: 'warning',
+    //   text: 'warning',
+    //   icon: 'warning',
+    //   button: 'ok',
+    // });
+    // swal({
+    //   title: 'info',
+    //   text: 'info',
+    //   icon: 'info',
+    //   button: 'ok',
+    // });
+    // swal({
+    //   title: 'error',
+    //   text: 'error',
+    //   icon: 'error',
+    //   button: 'ok',
+    // });
+  })
+</script>
+
+
+<!-- jQuery .. -->
+<script>
+
+  $(function () {
+
+
+
+    if ($(window).width() <= 800) {
+      setMobileDrawerComponentHeight()
+    } else {
+      setDrawerComponentHeight()
+    }
+
+    if ($(window).width() <= 1100) {
+      $('#drawer-component, #header-component, #content-component').addClass('active')
+      $('#lnb-component').addClass('active')
+    }
+
+    $(window).resize(function (event) {
+
+      if ($(this).width() <= 1100) {
+        $('#drawer-component, #header-component, #content-component').addClass('active')
+        $('#lnb-component').addClass('active')
+      }
+
+      if ($(this).width() <= 800) {
+        setMobileDrawerComponentHeight()
+      } else {
+        setDrawerComponentHeight()
+      }
+    })
+    $(window).scroll(function () {
+
+      if ($(window).width() <= 800) {
+        setMobileDrawerComponentHeight()
+      } else {
+        setDrawerComponentHeight()
+      }
+
+    })
+
+
+    function setDrawerComponentHeight () {
+      return $('#drawer-component').css({
+        height: $('#content-component').height() + 70 + 'px',
+      })
+    }
+
+    function setMobileDrawerComponentHeight () {
+      return $('#drawer-component').css({
+        height: $('#content-component').height() + 70 + 60 + 'px',
+      })
+    }
+
+
+    $('#drawer-main-menu-component > li').click(function (event) {
+      event.preventDefault()
+
+      if (!$(event.target).attr('alt')) {
+        $(this).addClass('active').siblings().removeClass('active')
+
+        if ($('#drawer-main-menu-component > li.active').find('.drawer-sub-menu-component')[0])
+          $('#drawer-main-menu-component > li.active').find('.drawer-sub-menu-component').addClass('active').parent().parent().addClass('active')
+
+      } else {
+
+        if ($('#drawer-main-menu-component > li.active').find('.drawer-sub-menu-component')[0])
+          $(this).removeClass('active').parent().removeClass('active').find('.drawer-sub-menu-component').removeClass('active')
+
+        $('#drawer-main-menu-component > li:nth-child(1)').addClass('active').siblings().removeClass('active')
+
+        $('.drawer-sub-menu-component li').removeClass('active')
+      }
+    })
+    $('#lnb-component').click(function () {
+      $('#drawer-component, #header-component, #content-component').toggleClass('active')
+      $(this).toggleClass('active')
+    })
+
+    $('.drawer-sub-menu-component > li:not(:nth-child(1))').click(function () {
+      $(this).addClass('active').siblings().removeClass('active')
+    })
+
+    $('.notice-container-component').click(function () {
+      $('.notice-list-container-component').toggle()
+    })
+
+    $('.select-box-blue-component').click(function () {
+      $(this).toggleClass('active')
+      $($(this).find('.select-box-blue-option-container-component')).toggle()
+    })
+
+    $('.notice-list-check-close-item-component button').click(function () {
+      if ($($(this).find('img')).attr('alt')) {
+        $(this).parent().parent().parent().remove()
+      } else {
+        $(this).text('').html('<img src="images/E/HEADER/icon-12-x-12-line-delete/icon-12-x-12-line-delete.webp" alt="DELETE" title="DELETE">')
+        $(this).parent().parent().parent().removeClass('check')
+      }
+    })
+
+
+    $('.notice-list-title-container-component button').click(function () {
+      $('.notice-list-check-close-item-component.check').each(function (i, index) {
+        $(this).find('button').text('').html('<img class="btn-close" src="images/E/HEADER/icon-12-x-12-line-delete/icon-12-x-12-line-delete.webp" alt="DELETE" title="DELETE">')
+        $(this).removeClass('check')
+      })
+    })
+
+
+    $('.select-box-gray-component').click(function () {
+      $(this).toggleClass('active')
+      $($(this).find('.select-box-blue-option-container-component')).toggle()
+    })
+    $('.select-box-gray-component .select-box-blue-option-component').click(function () {
+      $(this).addClass('active').siblings().removeClass('active')
+      $($(this).parent().parent().find('span')[0]).text($(this).text())
+    })
+
+  })
+
+
+</script>
+
+</body>
+</html>
