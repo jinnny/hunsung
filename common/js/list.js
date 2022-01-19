@@ -228,6 +228,55 @@ $(function () {
         $('.js-input-checkbox-all').prop('checked', false);
       }
     })
+
+    //품목 전송
+    $('.js-table-button-item').on('click', function() {
+      const data = $('.js-input-checkbox:checked').map(function() {
+        const main = $(this).parent().parent()
+
+        const sub = main.parent().find('.child')
+        const subCount = sub.length
+        const subData = sub.map(function() {
+          return {
+            name: $(this).find('.js-data-name').text(),
+            qty: $(this).find('.js-data-qty').text(),
+            price: $(this).find('.js-data-price').text(),
+          }
+        }).get()
+
+        return {
+          code: main.find('.js-data-code').text(),
+          name: main.find('.js-data-name').text(),
+          mall_name: main.find('.js-data-mallName').prop('alt'),
+          price: main.find('.js-data-price').text(),
+          qty: main.find('.js-data-qty').text(),
+          sub_count: subCount,
+          sub_data: subData
+        }
+      }).get()
+
+      console.log(JSON.stringify(data))
+
+      if (data.length === 0) {
+        alert('품목을 선택하여 주시기 바립니다')
+        return
+      }
+
+      $.ajax({
+        url: "http://115.85.181.125/test.php",
+        type: "post",
+        accept: "application/json",
+        contentType: "application/json; charset=utf-8",
+        data: { data: data },
+        dataType: "json",
+        success: function(data) {
+        },
+        error: function(jqXHR,textStatus,errorThrown) {
+        }
+      });
+
+
+    })
   }
 
   listHandler()
