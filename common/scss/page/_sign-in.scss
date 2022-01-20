@@ -3,7 +3,8 @@
   height: 100vh;
   align-items: center;
   &-bg {
-    border-radius: 40px;
+    border-top-right-radius: 40px;
+    border-bottom-right-radius: 40px;
     box-shadow: 10px 0 20px 0 rgba(39, 70, 127, 0.05);
     background-color: #e3f6ff;
     background-repeat: no-repeat;
@@ -43,6 +44,7 @@
     border-radius: 8px;
     border: solid 1px #e6e6e6;
     background-color: $neutral-white-ffffff;
+    font-size: 15px;
     &::-webkit-input-placeholder {
       color: $gray;
     }

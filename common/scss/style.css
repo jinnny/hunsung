@@ -306,7 +306,7 @@
 .input__input-checkbox:checked {
   background-color: #4c8cff;
   border-color: #4c8cff;
-  background-image: url("/images/E/COMMON/btn-checkbox-16-x-16-active.svg");
+  background-image: url("/images/E/COMMON/btn-checkbox-active.svg");
   background-repeat: no-repeat;
   background-position: 50% 50%;
 }
@@ -1236,7 +1236,8 @@
   align-items: center;
 }
 .sign-in-bg {
-  border-radius: 40px;
+  border-top-right-radius: 40px;
+  border-bottom-right-radius: 40px;
   box-shadow: 10px 0 20px 0 rgba(39, 70, 127, 0.05);
   background-color: #e3f6ff;
   background-repeat: no-repeat;
@@ -1280,6 +1281,7 @@
   border-radius: 8px;
   border: solid 1px #e6e6e6;
   background-color: #fff;
+  font-size: 15px;
 }
 .sign-in__input::-webkit-input-placeholder {
   color: #c7c7c7;
