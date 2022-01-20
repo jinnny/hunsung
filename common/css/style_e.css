@@ -1,12 +1,35 @@
 /* FONT FACE */
+/*@font-face {*/
+/*    font-family: 'PretendardR';*/
+/*    src: url(../Pretendard-1.2.1/web/static/woff2/Pretendard-Regular.woff2) format('woff2');*/
+/*}*/
+/*@font-face {*/
+/*    font-family: 'PretendardB';*/
+/*    src: url(../Pretendard-1.2.1/web/static/woff2/Pretendard-Bold.woff2) format('woff2');*/
+/*}*/
+
 @font-face {
     font-family: 'PretendardR';
-    src: url(../Pretendard-1.2.1/web/static/woff2/Pretendard-Regular.woff2) format('woff2');
+    font-weight: normal;
+    src: url(../Pretendard-1.2.1/web/static/woff2/Pretendard-Regular.woff2) format('woff2')
 }
 @font-face {
-    font-family: 'PretendardB';
-    src: url(../Pretendard-1.2.1/web/static/woff2/Pretendard-Bold.woff2) format('woff2');
+    font-family: 'PretendardR';
+    font-weight: 500;
+    src: url(../Pretendard-1.2.1/web/static/woff2/Pretendard-Medium.woff2) format('woff2')
 }
+@font-face {
+    font-family: 'PretendardR';
+    font-weight: 600;
+    src: url(../Pretendard-1.2.1/web/static/woff2/Pretendard-SemiBold.woff2) format('woff2')
+}
+@font-face {
+    font-family: 'PretendardR';
+    font-weight: 700;
+    src: url(../Pretendard-1.2.1/web/static/woff2/Pretendard-Bold.woff2) format('woff2')
+}
+
+
 /* FONT FACE END */
 
 

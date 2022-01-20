@@ -258,7 +258,12 @@ $(function () {
       console.log(JSON.stringify(data))
 
       if (data.length === 0) {
-        alert('품목을 선택하여 주시기 바립니다')
+        swal({
+          title: 'error',
+          text: '품목을 선택하여 주시기 바립니다',
+          icon: 'error',
+          button: 'ok',
+        });
         return
       }
 

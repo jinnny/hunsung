@@ -163,12 +163,13 @@
         background-repeat: no-repeat;
         background-position: 95% 50%;
         background-image: icon(calendar, '6A6C75');
+        font-size: 13px;
         &:focus,
         &:active {
           outline: none;
         }
         &.is--open {
-          background-image: icon(calendar, '$iconGreenColor');
+          background-image: icon(calendar, $iconGreenColor);
         }
       }
       &__separator {
@@ -326,7 +327,6 @@
       &__total {
         display: inline-block;
         b {
-          font-family: 'PretendardB';
         }
         &:after {
           content: '';
@@ -346,6 +346,7 @@
           box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.08);
           background-color: $neutral-white-ffffff;
           @include setText(12,500);
+          color: $neutral-gray-6-a-6-c-75;
           & + .table-to-button {
             margin-left: 8px;
           }

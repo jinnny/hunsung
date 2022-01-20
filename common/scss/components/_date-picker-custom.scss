@@ -55,6 +55,10 @@
       &.highlighted {
         background-color: transparent;
         color: $neutral-black-32373-c;
+        &.disabled {
+          background-color: transparent;
+          color: #ccc;
+        }
       }
       &.picked {
         color: $neutral-white-ffffff;
