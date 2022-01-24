@@ -268,12 +268,12 @@ $(function () {
       }
 
       $.ajax({
-        url: "http://115.85.181.125/test.php",
-        type: "post",
-        accept: "application/json",
-        contentType: "application/json; charset=utf-8",
+        url: 'http://115.85.181.125/test.php',
+        type: 'post',
+        accept: 'application/json',
+        contentType: 'application/json; charset=utf-8',
         data: { data: data },
-        dataType: "json",
+        dataType: 'json',
         success: function(data) {
         },
         error: function(jqXHR,textStatus,errorThrown) {

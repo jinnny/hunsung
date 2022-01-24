@@ -306,7 +306,7 @@
 .input__input-checkbox:checked {
   background-color: #4c8cff;
   border-color: #4c8cff;
-  background-image: url("/images/E/COMMON/btn-checkbox-active.svg");
+  background-image: url("/images/E/LIST/btn-checkbox-active.svg");
   background-repeat: no-repeat;
   background-position: 50% 50%;
 }
@@ -588,7 +588,7 @@
 .header-page-info {
   font-size: 14px;
   color: #9499ab;
-  margin: 21px 0 0 20px;
+  margin: 26px 0 0 20px;
   display: inline-block;
 }
 .header-page-info__current {
@@ -1069,7 +1069,7 @@
   height: 30px;
   display: inline-block;
   background-repeat: no-repeat;
-  background-image: url("/images/E/img-fill-notice.svg");
+  background-image: url("/images/E/LIST/img-fill-notice.svg");
 }
 .list-table-item .icon-alert .list-table__content.small {
   font-size: 12px;
