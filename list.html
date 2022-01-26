@@ -437,6 +437,9 @@
             <a href="" class="list-button-more__item js-list-more-item">연동 히스토리</a>
             <a href="" class="list-button-more__item js-list-more-item">엑셀 설정</a>
             <button class="list-button-more__item js-list-more-item">연동 설정</button>
+            <!--          1/26 추가-->
+            <div class="list-button-more-bg select-bg js-select-bg"></div>
+            <!--          1/26 추가-->
           </div>
         </div>
       </div>
@@ -453,11 +456,14 @@
             <span class="select-box__item js-select-item">재고 수정일</span>
             <span class="select-box__item js-select-item">품절 마감일</span>
           </div>
+          <!--          1/26 추가-->
+          <div class="select-bg js-select-bg"></div>
+          <!--          1/26 추가-->
         </div>
         <div class="input-group">
-          <input type="text" placeholder="Start date" aria-label="First name" class="js-start-date filter-input__date">
+          <input type="text" placeholder="날짜 선택" aria-label="First date" class="js-start-date filter-input__date">
           <span class="filter-input__separator">~</span>
-          <input type="text" placeholder="End date" aria-label="Last name" class="js-end-date filter-input__date">
+          <input type="text" placeholder="날짜 선택" aria-label="Last date" class="js-end-date filter-input__date">
         </div>
         <div class="date-button-area">
           <button class="date-button js-date-button" data-date="0">오늘</button>
@@ -476,6 +482,9 @@
               <span class="select-box__item js-select-item js-date-button" data-date="180">6개월</span>
               <span class="select-box__item js-select-item js-date-button" data-date="365">1년</span>
             </div>
+            <!--          1/26 추가-->
+            <div class="select-bg js-select-bg"></div>
+            <!--          1/26 추가-->
           </div>
         </div>
       </div>
@@ -491,6 +500,9 @@
             <span class="select-box__item js-select-item">재고수량</span>
             <span class="select-box__item js-select-item" data-category="authentication">인증정보</span>
           </div>
+          <!--          1/26 추가-->
+          <div class="select-bg js-select-bg"></div>
+          <!--          1/26 추가-->
         </div>
         <input type="text" class="filter-input__search" placeholder="검색 내용을 입력해 주세요.">
         <div class="filter-part-button-area">
@@ -510,9 +522,15 @@
         <div class="select-box js-select table-box">
           <strong class="select-box__label">25개씩</strong><span class="select-box__icon"></span>
           <div class="select-box-list">
-            <span class="select-box__item js-select-item">30개씩</span>
-            <span class="select-box__item js-select-item">35개씩</span>
+            <span class="select-box__item js-select-item">25개씩</span>
+            <span class="select-box__item js-select-item">50개씩</span>
+            <span class="select-box__item js-select-item">100개씩</span>
+            <span class="select-box__item js-select-item">200개씩</span>
+            <span class="select-box__item js-select-item">500개씩</span>
           </div>
+          <!--          1/26 추가-->
+          <div class="select-bg js-select-bg"></div>
+          <!--          1/26 추가-->
         </div>
       </div>
       <div class="table-top-right">
@@ -742,7 +760,7 @@
         <a href="" class="pagination__item">8</a>
         <a href="" class="pagination__item">9</a>
         <a href="" class="pagination__item">10</a>
-        <button class="pagination__item-button next"><span class="blind">다음</span></button>
+        <button class="pagination__item-button next disabled"><span class="blind">다음</span></button>
       </div>
     </div>
   </article>
@@ -835,6 +853,9 @@
         </div>
         <div class="next-content js-next-content">
           <strong class="table__subject">Title</strong>
+          <!--          1/26 추가-->
+          <button class="table-button wide position-top">운영자 변경 이력</button>
+          <!--          1/26 추가-->
           <table class="table vertical text-center other-type">
             <colgroup>
               <col style="width: 160px">

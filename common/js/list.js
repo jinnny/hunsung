@@ -7,6 +7,9 @@ $(function () {
     $('.js-list-more-item').on('click', function () {
       $('.list-button-more-area').removeClass('is--open')
     })
+    $('.list-button-more-area .js-select-bg').on('click', function () {
+      $(this).parents('.list-button-more-area').removeClass('is--open')
+    })
   }
 
   //select box
@@ -20,6 +23,10 @@ $(function () {
       $($(this).parent().parent().find('.select-box__label')).text($(this).text());
       $($(this).parent().parent().find('.select-box__label')).addClass('is--selected');
     });
+    $(document).on('click', '.js-select-bg', function (event){
+      $(this).parent().removeClass('is--open')
+      event.stopPropagation();
+    })
   }
 
   // datepicker
@@ -137,6 +144,7 @@ $(function () {
             <span class="select-box__item js-select-item">재고수량</span>
             <span class="select-box__item js-select-item" data-category="authentication">인증정보</span>
           </div>
+          <div class="select-bg js-select-bg"></div>
         </div>
         <input type="text" class="filter-input__search" placeholder="검색 내용을 입력해 주세요.">
         <div class="filter-part-button-area">
@@ -146,10 +154,11 @@ $(function () {
       </div>`)
     }
 
+    // 검색창에서 검색조건 추가버튼 눌렀을 경우
     $(document).on( 'click' , '.js-part-add', function() {
       appendFilter($(this).parents('.list-filter-part'))
     });
-
+    // 검색창에서 검색조건 삭제버튼 눌렀을 경우
     $(document).on( 'click' , '.js-part-remove', function() {
       $(this).parents('.list-filter-part').remove()
     });
@@ -163,6 +172,7 @@ $(function () {
             <span class="select-box__item js-select-item">전자파 인증</span>
             <span class="select-box__item js-select-item">어린이 인증</span>
           </div>
+          <div class="select-bg js-select-bg"></div>
         </div>`
       if (category === 'authentication') {
         $(this).parents('.js-select-filter').after(authenticationList)
@@ -191,7 +201,7 @@ $(function () {
   const listHandler = () => {
     // 리스트 이미지 클릭시
     $('.js-img-box').on('click', function (){
-      $(this).next('.js-img-layer').addClass('is--show')
+      $(this).next('.js-img-layer').toggleClass('is--show')
     })
     $('.js-layer-bg').on('click', function () {
       $(this).parents('.js-img-layer').removeClass('is--show')
@@ -285,33 +295,37 @@ $(function () {
   const layerPopupHandler = () => {
     //layerpopup open
     $('.js-open-popup').on('click', function () {
-      $('.js-layer-popup').addClass('is--show')
+      //속도 제어
+      $('.js-layer-popup').fadeIn(400);
     })
     // 다음 클릭
     $('.js-next-layer-button').on('click', function () {
       const popupContent = $(this).parents('.js-layer-popup-content')
-      popupContent.addClass('is--next-popup')
-      popupContent.find('.js-layer-popup-close').fadeOut(100)
-      popupContent.find('.js-layer-popup-prev').fadeIn(100)
-      popupContent.find('.js-next-content').fadeIn(100)
-      popupContent.find('.js-next-title').fadeIn(100)
-      popupContent.find('.js-first-title').fadeOut(100)
-      popupContent.find('.js-first-content').fadeOut(100)
+      //속도 제어
+      popupContent.animate({width:'700px', height: '360px'}, 300)
+      popupContent.find('.js-layer-popup-close').fadeOut(300)
+      popupContent.find('.js-layer-popup-prev').fadeIn(300)
+      popupContent.find('.js-next-content').fadeIn(300)
+      popupContent.find('.js-next-title').fadeIn(300)
+      popupContent.find('.js-first-title').fadeOut(300)
+      popupContent.find('.js-first-content').fadeOut(300)
     })
     //닫기클릭
     $('.js-layer-popup-close').on('click', function () {
-      $('.js-layer-popup').removeClass('is--show')
+      //속도 제어
+      $('.js-layer-popup').fadeOut(400);
     })
     // 이전클릭
     $('.js-layer-popup-prev').on('click', function () {
       const popupContent = $(this).parents('.js-layer-popup-content')
-      popupContent.removeClass('is--next-popup')
-      popupContent.find('.js-layer-popup-close').fadeIn(100)
-      popupContent.find('.js-layer-popup-prev').fadeOut(100)
-      popupContent.find('.js-next-content').fadeOut(100)
-      popupContent.find('.js-next-title').fadeOut(100)
-      popupContent.find('.js-first-title').fadeIn(100)
-      popupContent.find('.js-first-content').fadeIn(100)
+      //속도 제어
+      popupContent.animate({width:'960px', height: '536px'}, 300)
+      popupContent.find('.js-layer-popup-close').fadeIn(300)
+      popupContent.find('.js-layer-popup-prev').fadeOut(300)
+      popupContent.find('.js-next-content').fadeOut(300)
+      popupContent.find('.js-next-title').fadeOut(300)
+      popupContent.find('.js-first-title').fadeIn(300)
+      popupContent.find('.js-first-content').fadeIn(300)
     })
   }
 
