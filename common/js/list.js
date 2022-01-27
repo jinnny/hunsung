@@ -2,32 +2,53 @@ $(function () {
   // list 더보기 버튼
   const listMoreHandler = () => {
     $('.js-list-button-more').on('click', function () {
-      $(this).parents('.list-button-more-area').toggleClass('is--open')
+      const select = $('.list-button-more-area');
+      if(select.hasClass('is--open')) {
+        select.removeClass('is--open')
+      }else {
+        select.addClass('is--open')
+      }
+      const seting = $(this).find('.list-button-more-content');
+      $(document).on('mouseup', function(e) {
+        if (seting.has(e.target).length === 0) {
+          if(e.target.className !== 'list-button-more js-list-button-more') {
+            select.removeClass('is--open');
+          }
+        }
+      })
     })
     $('.js-list-more-item').on('click', function () {
       $('.list-button-more-area').removeClass('is--open')
     })
-    $('.list-button-more-area .js-select-bg').on('click', function () {
-      $(this).parents('.list-button-more-area').removeClass('is--open')
-    })
+
   }
 
   //select box
   const selectBoxHandler = () => {
-    $(document).on( 'click' , '.js-select', function() {
-      $(this).toggleClass('is--open')
+    $(document).on('click', '.js-select', function() {
+      const select = $(this);
+      if($(this).hasClass('is--open')) {
+        $(this).removeClass('is--open')
+      }else {
+        $(this).addClass('is--open')
+      }
+      const seting = $(this).find('.select-box-list');
+      $(document).on('mouseup', function(e) {
+        if (seting.has(e.target).length === 0) {
+          if(e.target.className !== select[0].className) {
+            select.removeClass('is--open');
+          }
+        }
+      });
     });
-    $(document).on( 'click' , '.js-select-item', function() {
+    $(document).on('click', '.js-select-item', function() {
       $(this).parents('.js-select').addClass('is--selected')
       $(this).addClass('is--selected').siblings().removeClass('is--selected');
       $($(this).parent().parent().find('.select-box__label')).text($(this).text());
       $($(this).parent().parent().find('.select-box__label')).addClass('is--selected');
     });
-    $(document).on('click', '.js-select-bg', function (event){
-      $(this).parent().removeClass('is--open')
-      event.stopPropagation();
-    })
   }
+
 
   // datepicker
   const datePickerHandler = () => {
@@ -144,7 +165,6 @@ $(function () {
             <span class="select-box__item js-select-item">재고수량</span>
             <span class="select-box__item js-select-item" data-category="authentication">인증정보</span>
           </div>
-          <div class="select-bg js-select-bg"></div>
         </div>
         <input type="text" class="filter-input__search" placeholder="검색 내용을 입력해 주세요.">
         <div class="filter-part-button-area">
@@ -172,7 +192,6 @@ $(function () {
             <span class="select-box__item js-select-item">전자파 인증</span>
             <span class="select-box__item js-select-item">어린이 인증</span>
           </div>
-          <div class="select-bg js-select-bg"></div>
         </div>`
       if (category === 'authentication') {
         $(this).parents('.js-select-filter').after(authenticationList)

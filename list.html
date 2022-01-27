@@ -437,9 +437,6 @@
             <a href="" class="list-button-more__item js-list-more-item">연동 히스토리</a>
             <a href="" class="list-button-more__item js-list-more-item">엑셀 설정</a>
             <button class="list-button-more__item js-list-more-item">연동 설정</button>
-            <!--          1/26 추가-->
-            <div class="list-button-more-bg select-bg js-select-bg"></div>
-            <!--          1/26 추가-->
           </div>
         </div>
       </div>
@@ -456,9 +453,6 @@
             <span class="select-box__item js-select-item">재고 수정일</span>
             <span class="select-box__item js-select-item">품절 마감일</span>
           </div>
-          <!--          1/26 추가-->
-          <div class="select-bg js-select-bg"></div>
-          <!--          1/26 추가-->
         </div>
         <div class="input-group">
           <input type="text" placeholder="날짜 선택" aria-label="First date" class="js-start-date filter-input__date">
@@ -482,9 +476,6 @@
               <span class="select-box__item js-select-item js-date-button" data-date="180">6개월</span>
               <span class="select-box__item js-select-item js-date-button" data-date="365">1년</span>
             </div>
-            <!--          1/26 추가-->
-            <div class="select-bg js-select-bg"></div>
-            <!--          1/26 추가-->
           </div>
         </div>
       </div>
@@ -500,9 +491,6 @@
             <span class="select-box__item js-select-item">재고수량</span>
             <span class="select-box__item js-select-item" data-category="authentication">인증정보</span>
           </div>
-          <!--          1/26 추가-->
-          <div class="select-bg js-select-bg"></div>
-          <!--          1/26 추가-->
         </div>
         <input type="text" class="filter-input__search" placeholder="검색 내용을 입력해 주세요.">
         <div class="filter-part-button-area">
@@ -528,9 +516,6 @@
             <span class="select-box__item js-select-item">200개씩</span>
             <span class="select-box__item js-select-item">500개씩</span>
           </div>
-          <!--          1/26 추가-->
-          <div class="select-bg js-select-bg"></div>
-          <!--          1/26 추가-->
         </div>
       </div>
       <div class="table-top-right">
@@ -985,9 +970,26 @@
     })
 
     $('.select-box-blue-component').click(function () {
-      $(this).toggleClass('active')
-      $($(this).find('.select-box-blue-option-container-component')).toggle()
+      const select = $(this);
+      const seting = $(this).find('.select-box-blue-option-container-component');
+      if(select.hasClass('active')) {
+        select.removeClass('active')
+        seting.hide()
+      }else {
+        select.addClass('active')
+        seting.show()
+      }
+      $(document).on('mouseup', function(e) {
+        if (seting.has(e.target).length === 0) {
+          if(e.target.className !== select[0].className) {
+            select.removeClass('active');
+            seting.hide()
+            e.preventDefault()
+          }
+        }
+      });
     })
+
 
     $('.notice-list-check-close-item-component button').click(function () {
       if ($($(this).find('img')).attr('alt')) {
@@ -1006,11 +1008,6 @@
       })
     })
 
-
-    $('.select-box-gray-component').click(function () {
-      $(this).toggleClass('active')
-      $($(this).find('.select-box-blue-option-container-component')).toggle()
-    })
     $('.select-box-gray-component .select-box-blue-option-component').click(function () {
       $(this).addClass('active').siblings().removeClass('active')
       $($(this).parent().parent().find('span')[0]).text($(this).text())

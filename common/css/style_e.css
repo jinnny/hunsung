@@ -638,6 +638,9 @@ footer {
     font-size: 14px;
     position: relative;
 }
+.select-box-blue-component > span {
+    pointer-events: none;
+}
 .select-box-blue-component.active img {
     transform: rotate(-180deg);
 }
@@ -882,6 +885,9 @@ footer {
     cursor: pointer;
     position: relative;
 }
+.select-box-gray-component > span {
+    pointer-events: none;
+}
 .select-box-gray-component img {
     margin-left: 11px;
 }
@@ -1015,7 +1021,6 @@ footer {
     margin: 5px;
 }
 /* CONTENT STYLE END */
-
 
 /* MEDIA QUERY */
 @media (max-width: 1200px) {
