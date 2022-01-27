@@ -312,16 +312,16 @@ $(function () {
   }
 
   const layerPopupHandler = () => {
-    //layerpopup open
-    $('.js-open-popup').on('click', function () {
+    //layerpopup open multiple
+    $('.js-open-popup-multiple').on('click', function () {
       //속도 제어
-      $('.js-layer-popup').fadeIn(400);
+      $('.js-layer-popup-multiple').fadeIn(400);
     })
     // 다음 클릭
-    $('.js-next-layer-button').on('click', function () {
+    $('.js-layer-popup-multiple .js-next-layer-button').on('click', function () {
       const popupContent = $(this).parents('.js-layer-popup-content')
       //속도 제어
-      popupContent.animate({width:'700px', height: '360px'}, 300)
+      popupContent.animate({'max-width':'700px', height: '360px'}, 300)
       popupContent.find('.js-layer-popup-close').fadeOut(300)
       popupContent.find('.js-layer-popup-prev').fadeIn(300)
       popupContent.find('.js-next-content').fadeIn(300)
@@ -330,21 +330,34 @@ $(function () {
       popupContent.find('.js-first-content').fadeOut(300)
     })
     //닫기클릭
-    $('.js-layer-popup-close').on('click', function () {
+    $('.js-layer-popup-multiple .js-layer-popup-close').on('click', function () {
       //속도 제어
-      $('.js-layer-popup').fadeOut(400);
+      $(this).parents('.js-layer-popup-multiple').fadeOut(400);
     })
     // 이전클릭
-    $('.js-layer-popup-prev').on('click', function () {
+    $('.js-layer-popup-multiple .js-layer-popup-prev').on('click', function () {
       const popupContent = $(this).parents('.js-layer-popup-content')
+
       //속도 제어
-      popupContent.animate({width:'960px', height: '536px'}, 300)
+      popupContent.animate({'max-width':'960px', height: '536px'}, 300)
       popupContent.find('.js-layer-popup-close').fadeIn(300)
       popupContent.find('.js-layer-popup-prev').fadeOut(300)
       popupContent.find('.js-next-content').fadeOut(300)
       popupContent.find('.js-next-title').fadeOut(300)
       popupContent.find('.js-first-title').fadeIn(300)
       popupContent.find('.js-first-content').fadeIn(300)
+    })
+
+
+    // layerpopup 기본팝업
+    $('.js-open-popup').on('click', function () {
+      //속도 제어
+      $('.js-layer-popup').fadeIn(400);
+    })
+    //닫기클릭
+    $('.js-layer-popup .js-layer-popup-close').on('click', function () {
+      //속도 제어
+      $(this).parents('.js-layer-popup').fadeOut(400);
     })
   }
 

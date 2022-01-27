@@ -445,19 +445,25 @@
   background-color: rgba(0, 0, 0, 0.4);
 }
 .layer-popup-content {
-  width: 960px;
+  max-width: 960px;
   height: 536px;
   border-radius: 10px;
   box-shadow: 0 0 20px 0 rgba(39, 70, 127, 0.3);
   background-color: #fff;
   z-index: 11;
-  overflow: hidden;
+  overflow-y: scroll;
   position: absolute;
   left: 0;
   right: 0;
   top: 0;
   bottom: 0;
   margin: auto;
+}
+@media screen and (max-width: 990px) {
+  .layer-popup-content {
+    width: 95%;
+    overflow-x: hidden;
+  }
 }
 .layer-popup-content-content {
   padding: 30px;
@@ -487,7 +493,7 @@
   display: inline-block;
   position: absolute;
   left: 24px;
-  width: 100%;
+  width: 70%;
   top: 19px;
 }
 .layer-popup-header .layer-popup__title .next-title {
@@ -523,6 +529,15 @@
   font-size: 13px;
   border-collapse: collapse;
   width: 100%;
+}
+@media screen and (max-width: 990px) {
+  .table-scroll-area {
+    width: 100%;
+    overflow-x: scroll;
+  }
+  .table-scroll-area .table-scroll {
+    width: 900px;
+  }
 }
 .table + .table__subject {
   margin-top: 30px;
@@ -1029,10 +1044,20 @@
 .list-table-head th {
   font-weight: normal;
 }
+.list-table-head .list-table-th {
+  font-weight: 500;
+  font-size: 15px;
+}
+@media screen and (max-width: 976px) {
+  .list-table-head .list-table-th {
+    font-size: inherit;
+  }
+}
 .list-table-body .list-table-content {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  font-weight: 500;
 }
 .list-table-body .list-table-content.child {
   width: calc(100% - 2.08vw);
@@ -1166,7 +1191,7 @@
   width: 14.16vw;
   margin: 0 10px 0 8px;
   color: #32373c;
-  font-weight: 400;
+  font-weight: 500;
   display: block;
   display: -webkit-box;
   -webkit-line-clamp: 2;
@@ -1181,7 +1206,6 @@
   line-height: 1.31;
 }
 .list-table-item .table-name__content .list-item__title:hover {
-  font-weight: 500;
   text-decoration: underline;
 }
 @media screen and (max-width: 930px) {

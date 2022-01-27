@@ -572,7 +572,7 @@
               <div class="list-table-td list-table-item table-name">
                 <div class="list-table__content table-name__content">
                   <mark class="label-category label">세트</mark>
-                  <p class="list-item__title js-data-name  js-open-popup">가나다라마바사아자차카타파하가가가가가가가가가</p>
+                  <p class="list-item__title js-data-name  js-open-popup-multiple">가나다라마바사아자차카타파하가가가가가가가가가</p>
                   <button class="list-item__more-button js-list-more-button"></button>
                 </div>
               </div>
@@ -751,14 +751,14 @@
   </article>
   <!--add-->
   <!--add-->
-  <!--  layer popup-->
-  <div class="layer-popup js-layer-popup">
+  <!--  layer popup 이중팝업-->
+  <div class="layer-popup js-layer-popup-multiple">
     <article class="layer-popup-content js-layer-popup-content">
       <header class="layer-popup-header">
         <button class="layer-popup__prev-button js-layer-popup-prev"><span class="blind">뒤로</span></button>
         <h2 class="layer-popup__title">
         <span class="first-title js-first-title">
-          주문 상세 조회
+          이중레이어 주문 상세 조회
         </span>
           <span class="next-title js-next-title">
           배송상태 변경이력
@@ -796,7 +796,176 @@
             </tr>
           </table>
           <strong class="table__subject">상품 정보</strong>
-          <table class="table horizontal">
+          <div class="table-scroll-area">
+            <table class="table horizontal table-scroll">
+              <thead>
+              <tr>
+                <th class="px-8 width--shipping">배송 유형<br>묶음배송 번호</th>
+                <th class="px-8 width--product">상품명 / 노출 정보</th>
+                <th class="px-8 width--amount">수량</th>
+                <th class="px-8 width--price">금액</th>
+                <th class="px-8 width--date">출고 예정일</th>
+                <th class="px-8 width--number">운송장번호</th>
+                <th class="px-8 width--button">운송장번호</th>
+              </tr>
+              </thead>
+              <tr>
+                <td class="px-8">
+                  <div class="width--shipping word-break">
+                    <p>택배 배송</p>
+                    <span class="text-underline">0938475612</span>
+                  </div>
+                </td>
+                <td class="px-8 word-break">
+                  <p class="width--product">트위스 투피스 1+1 세트 상품 노출 여부 </p>
+                </td>
+                <td class="px-8 word-break">
+                  <p class="width--amount">500</p>
+                </td>
+                <td class="px-8 word-break">
+                  <p class="width--price">2,365,987 원</p>
+                </td>
+                <td class="px-8 word-break">
+                  <p class="width--date">2022년 01월 30일</p>
+                </td>
+                <td class="px-8 word-break">
+                  <p class="width--number text-underline">123456789874563</p>
+                </td>
+                <td class="px-8">
+                  <button class="table-button js-next-layer-button">취소/반품 접수</button>
+                </td>
+              </tr>
+              <tr>
+                <td class="px-8">
+                  <div class="width--shipping word-break">
+                    <p>택배 배송</p>
+                    <span class="text-underline">0938475612</span>
+                  </div>
+                </td>
+                <td class="px-8 word-break">
+                  <p class="width--product">트위스 투피스 1+1 세트 상품 노출 여부 </p>
+                </td>
+                <td class="px-8 word-break">
+                  <p class="width--amount">500</p>
+                </td>
+                <td class="px-8 word-break">
+                  <p class="width--price">2,365,987 원</p>
+                </td>
+                <td class="px-8 word-break">
+                  <p class="width--date">2022년 01월 30일</p>
+                </td>
+                <td class="px-8 word-break">
+                  <p class="width--number text-underline">123456789874563</p>
+                </td>
+                <td class="px-8">
+                  <button class="table-button js-next-layer-button">취소/반품 접수</button>
+                </td>
+              </tr>
+              <tr>
+                <td class="px-8">
+                  <div class="width--shipping word-break">
+                    <p>택배 배송</p>
+                    <span class="text-underline">0938475612</span>
+                  </div>
+                </td>
+                <td class="px-8 word-break">
+                  <p class="width--product">트위스 투피스 1+1 세트 상품 노출 여부 </p>
+                </td>
+                <td class="px-8 word-break">
+                  <p class="width--amount">500</p>
+                </td>
+                <td class="px-8 word-break">
+                  <p class="width--price">2,365,987 원</p>
+                </td>
+                <td class="px-8 word-break">
+                  <p class="width--date">2022년 01월 30일</p>
+                </td>
+                <td class="px-8 word-break">
+                  <p class="width--number text-underline">123456789874563</p>
+                </td>
+                <td class="px-8">
+                  <button class="table-button js-next-layer-button">취소/반품 접수</button>
+                </td>
+              </tr>
+            </table>
+          </div>
+        </div>
+        <div class="next-content js-next-content">
+          <strong class="table__subject">Title</strong>
+          <!--          1/26 추가-->
+          <button class="table-button wide position-top">운영자 변경 이력</button>
+          <!--          1/26 추가-->
+          <table class="table vertical text-center other-type">
+            <colgroup>
+              <col style="width: 160px">
+              <col style="width: 480px">
+            </colgroup>
+            <thead>
+            <tr>
+              <th class="left--fix px-16">배송상태</th>
+              <th class="px-16">변경 일시</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+              <td class="left--fix px-16">글자는 max 10글자</td>
+              <td class="px-16">5,000 원</td>
+            </tr>
+            <tr>
+              <td class="left--fix px-16">글자는 max 10글자</td>
+              <td class="px-16">가가가가가가가가가가가가가가가가가가가가가가가가가가가가가가</td>
+            </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </article>
+    <div class="layer-popup-bg"></div>
+  </div>
+  <!--  layer popup 이중팝업-->
+
+  <!--  layer popup 기본팝업-->
+  <div class="layer-popup js-layer-popup">
+    <article class="layer-popup-content js-layer-popup-content">
+      <header class="layer-popup-header">
+        <h2 class="layer-popup__title">
+          <span class="first-title js-first-title">
+            기본레이어 주문 상세 조회
+          </span>
+        </h2>
+        <button class="layer-popup__close-button js-layer-popup-close" ><span class="blind">닫기</span></button>
+      </header>
+      <div class="layer-popup-content-content">
+        <strong class="table__subject">주문 정보</strong>
+        <table class="table vertical">
+          <tr>
+            <th class="px-16">주문번호</th>
+            <td class="px-16">0988273849</td>
+            <th class="px-16">분리배송 여부</th>
+            <td class="px-16">N</td>
+          </tr>
+          <tr>
+            <th class="px-16">주문일시</th>
+            <td class="px-16">2022-01-12</td>
+            <th class="px-16">결제금액</th>
+            <td class="px-16">1,000,000 원</td>
+          </tr>
+          <tr>
+            <th class="px-16">주문자 명</th>
+            <td class="px-16">유예슬</td>
+            <th class="px-16">배송비</th>
+            <td class="px-16">3,000 원</td>
+          </tr>
+          <tr>
+            <th class="px-16">휴대폰 뒷자리</th>
+            <td class="px-16">1234</td>
+            <th class="px-16">도서산간 배송비</th>
+            <td class="px-16">5,000 원</td>
+          </tr>
+        </table>
+        <strong class="table__subject">상품 정보</strong>
+        <div class="table-scroll-area">
+          <table class="table horizontal table-scroll">
             <thead>
             <tr>
               <th class="px-8 width--shipping">배송 유형<br>묶음배송 번호</th>
@@ -831,44 +1000,42 @@
                 <p class="width--number text-underline">123456789874563</p>
               </td>
               <td class="px-8">
-                <button class="table-button js-next-layer-button">취소/반품 접수</button>
+                <button class="table-button">취소/반품 접수</button>
               </td>
             </tr>
-          </table>
-        </div>
-        <div class="next-content js-next-content">
-          <strong class="table__subject">Title</strong>
-          <!--          1/26 추가-->
-          <button class="table-button wide position-top">운영자 변경 이력</button>
-          <!--          1/26 추가-->
-          <table class="table vertical text-center other-type">
-            <colgroup>
-              <col style="width: 160px">
-              <col style="width: 480px">
-            </colgroup>
-            <thead>
             <tr>
-              <th class="left--fix px-16">배송상태</th>
-              <th class="px-16">변경 일시</th>
+              <td class="px-8">
+                <div class="width--shipping word-break">
+                  <p>택배 배송</p>
+                  <span class="text-underline">0938475612</span>
+                </div>
+              </td>
+              <td class="px-8 word-break">
+                <p class="width--product">트위스 투피스 1+1 세트 상품 노출 여부 </p>
+              </td>
+              <td class="px-8 word-break">
+                <p class="width--amount">500</p>
+              </td>
+              <td class="px-8 word-break">
+                <p class="width--price">2,365,987 원</p>
+              </td>
+              <td class="px-8 word-break">
+                <p class="width--date">2022년 01월 30일</p>
+              </td>
+              <td class="px-8 word-break">
+                <p class="width--number text-underline">123456789874563</p>
+              </td>
+              <td class="px-8">
+                <button class="table-button">취소/반품 접수</button>
+              </td>
             </tr>
-            </thead>
-            <tbody>
-            <tr>
-              <td class="left--fix px-16">글자는 max 10글자</td>
-              <td class="px-16">5,000 원</td>
-            </tr>
-            <tr>
-              <td class="left--fix px-16">글자는 max 10글자</td>
-              <td class="px-16">가가가가가가가가가가가가가가가가가가가가가가가가가가가가가가</td>
-            </tr>
-            </tbody>
           </table>
         </div>
       </div>
     </article>
     <div class="layer-popup-bg"></div>
   </div>
-  <!--  layer popup-->
+  <!--  layer popup 기본팝업-->
   <!--add-->
 </section>
 <!-- CONTENT AREA END -->

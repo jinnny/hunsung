@@ -386,12 +386,20 @@
     th {
       font-weight: normal;
     }
+    .list-table-th {
+      font-weight: 500;
+      font-size: 15px;
+      @include respond-to(976) {
+        font-size: inherit;
+      }
+    }
   }
   &-body {
     .list-table-content {
       display: flex;
       align-items: center;
       justify-content: space-between;
+      font-weight: 500;
       &.child {
         width: calc(100% - 2.08vw);
         margin: 0 auto;
@@ -526,11 +534,10 @@
         width: 14.16vw;
         margin: 0 10px 0 8px;
         color: $neutral-black-32373-c;
-        font-weight: 400;
+        font-weight: 500;
         @include textClamp(2);
         line-height: 1.31;
         &:hover {
-          font-weight: 500;
           text-decoration: underline;
         }
         @include respond-to(930) {
