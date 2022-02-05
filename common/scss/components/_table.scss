@@ -35,10 +35,20 @@
     margin: auto;
     &.register {
       height: 700px;
+      overflow-y: hidden;
       .layer-popup-header {
         position: sticky;
         top: 0;
         z-index: 15;
+      }
+      .layer-popup-content-content {
+        padding: 0;
+        overflow-y: auto;
+        height: calc(100% - 58px);
+        &-inner {
+          min-height: 700px;
+          padding: 30px;
+        }
       }
       @include respond-to(990) {
         height: 536px;

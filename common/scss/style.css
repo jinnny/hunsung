@@ -520,7 +520,7 @@
   background-position: 50% 50%;
 }
 .input__input-radio-label {
-  margin-left: 6px;
+  padding-left: 6px;
   word-break: keep-all;
 }
 .input__input-radio-label + .input__input-radio {
@@ -657,11 +657,21 @@
 }
 .layer-popup-content.register {
   height: 700px;
+  overflow-y: hidden;
 }
 .layer-popup-content.register .layer-popup-header {
   position: sticky;
   top: 0;
   z-index: 15;
+}
+.layer-popup-content.register .layer-popup-content-content {
+  padding: 0;
+  overflow-y: auto;
+  height: calc(100% - 58px);
+}
+.layer-popup-content.register .layer-popup-content-content-inner {
+  min-height: 700px;
+  padding: 30px;
 }
 @media screen and (max-width: 990px) {
   .layer-popup-content.register {
@@ -965,6 +975,27 @@
   color: #595f68;
   background-color: #fff;
   border-color: #595f68;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f7f7f7;
+  border-radius: 10px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #ddd;
+  border-radius: 10px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #c8c7c7;
 }
 
 .button {
