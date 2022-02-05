@@ -33,6 +33,17 @@
     top: 0;
     bottom: 0;
     margin: auto;
+    &.register {
+      height: 700px;
+      .layer-popup-header {
+        position: sticky;
+        top: 0;
+        z-index: 15;
+      }
+      @include respond-to(990) {
+        height: 536px;
+      }
+    }
     @include respond-to(990) {
       width: 95%;
       overflow-x: hidden;
@@ -117,6 +128,11 @@
       }
     }
   }
+  &.with--input {
+    td {
+      height: auto;
+    }
+  }
   & + .table__subject {
     margin-top: 30px;
   }
@@ -136,10 +152,16 @@
     font-weight: 500;
   }
   .px-8 {
-    padding: 0 8px;
+    padding-left: 8px;
+    padding-right: 8px;
+  }
+  .py-12 {
+    padding-top: 12px;
+    padding-bottom: 12px;
   }
   .px-16 {
-    padding: 0 16px;
+    padding-left: 16px;
+    padding-right: 16px;
   }
   &.vertical {
     text-align: left;
@@ -215,7 +237,14 @@
       }
     }
   }
-
+  &.right-line {
+    td {
+      padding-bottom: 14px;
+      &:not(:last-child) {
+        border-right: 1px solid #f0f1f3;
+      }
+    }
+  }
   &-button {
     font-size: 12px;
     font-weight: 500;

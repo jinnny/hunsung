@@ -49,7 +49,6 @@ $(function () {
     });
   }
 
-
   // datepicker
   const datePickerHandler = () => {
     const $startDate = $('.js-start-date');
@@ -361,6 +360,170 @@ $(function () {
     })
   }
 
+  //register popup
+  const registerPopupHandler = () => {
+    // 추가버튼
+    $('.js-amount-add').on('click', function () {
+      const last = $('.amount-contents-area .input-content-area:last-child')
+
+      if(last.prev().find('.js-input-end').val()){
+        last.append(`
+         <span class="set-amount-area">
+          <input type="text" class="input__input input__input-price mini js-input-end">
+          <span class="input__input-unit">개</span>
+         </span>
+      `)
+        last.after(`
+       <div class="input-content-area text-left">
+          <input type="text" class="input__input input__input-price mini js-last-input">
+          ~
+        </div>
+      `)
+      }else {
+        swal({
+          title: 'error',
+          text: '조건 추가시 이전 수량 조건을 입력하셔야 합니다.',
+          icon: 'error',
+          button: 'ok',
+        });
+      }
+    })
+    $(document).on('keyup', '.js-input-end', function () {
+      const value = $(this).val()
+      console.log('dddd', value, $(this).parent())
+      if(value !== '') {
+        $(this).parent().parent().next().find('.js-last-input').val(Number($(this).val())+1)
+      }else {
+        $(this).parent().parent().next().find('.js-last-input').val(null)
+      }
+    })
+    // 삭제버튼
+    $('.js-amount-remove').on('click', function () {
+      if($('.amount-contents-area').children().length > 2) {
+        const last = $('.amount-contents-area .input-content-area:last-child')
+        last.prev().find('.set-amount-area').remove()
+        last.remove()
+      }
+    })
+
+    //추가 설정 정보 버튼 클릭시
+    $('.js-register-setting-button').on('click', function (){
+      $(this).toggleClass('is--open')
+      $(this).parent().next().toggle()
+    })
+
+    //category select box
+    const categorySelectBoxHandler = () => {
+      $(document).on('click', '.js-category-select-top', function() {
+        $('.js-category-select').toggleClass('is--open')
+        const selectbox = $(this).parent();
+        if(selectbox.hasClass('category-select-box1')) {
+          selectbox.addClass('is--show-list')
+        }
+      });
+
+      let selectedCategory = [];
+      let lastSelectIndex = 0;
+
+      $(document).on('click', '.js-category-select-item', function() {
+        const categoryBoxIndex = $(this).parents('.js-category-select').data('category-box')
+        const selectParent = $(this).parents('.js-category-select')
+        let selectedCategoryText = ''
+
+        $($(this).parent().parent().find('.category-select-box__label')).text($(this).text());
+        $(this).parents('.js-category-select').addClass('is--selected')
+        $(this).parents('.js-category-select').next().addClass('is--show-list')
+        $(this).addClass('is--selected').siblings().removeClass('is--selected');
+
+        // 선택 카테고리 보이게 처리
+        if(!$('.category-select-select').is(':visible')) {
+          $('.category-select-select').addClass('is--show')
+        }
+
+        // 마지막으로 클릭한 select가 카테고리박스의 인덱스보다 클 때
+        if(lastSelectIndex > categoryBoxIndex) {
+          //선택된카테고리랑 현재텍스트가 같지않고, 선택된카테고리가 있을 때
+          if(selectedCategory[categoryBoxIndex] !== $(this).text() && selectedCategory.length > 0) {
+            const nextSelect = selectParent.next()
+            nextSelect.removeClass('is--selected');
+            nextSelect.addClass('is--show-list');
+            nextSelect.find('.category-select-box__label').removeClass('is--selected');
+            nextSelect.find('.category-select-box__item').removeClass('is--selected');
+
+            switch(categoryBoxIndex){
+              case 0: selectParent.siblings().removeClass('is--selected is--show-list');
+                nextSelect.addClass('is--show-list');
+                nextSelect.find('.category-select-box__label').text('중분류 선택');
+                selectedCategory = []
+                break;
+              case 1: selectParent.next().next().removeClass('is--selected is--show-list');
+                nextSelect.find('.category-select-box__label').text('소분류 선택');
+                //무조건 두번째 인덱스부터 삭제
+                selectedCategory.splice(2, 2);
+                break;
+              case 2: selectParent.next().next().removeClass('is--selected is--show-list');
+                nextSelect.find('.category-select-box__label').text('세분류 선택');
+                //무조건 세번째 인덱스부터 삭제
+                selectedCategory.splice(3, 1);
+                break;
+            }
+            selectedCategory[categoryBoxIndex] = $(this).text()
+
+          }
+        }
+
+        lastSelectIndex = categoryBoxIndex
+        //왜안되징..
+        console.log(categoryBoxIndex, selectedCategory, lastSelectIndex)
+        selectedCategory[categoryBoxIndex] = $(this).text()
+        for(idx in selectedCategory) {
+          /// > 추가여부작업
+          if(idx !== '0') {
+            selectedCategoryText = selectedCategoryText.concat(' > ' +selectedCategory[idx] + ' ')
+          }else {
+            selectedCategoryText = selectedCategoryText.concat(selectedCategory[idx])
+          }
+        }
+
+        $($(this).parent().parent().find('.category-select-box__label')).addClass('is--selected');
+        $('.category-select-item').text(selectedCategoryText)
+      });
+    }
+
+    (function (){
+      // changeShipFee
+      $('.js-ship-fee-radio').on('change', function () {
+        const shipFee = $(this).val()
+        console.log(shipFee)
+        switch (shipFee) {
+          case 'fee' :
+            $('.fee-content-area').show()
+            $('.conditional-fee-content-area').hide()
+            break
+          case 'free' :
+            $('.fee-content-area').hide()
+            $('.conditional-fee-content-area').hide()
+            break
+          case 'conditionalFee' :
+            $('.fee-content-area').hide()
+            $('.conditional-fee-content-area').show()
+            break
+        }
+      })
+    })()
+
+    //취소
+    $('.js-register-close').on('click', function () {
+      $(this).parents('.js-layer-popup').fadeOut(400);
+    })
+    //저장
+    $('.js-register-submit').on('click', function () {
+      $(this).parents('.js-layer-popup').fadeOut(400);
+    })
+
+    categorySelectBoxHandler();
+  }
+
 
   listHandler()
   searchList()
@@ -369,4 +532,5 @@ $(function () {
   listMoreHandler()
   datePickerHandler()
   selectBoxHandler()
+  registerPopupHandler()
 })

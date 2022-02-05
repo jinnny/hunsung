@@ -1,0 +1,26 @@
+.button {
+  height: 36px;
+  border-radius: 4px;
+  box-shadow: 0 1px 3px 0 rgb(39 70 127 / 6%);
+  background-color: #4c8cff;
+  border: solid 1px #4c8cff;
+  font-size: 13px;
+  font-weight: 500;
+  line-height: normal;
+  color: #f4f8ff;
+  padding: 8px 12px;
+  &.mini {
+    height: 28px;
+    padding: 0 12px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+  &-add {}
+  &-remove {
+    background-color: #fff2f5;
+    border-color: #ff7b99;
+    color: #ff7b99;
+    font-weight: 500;
+  }
+}

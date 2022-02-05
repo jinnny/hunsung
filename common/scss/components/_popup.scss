@@ -1,0 +1,111 @@
+.layer-popup {
+  .input-content-area {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    &.justify-center {
+      justify-content: center;
+    }
+    .select-box {
+      &.with--button {
+        margin-right: 10px;
+      }
+    }
+    .select-box,
+    .width-select {
+      width: 70%;
+      margin-right: 0;
+    }
+    & + .input-content-area {
+      margin-top: 8px;
+    }
+    .input__input {
+      & + .input-radio-area {
+        margin-left: 20px;
+      }
+    }
+  }
+  .input-radio-area {
+    display: flex;
+    align-items: center;
+  }
+
+  .register-popup__notice {
+    font-size: 12px;
+    margin-top: 8px;
+  }
+
+  .ship-fee-content {
+    display: none;
+    margin-top: 10px;
+  }
+  .fee-content-area {
+    .table {
+      //width: 80%;
+    }
+  }
+  .text-with-select {
+    margin-right: 5px;
+  }
+
+  .text {
+    &-left {
+      text-align: left;
+    }
+    &-right {
+      text-align: right;
+    }
+  }
+
+  .amount-button-area {
+    margin-top: 15px;
+  }
+
+  .register-setting {
+    margin-top: 15px;
+    .table__subject {
+      margin-bottom: 0;
+    }
+    &-top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 15px;
+    }
+    &-content {
+      display: none;
+    }
+    &-button {
+      width: 28px;
+      height: 28px;
+      background-image: icon(arrowDown, '6A6C75');
+      background-position: 50% 50%;
+      border-radius: 4px;
+      background-size: 10px 10px;
+      box-shadow: 0 1px 3px 0 rgba(39, 70, 127, 0.06);
+      border: solid 1px $neutral-gray-c-6-c-9-d-3;
+      background-color: $neutral-white-100;
+      background-repeat: no-repeat;
+      &.is--open {
+        transform: rotate(-180deg);
+      }
+    }
+  }
+
+  .register-button-area {
+    text-align: center;
+    margin-top: 20px;
+    .register-button {
+      width: 110px;
+      & + .register-button {
+        margin-left: 10px;
+      }
+      &.outline {
+        color: #595f68;
+        background-color: #fff;
+        border-color: #595f68;
+      }
+    }
+  }
+}
+
