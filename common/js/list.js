@@ -365,7 +365,6 @@ $(function () {
     // 추가버튼
     $('.js-amount-add').on('click', function () {
       const last = $('.amount-contents-area .input-content-area:last-child')
-
       if(last.prev().find('.js-input-end').val()){
         last.append(`
          <span class="set-amount-area">
@@ -379,6 +378,12 @@ $(function () {
           ~
         </div>
       `)
+        $('.input-content-area-area').append(`
+          <div class="input-content-area justify-center">
+            <input type="text" class="input__input input__input-price text-right mini">
+            <span class="input__input-unit">원</span>
+          </div>
+        `)
       }else {
         swal({
           title: 'error',
@@ -390,7 +395,6 @@ $(function () {
     })
     $(document).on('keyup', '.js-input-end', function () {
       const value = $(this).val()
-      console.log('dddd', value, $(this).parent())
       if(value !== '') {
         $(this).parent().parent().next().find('.js-last-input').val(Number($(this).val())+1)
       }else {
@@ -403,6 +407,7 @@ $(function () {
         const last = $('.amount-contents-area .input-content-area:last-child')
         last.prev().find('.set-amount-area').remove()
         last.remove()
+        $('.input-content-area-area .input-content-area:last').remove()
       }
     })
 
@@ -494,7 +499,6 @@ $(function () {
       // changeShipFee
       $('.js-ship-fee-radio').on('change', function () {
         const shipFee = $(this).val()
-        console.log(shipFee)
         switch (shipFee) {
           case 'fee' :
             $('.fee-content-area').show()
