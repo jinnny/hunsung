@@ -454,13 +454,25 @@ $(function () {
         if (categoryBoxIndex < 4) {
           $(`.js-cate-${categoryBoxIndex + 1}`).empty()
           const a = await getCategory(categoryBoxIndex + 2, $(this).attr('data-key'))
-          console.log(a)
-          a[`cate${categoryBoxIndex + 2}`][`${$(this).attr('data-key')}`].forEach(function(item) {
-            $(`.js-cate-${categoryBoxIndex + 1}`).append(`
+          const list = a[`cate${categoryBoxIndex + 2}`][`${$(this).attr('data-key')}`]
+          const range = [...Array(4 - categoryBoxIndex).keys()].map(i => i + categoryBoxIndex + 2);
+          if (a.cnt) {
+            list.forEach(function(item) {
+              $(`.js-cate-${categoryBoxIndex + 1}`).append(`
                 <span class="category-select-box__item js-category-select-item" data-key="${item.key}">${item.name}</span>
               `)
-          })
+            })
+            range.forEach(function(item) {
+              $(`.category-select-box${item}`).removeClass('disabled')
+            })
+          } else {
+            range.forEach(function(item) {
+              $(`.category-select-box${item}`).addClass('disabled')
+            })
+          }
         }
+
+
 
         $($(this).parent().parent().find('.category-select-box__label')).text($(this).text());
         $(this).parents('.js-category-select').addClass('is--selected')
@@ -497,6 +509,7 @@ $(function () {
                 $('.category-select-box3').find('.category-select-box__label').text('소분류 선택');
                 $('.category-select-box4').find('.category-select-box__label').text('세분류 선택');
                 $('.category-select-box5').find('.category-select-box__label').text('세세분류 선택');
+                $('.category-select-box5').removeClass('is--selected is--show-list');
                 nextSelect.addClass('is--show-list');
 
                 //무조건 두번째 인덱스부터 삭제
