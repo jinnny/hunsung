@@ -13,6 +13,9 @@
   justify-content: space-between;
   cursor: pointer;
   margin-right: 15px;
+  &.disabled {
+    background-color: #eee;
+  }
   .select-bg {
     position: fixed;
     top: 0;
@@ -185,6 +188,12 @@
   //justify-content: space-between;
   cursor: pointer;
   margin-right: 1%;
+  &.disabled {
+    .category-select-box-top,
+    .category-select-box-list {
+      background-color: #eee;
+    }
+  }
   &-top {
     width: 100%;
     display: flex;
@@ -228,6 +237,7 @@
     left: 0;
     height: 192px;
     top: 44px;
+    overflow-y: auto;
     //position: absolute;
     padding: 5px 0;
     border-radius: 5px;

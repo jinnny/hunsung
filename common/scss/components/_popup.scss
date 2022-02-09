@@ -95,20 +95,9 @@
     }
   }
 
-  .register-button-area {
-    text-align: center;
-    margin-top: 20px;
-    .register-button {
-      width: 110px;
-      & + .register-button {
-        margin-left: 10px;
-      }
-      &.outline {
-        color: #595f68;
-        background-color: #fff;
-        border-color: #595f68;
-      }
-    }
+  .register-button {
+    position: absolute;
+    right: 80px;
   }
 }
 

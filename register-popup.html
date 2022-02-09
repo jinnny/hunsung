@@ -760,6 +760,7 @@
             11번가 그룹 등록관리
           </span>
         </h2>
+        <button class="button register-button js-register-submit">저장하기</button>
         <button class="layer-popup__close-button js-layer-popup-close" ><span class="blind">닫기</span></button>
       </header>
       <div class="layer-popup-content-content">
@@ -778,6 +779,7 @@
                     <label for="unUse" class="input__input-radio-label">사용안함</label>
                   </div>
                 </div>
+                <p class="input__notice">필수 입력값입니다.</p>
               </td>
             </tr>
             <tr>
@@ -855,13 +857,11 @@
               <th class="px-16">출고지 주소</th>
               <td class="px-16 py-12">
                 <div class="input-content-area">
-                  <div class="select-box js-select-addr with--button">
+                  <div class="select-box js-select-addr with--button disabled">
                     <strong class="select-box__label">출고지 주소를 선택하세요</strong><span class="select-box__icon"></span>
-                    <div class="select-box-list js-addr">
-                      <span class="select-box__item js-select-addr-item">서울특별시 강남구 역삼로 542 (대치동,신사에스앤지) 3층</span>
-                    </div>
+                    <div class="select-box-list js-addr"></div>
                   </div>
-                  <button type="button" class="button">가져오기</button>
+                  <button type="button" class="button js-address-button">가져오기</button>
                 </div>
                 <div class="input-content-area">
                   <input type="text" class="input__input width-select js-addr-input" readonly>
@@ -1100,10 +1100,6 @@
                 </tbody>
               </table>
             </div>
-          </div>
-          <div class="register-button-area">
-            <button class="button register-button js-register-close outline" type="button">취소</button>
-            <button class="button register-button js-register-submit">저장</button>
           </div>
         </div>
       </div>

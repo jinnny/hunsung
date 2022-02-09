@@ -594,7 +594,7 @@ $(function () {
 
   //select box
   const selectBoxAddressHandler = () => {
-    $(document).on('click', '.js-select-addr', function() {
+    $(document).on('click', '.js-select-addr:not(.disabled)', function() {
       const select = $(this);
       if($(this).hasClass('is--open')) {
         $(this).removeClass('is--open')
@@ -620,21 +620,24 @@ $(function () {
     });
 
     // 주소 가져오기
-    $.ajax({
-      url: 'http://115.85.181.125/addr.php',
-      type: "GET",
-      dataType: "json",
-      success: (res) => {
-        $('.js-addr').empty()
-        res.addr.forEach(function(item) {
-          $('.js-addr').append(`
+    $('.js-address-button').on('click', function () {
+      $.ajax({
+        url: 'http://115.85.181.125/addr.php',
+        type: "GET",
+        dataType: "json",
+        success: (res) => {
+          $('.js-addr').empty()
+          res.addr.forEach(function(item) {
+            $('.js-addr').append(`
                  <span class="select-box__item js-select-addr-item" data-key="${item.key}">${item.name}</span>
               `)
-        })
-      },
-      error: (e) => {
-        console.error(e);
-      }
+          })
+          $('.js-select-addr').removeClass('disabled')
+        },
+        error: (e) => {
+          console.error(e);
+        }
+      })
     })
   }
 

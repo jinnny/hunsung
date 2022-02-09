@@ -35,8 +35,11 @@
     margin: auto;
     &.register {
       max-width: 1100px;
-      height: 700px;
+      height: 900px;
       overflow-y: hidden;
+      @include respond-to(950, 'max-height') {
+        height: 80%;
+      }
       .layer-popup-header {
         position: sticky;
         top: 0;
