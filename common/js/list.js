@@ -592,6 +592,52 @@ $(function () {
     categorySelectBoxHandler();
   }
 
+  //select box
+  const selectBoxAddressHandler = () => {
+    $(document).on('click', '.js-select-addr', function() {
+      const select = $(this);
+      if($(this).hasClass('is--open')) {
+        $(this).removeClass('is--open')
+      }else {
+        $(this).addClass('is--open')
+      }
+      const seting = $(this).find('.select-box-list');
+      $(document).on('mouseup', function(e) {
+        if (seting.has(e.target).length === 0) {
+          if(e.target.className !== select[0].className) {
+            select.removeClass('is--open');
+          }
+        }
+      });
+    });
+    $(document).on('click', '.js-select-addr-item', function() {
+      $(this).parents('.js-select-addr').addClass('is--selected')
+      $(this).addClass('is--selected').siblings().removeClass('is--selected');
+      $($(this).parent().parent().find('.select-box__label')).text($(this).text());
+      $($(this).parent().parent().find('.select-box__label')).addClass('is--selected');
+
+      $('.js-addr-input').val($(this).text())
+    });
+
+    // 주소 가져오기
+    $.ajax({
+      url: 'http://115.85.181.125/addr.php',
+      type: "GET",
+      dataType: "json",
+      success: (res) => {
+        $('.js-addr').empty()
+        res.addr.forEach(function(item) {
+          $('.js-addr').append(`
+                 <span class="select-box__item js-select-addr-item" data-key="${item.key}">${item.name}</span>
+              `)
+        })
+      },
+      error: (e) => {
+        console.error(e);
+      }
+    })
+  }
+
 
   listHandler()
   searchList()
@@ -601,4 +647,5 @@ $(function () {
   datePickerHandler()
   selectBoxHandler()
   registerPopupHandler()
+  selectBoxAddressHandler()
 })
