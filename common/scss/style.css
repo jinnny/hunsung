@@ -189,7 +189,7 @@
 
 .category-select-box {
   flex: none;
-  width: 24.25%;
+  width: 19.25%;
   position: relative;
   cursor: pointer;
   margin-right: 1%;
@@ -656,6 +656,7 @@
   margin: auto;
 }
 .layer-popup-content.register {
+  max-width: 1100px;
   height: 700px;
   overflow-y: hidden;
 }

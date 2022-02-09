@@ -420,10 +420,13 @@ $(function () {
     //category select box
     const categorySelectBoxHandler = () => {
       $(document).on('click', '.js-category-select-top', function() {
-        $('.js-category-select').toggleClass('is--open')
         const selectbox = $(this).parent();
-        if(selectbox.hasClass('category-select-box1')) {
-          selectbox.addClass('is--show-list')
+        // 대분류거나, 선택된 분류의 이전거가 이미 선택되어있을때(중분류는 반드시 대분류를 선택되어있어야만 여/닫)
+        if(selectbox.data('category-box') === 0 || selectbox.prev().hasClass('is--selected')) {
+          $('.js-category-select').toggleClass('is--open')
+          if(selectbox.hasClass('category-select-box1')) {
+            selectbox.addClass('is--show-list')
+          }
         }
       });
 
@@ -454,32 +457,50 @@ $(function () {
             nextSelect.addClass('is--show-list');
             nextSelect.find('.category-select-box__label').removeClass('is--selected');
             nextSelect.find('.category-select-box__item').removeClass('is--selected');
-
+            console.log(categoryBoxIndex)
             switch(categoryBoxIndex){
               case 0: selectParent.siblings().removeClass('is--selected is--show-list');
                 nextSelect.addClass('is--show-list');
-                nextSelect.find('.category-select-box__label').text('중분류 선택');
+                $('.category-select-box2, .category-select-box3, .category-select-box4, .category-select-box5').find('.category-select-box__label, .js-category-select-item').removeClass('is--selected')
+                $('.category-select-box2').find('.category-select-box__label').text('중분류 선택');
+                $('.category-select-box3').find('.category-select-box__label').text('소분류 선택');
+                $('.category-select-box4').find('.category-select-box__label').text('세분류 선택');
+                $('.category-select-box5').find('.category-select-box__label').text('세세분류 선택');
                 selectedCategory = []
                 break;
               case 1: selectParent.next().next().removeClass('is--selected is--show-list');
-                nextSelect.find('.category-select-box__label').text('소분류 선택');
+                $('.category-select-box3, .category-select-box4, .category-select-box5').find('.category-select-box__label, .js-category-select-item').removeClass('is--selected')
+                $('.category-select-box3').find('.category-select-box__label').text('소분류 선택');
+                $('.category-select-box4').find('.category-select-box__label').text('세분류 선택');
+                $('.category-select-box5').find('.category-select-box__label').text('세세분류 선택');
+                nextSelect.addClass('is--show-list');
+
                 //무조건 두번째 인덱스부터 삭제
                 selectedCategory.splice(2, 2);
                 break;
-              case 2: selectParent.next().next().removeClass('is--selected is--show-list');
-                nextSelect.find('.category-select-box__label').text('세분류 선택');
+              case 2:
+                $('.category-select-box4, .category-select-box5').removeClass('is--selected is--show-list');
+                nextSelect.addClass('is--show-list');
+                $('.category-select-box4, .category-select-box5').find('.category-select-box__label, .js-category-select-item').removeClass('is--selected')
+                $('.category-select-box4').find('.category-select-box__label').text('세분류 선택');
+                $('.category-select-box5').find('.category-select-box__label').text('세세분류 선택');
                 //무조건 세번째 인덱스부터 삭제
-                selectedCategory.splice(3, 1);
+                selectedCategory.splice(3, 2);
+                break;
+              case 3:
+                $('.category-select-box5').removeClass('is--selected');
+                $('.category-select-box5').find('.category-select-box__label, .js-category-select-item').removeClass('is--selected')
+                $('.category-select-box5').find('.category-select-box__label').text('세세분류 선택');
+
+                //무조건 네번째 인덱스부터 삭제
+                selectedCategory.splice(4, 2);
                 break;
             }
             selectedCategory[categoryBoxIndex] = $(this).text()
-
           }
         }
 
         lastSelectIndex = categoryBoxIndex
-        //왜안되징..
-        console.log(categoryBoxIndex, selectedCategory, lastSelectIndex)
         selectedCategory[categoryBoxIndex] = $(this).text()
         for(idx in selectedCategory) {
           /// > 추가여부작업
