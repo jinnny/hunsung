@@ -419,13 +419,24 @@ $(function () {
 
     //category select box
     const categorySelectBoxHandler = () => {
-      $(document).on('click', '.js-category-select-top', function() {
+      $(document).on('click', '.js-category-select-top', async function() {
         const selectbox = $(this).parent();
         // 대분류거나, 선택된 분류의 이전거가 이미 선택되어있을때(중분류는 반드시 대분류를 선택되어있어야만 여/닫)
         if(selectbox.data('category-box') === 0 || selectbox.prev().hasClass('is--selected')) {
           $('.js-category-select').toggleClass('is--open')
           if(selectbox.hasClass('category-select-box1')) {
             selectbox.addClass('is--show-list')
+
+            // 대분류 카테고리 가져오기
+            $('.js-cate-0').empty()
+            const a = await getCategory(1)
+            console.log(a)
+            a['cate1'].forEach(function(item) {
+              $('.js-cate-0').append(`
+                <span class="category-select-box__item js-category-select-item" data-key="${item.key}">${item.name}</span>
+              `)
+            })
+
           }
         }
       });
@@ -433,10 +444,23 @@ $(function () {
       let selectedCategory = [];
       let lastSelectIndex = 0;
 
-      $(document).on('click', '.js-category-select-item', function() {
+      $(document).on('click', '.js-category-select-item', async function() {
+
         const categoryBoxIndex = $(this).parents('.js-category-select').data('category-box')
         const selectParent = $(this).parents('.js-category-select')
         let selectedCategoryText = ''
+
+        // 카테고리 가져오기
+        if (categoryBoxIndex < 4) {
+          $(`.js-cate-${categoryBoxIndex + 1}`).empty()
+          const a = await getCategory(categoryBoxIndex + 2, $(this).attr('data-key'))
+          console.log(a)
+          a[`cate${categoryBoxIndex + 2}`][`${$(this).attr('data-key')}`].forEach(function(item) {
+            $(`.js-cate-${categoryBoxIndex + 1}`).append(`
+                <span class="category-select-box__item js-category-select-item" data-key="${item.key}">${item.name}</span>
+              `)
+          })
+        }
 
         $($(this).parent().parent().find('.category-select-box__label')).text($(this).text());
         $(this).parents('.js-category-select').addClass('is--selected')
@@ -514,6 +538,25 @@ $(function () {
         $($(this).parent().parent().find('.category-select-box__label')).addClass('is--selected');
         $('.category-select-item').text(selectedCategoryText)
       });
+
+      function getCategory(gubun, cateKey) {
+        let url = `http://115.85.181.125/cate1.php?gubun=${gubun}`
+        cateKey && (url += `&cate_key=${cateKey}`)
+
+        return new Promise((resolve, reject) => {
+          $.ajax({
+            url: url,
+            type: "GET",
+            dataType: "json",
+            success: (res) => {
+              resolve(res);
+            },
+            error: (e) => {
+              reject(e);
+            }
+          });
+        });
+      }
     }
 
     (function (){
