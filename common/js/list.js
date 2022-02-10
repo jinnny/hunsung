@@ -357,6 +357,7 @@ $(function () {
     $('.js-layer-popup .js-layer-popup-close').on('click', function () {
       //속도 제어
       $(this).parents('.js-layer-popup').fadeOut(400);
+      closingReset()
     })
   }
 
@@ -600,6 +601,7 @@ $(function () {
     //저장
     $('.js-register-submit').on('click', function () {
       $(this).parents('.js-layer-popup').fadeOut(400);
+      closingReset()
     })
 
     categorySelectBoxHandler();
@@ -652,6 +654,15 @@ $(function () {
         }
       })
     })
+  }
+
+  function closingReset() {
+    setTimeout(function () {
+      $('#js-register-layer').load(window.location.href + "#js-register-layer");
+      selectBoxHandler()
+      registerPopupHandler()
+      selectBoxAddressHandler()
+    }, 500)
   }
 
 
