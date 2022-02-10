@@ -252,7 +252,7 @@
   &__item {
     width: 100%;
     padding: 0 12px;
-    height: 36px;
+    min-height: 36px;
     cursor: pointer;
     display: block;
     @include setText(14,500, 36px);
