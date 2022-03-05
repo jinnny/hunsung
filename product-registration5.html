@@ -1,0 +1,749 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>상품등록 - 안전인증</title>
+  <!-- CSS FILES.. -->
+  <link rel="stylesheet" href="common/css/style_e.css">
+  <!--add-->
+  <link rel="stylesheet" href="common/scss/style.css">
+  <!--add-->
+</head>
+<body>
+
+<!-- LNB BUTTON -->
+<div id="lnb-component"></div>
+
+
+<!-- DRAWER AREA -->
+<nav id="drawer-component">
+
+  <div id="drawer-logo-component">
+    <a id="drawer-logo-link-component" href="#">
+      <img src="images/E/LOGO/logo-hyunsung.webp" alt="LOGO" title="LOGO">
+      <p id="drawer-logo-p-component">Hyunsung system</p>
+    </a>
+  </div>
+
+  <ul id="drawer-main-menu-component">
+    <li class="active">
+      <div class="drawer-menu-list-icon-component"></div>
+      <span>1. Dashboard</span>
+    </li>
+    <li>
+      <div class="drawer-menu-list-icon-component"></div>
+      <span>2. Products</span>
+      <div class="drawer-right-arrow-icon-component"></div>
+
+      <ul class="drawer-sub-menu-component">
+        <li>
+          <img src="images/E/DRAWER_FILL/icon-24-x-24-line-arrow-back_sub/icon-24-x-24-line-arrow-back.webp" alt="SUB"
+               title="SUB">
+          <span>2. Products</span>
+        </li>
+        <li>
+          <span>2-1. menu01</span>
+        </li>
+        <li>
+          <span>2-2. menu02</span>
+        </li>
+        <li>
+          <span>2-3. menu03</span>
+        </li>
+        <li>
+          <span>2-4. menu04</span>
+        </li>
+      </ul>
+    </li>
+    <li>
+      <div class="drawer-menu-list-icon-component"></div>
+      <span>3. Listings</span>
+      <div class="drawer-right-arrow-icon-component"></div>
+      <ul class="drawer-sub-menu-component">
+        <li>
+          <img src="images/E/DRAWER_FILL/icon-24-x-24-line-arrow-back_sub/icon-24-x-24-line-arrow-back.webp" alt="SUB"
+               title="SUB">
+          <span>3. Listings</span>
+        </li>
+        <li>
+          <span>3-1. menu01</span>
+        </li>
+        <li>
+          <span>3-2. menu02</span>
+        </li>
+        <li>
+          <span>3-3. menu03</span>
+        </li>
+        <li>
+          <span>3-4. menu04</span>
+        </li>
+      </ul>
+    </li>
+    <li>
+      <div class="drawer-menu-list-icon-component"></div>
+      <span>4. Orders</span>
+      <div class="drawer-right-arrow-icon-component"></div>
+      <ul class="drawer-sub-menu-component">
+        <li>
+          <img src="images/E/DRAWER_FILL/icon-24-x-24-line-arrow-back_sub/icon-24-x-24-line-arrow-back.webp" alt="SUB"
+               title="SUB">
+          <span>4. Orders</span>
+        </li>
+        <li>
+          <span>4-1. menu01</span>
+        </li>
+        <li>
+          <span>4-2. menu02</span>
+        </li>
+        <li>
+          <span>4-3. menu03</span>
+        </li>
+        <li>
+          <span>4-4. menu04</span>
+        </li>
+      </ul>
+    </li>
+    <li>
+      <div class="drawer-menu-list-icon-component"></div>
+      <span>5. Reports</span>
+      <div class="drawer-right-arrow-icon-component"></div>
+      <ul class="drawer-sub-menu-component">
+        <li>
+          <img src="images/E/DRAWER_FILL/icon-24-x-24-line-arrow-back_sub/icon-24-x-24-line-arrow-back.webp" alt="SUB"
+               title="SUB">
+          <span>5. Reports</span>
+        </li>
+        <li>
+          <span>5-1. menu01</span>
+        </li>
+        <li>
+          <span>5-2. menu02</span>
+        </li>
+        <li>
+          <span>5-3. menu03</span>
+        </li>
+        <li>
+          <span>5-4. menu04</span>
+        </li>
+      </ul>
+    </li>
+    <li>
+      <div class="drawer-menu-list-icon-component"></div>
+      <span>6. 도면관리</span>
+      <div class="drawer-right-arrow-icon-component"></div>
+      <ul class="drawer-sub-menu-component">
+        <li>
+          <img src="images/E/DRAWER_FILL/icon-24-x-24-line-arrow-back_sub/icon-24-x-24-line-arrow-back.webp" alt="SUB"
+               title="SUB">
+          <span>6. 도면관리</span>
+        </li>
+        <li>
+          <span>6-1. menu01</span>
+        </li>
+        <li>
+          <span>6-2. menu02</span>
+        </li>
+        <li>
+          <span>6-3. menu03</span>
+        </li>
+        <li>
+          <span>6-4. menu04</span>
+        </li>
+      </ul>
+    </li>
+    <li>
+      <div class="drawer-menu-list-icon-component"></div>
+      <span>7. 공정현황</span>
+      <div class="drawer-right-arrow-icon-component"></div>
+      <ul class="drawer-sub-menu-component">
+        <li>
+          <img src="images/E/DRAWER_FILL/icon-24-x-24-line-arrow-back_sub/icon-24-x-24-line-arrow-back.webp" alt="SUB"
+               title="SUB">
+          <span>7. 공정현황</span>
+        </li>
+        <li>
+          <span>7-1. menu01</span>
+        </li>
+        <li>
+          <span>7-2. menu02</span>
+        </li>
+        <li>
+          <span>7-3. menu03</span>
+        </li>
+        <li>
+          <span>7-4. menu04</span>
+        </li>
+      </ul>
+    </li>
+    <li>
+      <div class="drawer-menu-list-icon-component"></div>
+      <span>8. 재고현황</span>
+      <div class="drawer-right-arrow-icon-component"></div>
+
+      <ul class="drawer-sub-menu-component">
+        <li>
+          <img src="images/E/DRAWER_FILL/icon-24-x-24-line-arrow-back_sub/icon-24-x-24-line-arrow-back.webp" alt="SUB"
+               title="SUB">
+          <span>8. 재고현황</span>
+        </li>
+        <li>
+          <span>8-1. menu01</span>
+        </li>
+        <li>
+          <span>8-2. menu02</span>
+        </li>
+        <li>
+          <span>8-3. menu03</span>
+        </li>
+        <li>
+          <span>8-4. menu04</span>
+        </li>
+      </ul>
+    </li>
+    <li>
+      <div class="drawer-menu-list-icon-component"></div>
+      <span>9. 매출현황</span>
+      <div class="drawer-right-arrow-icon-component"></div>
+
+      <ul class="drawer-sub-menu-component">
+        <li>
+          <img src="images/E/DRAWER_FILL/icon-24-x-24-line-arrow-back_sub/icon-24-x-24-line-arrow-back.webp" alt="SUB"
+               title="SUB">
+          <span>9. 매출현황</span>
+        </li>
+        <li>
+          <span>9-1. menu01</span>
+        </li>
+        <li>
+          <span>9-2. menu02</span>
+        </li>
+        <li>
+          <span>9-3. menu03</span>
+        </li>
+        <li>
+          <span>9-4. menu04</span>
+        </li>
+      </ul>
+    </li>
+    <li>
+      <div class="drawer-menu-list-icon-component"></div>
+      <span>10. 설정</span>
+      <div class="drawer-right-arrow-icon-component"></div>
+
+      <ul class="drawer-sub-menu-component">
+        <li>
+          <img src="images/E/DRAWER_FILL/icon-24-x-24-line-arrow-back_sub/icon-24-x-24-line-arrow-back.webp" alt="SUB"
+               title="SUB">
+          <span>10. 설정</span>
+        </li>
+        <li>
+          <span>10-1. menu01</span>
+        </li>
+        <li>
+          <span>10-2. menu02</span>
+        </li>
+        <li>
+          <span>10-3. menu03</span>
+        </li>
+        <li>
+          <span>10-4. menu04</span>
+        </li>
+      </ul>
+    </li>
+  </ul>
+
+
+  <footer>© Hyunsung company.<br>All Rights Reserved</footer>
+
+</nav>
+<!-- DRAWER AREA END -->
+
+
+<!-- HEADER AREA -->
+<header id="header-component">
+  <article class="container-component">
+    <!--add-->
+    <p class="header-page-info">홈&nbsp; &#62; &nbsp;상품관리 &nbsp;&#62;&nbsp; <strong class="header-page-info__current">상품등록</strong></p>
+    <!--add-->
+    <div class="dashboard-right-container-component">
+      <div class="notice-container-component">
+        <div class="notice-count-component">99+</div>
+        <img src="images/E/HEADER/icon-30-x-30-notice/icon-30-x-30-notice.webp" alt="NOTICE" title="NOTICE">
+      </div>
+      <div class="notice-list-container-component">
+        <div class="notice-list-title-container-component">
+          <div class="notice-list-title-component">
+            <div class="notice-list-left-title-component">
+              <p>받은 알림</p>
+              <span>2</span>
+            </div>
+            <div class="notice-list-right-title-component">
+              <button>모두 확인</button>
+            </div>
+          </div>
+          <p><span>최근 30일 동안</span>의 알림만 보관됩니다.</p>
+        </div>
+        <div class="notice-list-check-close-container-component">
+          <div class="notice-list-check-close-item-component check">
+            <div class="notice-list-check-close-title-container">
+              <div class="notice-list-check-close-left-title-component">
+                알림 내용 내용알림 내용 내용
+              </div>
+              <div class="notice-list-check-close-right-title-component">
+                <button>확인</button>
+              </div>
+              <div class="notice-list-date-time-container-component">
+                <span>2021.11.21</span>
+                <span>|</span>
+                <span>오후 3시 30분</span>
+              </div>
+            </div>
+          </div>
+          <div class="notice-list-check-close-item-component check">
+            <div class="notice-list-check-close-title-container">
+              <div class="notice-list-check-close-left-title-component">
+                알림 내용 내용알림 내용 내용 내용이 아주 길 경우 두줄 까지 노출 놀출
+              </div>
+              <div class="notice-list-check-close-right-title-component">
+                <button>확인</button>
+              </div>
+              <div class="notice-list-date-time-container-component">
+                <span>2021.11.21</span>
+                <span>|</span>
+                <span>오후 3시 30분</span>
+              </div>
+            </div>
+          </div>
+          <div class="notice-list-check-close-item-component">
+            <div class="notice-list-check-close-title-container">
+              <div class="notice-list-check-close-left-title-component">
+                확인한 알림의 경우 우측에 삭제 버튼 노출
+              </div>
+              <div class="notice-list-check-close-right-title-component">
+                <button><img src="images/E/HEADER/icon-12-x-12-line-delete/icon-12-x-12-line-delete.webp" alt="DELETE"
+                             title="DELETE"></button>
+              </div>
+              <div class="notice-list-date-time-container-component">
+                <span>2021.11.21</span>
+                <span>|</span>
+                <span>오후 3시 30분</span>
+              </div>
+            </div>
+          </div>
+          <div class="notice-list-check-close-item-component">
+            <div class="notice-list-check-close-title-container">
+              <div class="notice-list-check-close-left-title-component">
+                알림은 시간순으로 노출 (최신이 상단에)
+              </div>
+              <div class="notice-list-check-close-right-title-component">
+                <button><img src="images/E/HEADER/icon-12-x-12-line-delete/icon-12-x-12-line-delete.webp" alt="DELETE"
+                             title="DELETE"></button>
+              </div>
+              <div class="notice-list-date-time-container-component">
+                <span>2021.11.21</span>
+                <span>|</span>
+                <span>오후 3시 30분</span>
+              </div>
+            </div>
+          </div>
+          <div class="notice-list-check-close-item-component">
+            <div class="notice-list-check-close-title-container">
+              <div class="notice-list-check-close-left-title-component">
+                알림 내용 내용알림 내용 내용
+              </div>
+              <div class="notice-list-check-close-right-title-component">
+                <button><img src="images/E/HEADER/icon-12-x-12-line-delete/icon-12-x-12-line-delete.webp" alt="DELETE"
+                             title="DELETE"></button>
+              </div>
+              <div class="notice-list-date-time-container-component">
+                <span>2021.11.21</span>
+                <span>|</span>
+                <span>오후 3시 30분</span>
+              </div>
+            </div>
+          </div>
+          <div class="notice-list-check-close-item-component">
+            <div class="notice-list-check-close-title-container">
+              <div class="notice-list-check-close-left-title-component">
+                알림은 시간순으로 노출 (최신이 상단에)
+              </div>
+              <div class="notice-list-check-close-right-title-component">
+                <button><img src="images/E/HEADER/icon-12-x-12-line-delete/icon-12-x-12-line-delete.webp" alt="DELETE"
+                             title="DELETE"></button>
+              </div>
+              <div class="notice-list-date-time-container-component">
+                <span>2021.11.21</span>
+                <span>|</span>
+                <span>오후 3시 30분</span>
+              </div>
+            </div>
+          </div>
+          <div class="notice-list-check-close-item-component">
+            <div class="notice-list-check-close-title-container">
+              <div class="notice-list-check-close-left-title-component">
+                알림 내용 내용알림 내용 내용
+              </div>
+              <div class="notice-list-check-close-right-title-component">
+                <button><img src="images/E/HEADER/icon-12-x-12-line-delete/icon-12-x-12-line-delete.webp" alt="DELETE"
+                             title="DELETE"></button>
+              </div>
+              <div class="notice-list-date-time-container-component">
+                <span>2021.11.21</span>
+                <span>|</span>
+                <span>오후 3시 30분</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="select-box-blue-component">
+        <span>관리자 님</span><img src="images/E/HEADER/icon-8-x-8-line-arrow-down/icon-8-x-8-line-arrow-down.webp"
+                               alt="ARROW DOWN" title="ARROW DOWN">
+
+        <div class="select-box-blue-option-container-component">
+          <div class="select-box-blue-option-component">
+            <div class="select-box-blue-option-img"></div>
+            <span>정보 변경</span>
+          </div>
+          <div class="select-box-blue-option-component">
+            <div class="select-box-blue-option-img"></div>
+            <span>로그아웃</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </article>
+</header>
+<!-- HEADER AREA END -->
+
+
+<!-- CONTENT AREA -->
+<section id="content-component">
+  <!--add-->
+  <article class="list-content">
+    <h2 class="list-header__title">상품 등록</h2>
+    <div class="product-registration-top">
+      <div class="tab">
+        <div class="tab-item-area">
+          <a href="product-registration1.html" class="tab__item">기본정보</a>
+          <a href="product-registration2.html" class="tab__item">이미지정보</a>
+          <a href="product-registration3.html" class="tab__item">옵션정보</a>
+          <a href="product-registration4.html" class="tab__item">품목고시</a>
+          <a href="product-registration5.html" class="tab__item is--selected">안전인증</a>
+        </div>
+        <div class="tab-button-area">
+          <button class="tab-button tab-button--cancel">취소하기</button>
+          <button class="tab-button tab-button--primary">저장하기</button>
+        </div>
+      </div>
+    </div>
+    <form action="">
+      <!-- 상품등록 - 안전인증 KC 인증-->
+      <div class="product-registration-content product-registration5-content">
+        <h2 class="content__title">KC 인증</h2>
+        <div class="content__content-area">
+          <div class="input-content-area">
+            <div class="input-radio-area">
+              <input type="radio" id="kcNo" name="kc" value="kcNo" class="input__input-radio js-certification-radio">
+              <label for="kcNo" class="input__input-radio-label">인증 · 신고 대상 아님</label>
+              <input type="radio" id="kcTarget" name="kc" value="kcTarget" class="input__input-radio js-certification-radio">
+              <label for="kcTarget" class="input__input-radio-label">인증 · 신고 대상</label>
+              <input type="radio" id="kcOther" name="kc" value="kcOther" class="input__input-radio js-certification-radio">
+              <label for="kcOther" class="input__input-radio-label">상세설명 별도 표기</label>
+            </div>
+            <div class="target-content-area">
+              <div class="content-info-part multiple items-end target-content-part justify-start">
+                <div class="select-box-animation js-select-animation width--third fix">
+                  <span class="select-box-label">인증 선택</span>
+                  <strong class="select-box__label-animation"></strong><span class="select-box__icon-animation"></span>
+                  <fieldset class="select-field-outline">
+                    <legend class="select-legend-text">인증 선택</legend>
+                  </fieldset>
+                  <div class="select-box-list-animation">
+                    <span class="select-box__item-animation js-select-item-animation">생활용품 안전인증</span>
+                    <span class="select-box__item-animation js-select-item-animation">어린이 안전인증</span>
+                    <span class="select-box__item-animation js-select-item-animation">공급자 적합성</span>
+                    <span class="select-box__item-animation js-select-item-animation">전기 안전인증</span>
+                    <span class="select-box__item-animation js-select-item-animation">생활용품 심의인증</span>
+                  </div>
+                </div>
+                <div class="width--second">
+                  <div class="input-animation-part full">
+                    <input type="text" class="input__input-animation" id="kcNumber">
+                    <label for="kcNumber" class="input__label input__label-animation">인증번호</label>
+                    <fieldset class="input-field-outline">
+                      <legend class="input-legend-text">인증번호</legend>
+                    </fieldset>
+                  </div>
+                </div>
+                <div class="certification-button-area">
+                  <button class="certification-button add js-kc-add" type="button"><span class="blind">추가</span></button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- 상품등록 - 안전인증 KC 인증-->
+      <!-- 상품등록 - 안전인증 심의기관 인증-->
+      <div class="product-registration-content product-registration5-content">
+        <h2 class="content__title">심의기관 인증</h2>
+        <div class="content__content-area">
+          <div class="input-content-area">
+            <div class="input-radio-area">
+              <input type="radio" id="institutionNo" name="institution" value="institutionNo" class="input__input-radio js-certification-radio">
+              <label for="institutionNo" class="input__input-radio-label">인증 · 신고 대상 아님</label>
+              <input type="radio" id="institutionTarget" name="institution" value="institutionTarget" class="input__input-radio js-certification-radio">
+              <label for="institutionTarget" class="input__input-radio-label">인증 · 신고 대상</label>
+              <input type="radio" id="institutionOther" name="institution" value="institutionOther" class="input__input-radio js-certification-radio">
+              <label for="institutionOther" class="input__input-radio-label">상세설명 별도 표기</label>
+            </div>
+            <div class="target-content-area">
+              <div class="content-info-part multiple items-end target-content-part justify-start">
+                <div class="select-box-animation js-select-animation width--third fix">
+                  <span class="select-box-label">인증 선택</span>
+                  <strong class="select-box__label-animation"></strong><span class="select-box__icon-animation"></span>
+                  <fieldset class="select-field-outline">
+                    <legend class="select-legend-text">인증 선택</legend>
+                  </fieldset>
+                  <div class="select-box-list-animation">
+                    <span class="select-box__item-animation js-select-item-animation">생활용품 안전인증</span>
+                    <span class="select-box__item-animation js-select-item-animation">어린이 안전인증</span>
+                    <span class="select-box__item-animation js-select-item-animation">공급자 적합성</span>
+                    <span class="select-box__item-animation js-select-item-animation">전기 안전인증</span>
+                    <span class="select-box__item-animation js-select-item-animation">생활용품 심의인증</span>
+                  </div>
+                </div>
+                <div class="width--second">
+                  <div class="input-animation-part full">
+                    <input type="text" class="input__input-animation" id="institutionNumber">
+                    <label for="institutionNumber" class="input__label input__label-animation">인증번호</label>
+                    <fieldset class="input-field-outline">
+                      <legend class="input-legend-text">인증번호</legend>
+                    </fieldset>
+                  </div>
+                </div>
+                <div class="certification-button-area">
+                  <button class="certification-button add js-institution-add" type="button"><span class="blind">추가</span></button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- 상품등록 - 안전인증 심의기관 인증-->
+      <!-- 상품등록 - 안전인증 QA 구비서류-->
+      <div class="product-registration-content product-registration5-content">
+        <h2 class="content__title">QA 구비서류</h2>
+        <div class="content__content-area">
+          <div class="input-content-area">
+            <div class="input-radio-area">
+              <input type="radio" id="qaUnuse" name="qa" value="qaUnuse" class="input__input-radio js-certification-radio">
+              <label for="qaUnuse" class="input__input-radio-label">미사용</label>
+              <input type="radio" id="qaUse" name="qa" value="qaUse" class="input__input-radio js-certification-radio">
+              <label for="qaUse" class="input__input-radio-label">사용</label>
+            </div>
+            <div class="target-content-area">
+              <div class="content-info-part multiple items-end target-content-part justify-start">
+                <div class="width--certification-button">
+                  <div class="input-animation-part full input-file-part">
+                    <input type="file" class="input__input-animation js-file-type-input input__file-animation" id="qaFile">
+                    <div class="input-file-content ">
+                      <p class="input-file__name js-input-file-content"></p>
+                      <button class="input-file-close js-file-clear" type="button"></button>
+                    </div>
+                    <label for="qaFile" class="input__label input__label-animation input__label-animation-file js-file-label">첨부파일</label>
+                    <fieldset class="input-field-outline">
+                      <legend class="input-legend-text">첨부파일</legend>
+                    </fieldset>
+                  </div>
+                </div>
+                <div class="certification-button-area">
+                  <button class="certification-button add js-qa-add" type="button"><span class="blind">추가</span></button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- 상품등록 - 안전인증 QA 구비서류-->
+    </form>
+
+  </article>
+  <!--  상세 내용 미리보기 팝업-->
+  <div class="layer-popup js-layer-popup js-preview-popup" id="js-preview-layer">
+    <article class="layer-popup-content js-layer-popup-content preview">
+      <header class="layer-popup-header">
+        <h2 class="layer-popup__title">
+          <span class="first-title js-first-title">
+            상세 내용 미리보기
+          </span>
+        </h2>
+        <button class="layer-popup__close-button js-layer-popup-close" ><span class="blind">닫기</span></button>
+      </header>
+      <div class="layer-popup-content-content">
+        <div class="layer-popup-content-content-inner">
+          <div class="layer-popup-content-scroll">
+          <!--           컨텐츠 들어가는 영역-->
+            <img src="images/E/PRODUCT_REGISTRATION/preview-img.png" alt="">
+          </div>
+        </div>
+      </div>
+    </article>
+    <div class="layer-popup-bg"></div>
+  </div>
+  <!--  상세 내용 미리보기 팝업-->
+  <!--add-->
+</section>
+<!-- CONTENT AREA END -->
+
+
+<!-- JAVASCRIPT FILES.. -->
+<script src="common/js/jquery-3.6.0.min.js"></script>
+<!--add-->
+<script src="common/js/datepicker.min.js"></script>
+<script src="common/js/datepicker.ko-KR.js"></script>
+<script src="common/js/sweetalert.min.js"></script>
+<script src="common/js/product-registration.js"></script>
+<!--add-->
+
+<!-- jQuery .. -->
+<script>
+
+  $(function () {
+
+
+    if ($(window).width() <= 800) {
+      setMobileDrawerComponentHeight()
+    } else {
+      setDrawerComponentHeight()
+    }
+
+    if ($(window).width() <= 1100) {
+      $('#drawer-component, #header-component, #content-component').addClass('active')
+      $('#lnb-component').addClass('active')
+    }
+
+    $(window).resize(function (event) {
+
+      if ($(this).width() <= 1100) {
+        $('#drawer-component, #header-component, #content-component').addClass('active')
+        $('#lnb-component').addClass('active')
+      }
+
+      if ($(this).width() <= 800) {
+        setMobileDrawerComponentHeight()
+      } else {
+        setDrawerComponentHeight()
+      }
+    })
+    $(window).scroll(function () {
+
+      if ($(window).width() <= 800) {
+        setMobileDrawerComponentHeight()
+      } else {
+        setDrawerComponentHeight()
+      }
+
+    })
+
+
+    function setDrawerComponentHeight () {
+      return $('#drawer-component').css({
+        height: $('#content-component').height() + 70 + 'px',
+      })
+    }
+
+    function setMobileDrawerComponentHeight () {
+      return $('#drawer-component').css({
+        height: $('#content-component').height() + 70 + 60 + 'px',
+      })
+    }
+
+
+    $('#drawer-main-menu-component > li').click(function (event) {
+      event.preventDefault()
+
+      if (!$(event.target).attr('alt')) {
+        $(this).addClass('active').siblings().removeClass('active')
+
+        if ($('#drawer-main-menu-component > li.active').find('.drawer-sub-menu-component')[0])
+          $('#drawer-main-menu-component > li.active').find('.drawer-sub-menu-component').addClass('active').parent().parent().addClass('active')
+
+      } else {
+
+        if ($('#drawer-main-menu-component > li.active').find('.drawer-sub-menu-component')[0])
+          $(this).removeClass('active').parent().removeClass('active').find('.drawer-sub-menu-component').removeClass('active')
+
+        $('#drawer-main-menu-component > li:nth-child(1)').addClass('active').siblings().removeClass('active')
+
+        $('.drawer-sub-menu-component li').removeClass('active')
+      }
+    })
+    $('#lnb-component').click(function () {
+      $('#drawer-component, #header-component, #content-component').toggleClass('active')
+      $(this).toggleClass('active')
+    })
+
+    $('.drawer-sub-menu-component > li:not(:nth-child(1))').click(function () {
+      $(this).addClass('active').siblings().removeClass('active')
+    })
+
+    $('.notice-container-component').click(function () {
+      $('.notice-list-container-component').toggle()
+    })
+
+    $('.select-box-blue-component').click(function () {
+      const select = $(this);
+      const seting = $(this).find('.select-box-blue-option-container-component');
+      if(select.hasClass('active')) {
+        select.removeClass('active')
+        seting.hide()
+      }else {
+        select.addClass('active')
+        seting.show()
+      }
+      $(document).on('mouseup', function(e) {
+        if (seting.has(e.target).length === 0) {
+          if(e.target.className !== select[0].className) {
+            select.removeClass('active');
+            seting.hide()
+            e.preventDefault()
+          }
+        }
+      });
+    })
+
+
+    $('.notice-list-check-close-item-component button').click(function () {
+      if ($($(this).find('img')).attr('alt')) {
+        $(this).parent().parent().parent().remove()
+      } else {
+        $(this).text('').html('<img src="images/E/HEADER/icon-12-x-12-line-delete/icon-12-x-12-line-delete.webp" alt="DELETE" title="DELETE">')
+        $(this).parent().parent().parent().removeClass('check')
+      }
+    })
+
+
+    $('.notice-list-title-container-component button').click(function () {
+      $('.notice-list-check-close-item-component.check').each(function (i, index) {
+        $(this).find('button').text('').html('<img class="btn-close" src="images/E/HEADER/icon-12-x-12-line-delete/icon-12-x-12-line-delete.webp" alt="DELETE" title="DELETE">')
+        $(this).removeClass('check')
+      })
+    })
+
+    $('.select-box-gray-component .select-box-blue-option-component').click(function () {
+      $(this).addClass('active').siblings().removeClass('active')
+      $($(this).parent().parent().find('span')[0]).text($(this).text())
+    })
+
+  })
+
+
+</script>
+
+</body>
+</html>

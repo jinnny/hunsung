@@ -13,6 +13,10 @@
   justify-content: space-between;
   cursor: pointer;
   margin-right: 15px;
+  &.search-select-box {
+    width: 120px;
+    margin-right: 0;
+  }
   &.disabled {
     background-color: #eee;
   }
@@ -283,3 +287,147 @@
   }
 }
 
+.select-box-animation {
+  flex: none;
+  width: 400px;
+  height: 46px;
+  padding: 7px 14px;
+  //background-color: $neutral-white-ffffff;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+  &.full {
+    width: 100%;
+  }
+  &.third {
+    width: 33.33%;
+  }
+  &.space-top {
+    margin-top: 24px;
+  }
+  &.space-right {
+    margin-right: 40px;
+  }
+  &.position-reverse {
+    .select-box-list-animation {
+      top: -126px;
+    }
+  }
+  .select-field-outline {
+    top: -5px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: 0;
+    padding: 0 8px;
+    overflow: hidden;
+    position: absolute;
+    border-style: solid;
+    pointer-events: none;
+    border-color: $neutral-gray-dadde-4;
+    border-width: 1px;
+    border-radius: 4px;
+    box-shadow: 0 1px 3px 0 rgba(39, 70, 127, 0.05);
+    .select-legend-text {
+      width: auto;
+      height: 11px;
+      display: block;
+      padding: 0;
+      font-size: 0.75em;
+      max-width: 0.01px;
+      text-align: left;
+      transition: max-width 50ms cubic-bezier(0.0, 0, 0.2, 1) 0ms;
+      visibility: hidden;
+    }
+  }
+  .select-box-label {
+    padding: 0 5px;
+    font-size: 13px;
+    color: $neutral-gray-b-3-b-7-c-5;
+    top: -3px;
+    left: 0;
+    position: absolute;
+    transform: translate(9px, 18px) scale(1);
+    -webkit-transition: transform 200ms cubic-bezier(0.0, 0, 0.2, 1) 0ms, color 200ms cubic-bezier(0.0, 0, 0.2, 1) 0ms;
+    transition: transform 200ms cubic-bezier(0.0, 0, 0.2, 1) 0ms, color 200ms cubic-bezier(0.0, 0, 0.2, 1) 0ms;
+  }
+  &.disabled {
+    background-color: #eee;
+  }
+  &.is--open {
+    z-index: 11;
+    .select-box-list-animation {
+      display: block;
+    }
+    .select-box__icon-animation {
+      transform: rotate(-180deg);
+    }
+  }
+  .select-box {
+    &__icon-animation {
+      width: 10px;
+      height: 10px;
+      display: inline-block;
+      background-repeat: no-repeat;
+      background-position: 50% 50%;
+      background-image: icon(arrowDown, '6A6C75');
+    }
+    &__label-animation {
+      color: $neutral-gray-b-3-b-7-c-5;
+      @include setText(13,400);
+      font-size: 13px;
+      text-align: left;
+      opacity: 0;
+      &.is--selected {
+        color: $neutral-black-32373-c;
+        font-weight: 500;
+        opacity: 1;
+      }
+    }
+    &-list-animation {
+      display: none;
+      width: 100%;
+      left: 0;
+      top: 52px;
+      position: absolute;
+      padding: 5px 0;
+      border-radius: 5px;
+      box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.05);
+      border: solid 1px $neutral-gray-dadde-4;
+      background-color: $neutral-white-ffffff;
+      z-index: 1;
+    }
+    &__item-animation {
+      width: 100%;
+      padding: 0 12px;
+      height: 36px;
+      cursor: pointer;
+      display: block;
+      @include setText(14,500, 36px);
+      background-repeat: no-repeat;
+      background-position: 95% 50%;
+      color: $neutral-black-32373-c;
+      &:hover {
+        background-color: $neutral-gray-f-6-f-7-fc;
+      }
+      &.is--selected {
+        font-weight: 600;
+        color: $primary-blue-4-c-8-cff;
+        background-color: $primary-pastel-blue-f-4-f-8-ff;
+        background-image: icon(selectCheck, $iconDefaultColor);
+      }
+    }
+  }
+  &.is--selected {
+    .select-legend-text {
+      max-width: 1000px;
+      padding: 0 5px;
+      transition: max-width 100ms cubic-bezier(0.0, 0, 0.2, 1) 50ms
+    }
+    .select-box-label {
+      transform: translate(6px, -6px) scale(0.846);
+    }
+  }
+}
