@@ -198,7 +198,7 @@ $(function () {
           parents.after(authenticationList)
         }
       } else {
-        if(parents.hasClass('append-authentication')) {
+        if(parents.next().hasClass('append-authentication')) {
           parents.next().remove()
         }
       }
