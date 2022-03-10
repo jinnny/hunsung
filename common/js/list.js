@@ -184,7 +184,7 @@ $(function () {
     $(document).on( 'click' , '.js-select-filter .js-select-item', function() {
       const category = $(this).attr('data-category')
       const authenticationList = `
-      <div class="select-box js-select js-select-filter">
+      <div class="select-box js-select js-select-filter append-authentication">
           <strong class="select-box__label">인증 종류</strong><span class="select-box__icon"></span>
           <div class="select-box-list">
             <span class="select-box__item js-select-item">KC인증</span>
@@ -192,8 +192,15 @@ $(function () {
             <span class="select-box__item js-select-item">어린이 인증</span>
           </div>
         </div>`
+      const parents = $(this).parents('.js-select-filter')
       if (category === 'authentication') {
-        $(this).parents('.js-select-filter').after(authenticationList)
+        if(!parents.next().hasClass('append-authentication')) {
+          parents.after(authenticationList)
+        }
+      } else {
+        if(parents.hasClass('append-authentication')) {
+          parents.next().remove()
+        }
       }
     });
   }

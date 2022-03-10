@@ -148,6 +148,17 @@
         width: calc(66.67% - 26.67px);
       }
 
+      &.long-label {
+        &.is--active,
+        &.is--complete,
+        &.is--error,
+        &.error {
+          .input__label-animation {
+            transform: translate(0, -6px) scale(0.846);
+          }
+        }
+      }
+
       &.is--active {
         .input__label-animation {
           transform: translate(7px, -6px) scale(0.846);
@@ -225,9 +236,14 @@
     font-size: 13px;
     line-height: 1;
     color: $neutral-black-32373-c;
-    padding: 15px 14px 0;
+    padding: 15px 14px 15px;
     box-sizing: border-box;
     border: none;
+    &:-webkit-autofill,
+    &:-webkit-autofill:hover,
+    &:-webkit-autofill:focus, {
+      -webkit-box-shadow: 0 0 0px 1000px $neutral-white-ffffff inset;
+    }
     &.input__file-animation {
       visibility: hidden;
       height: 0;

@@ -730,6 +730,9 @@
 .input-animation-part.two {
   width: calc(66.67% - 26.67px);
 }
+.input-animation-part.long-label.is--active .input__label-animation, .input-animation-part.long-label.is--complete .input__label-animation, .input-animation-part.long-label.is--error .input__label-animation, .input-animation-part.long-label.error .input__label-animation {
+  transform: translate(0, -6px) scale(0.846);
+}
 .input-animation-part.is--active .input__label-animation {
   transform: translate(7px, -6px) scale(0.846);
   color: #4c8cff;
@@ -796,9 +799,12 @@
   font-size: 13px;
   line-height: 1;
   color: #32373c;
-  padding: 15px 14px 0;
+  padding: 15px 14px 15px;
   box-sizing: border-box;
   border: none;
+}
+.input__input-animation:-webkit-autofill, .input__input-animation:-webkit-autofill:hover, .input__input-animation:-webkit-autofill:focus {
+  -webkit-box-shadow: 0 0 0px 1000px #fff inset;
 }
 .input__input-animation.input__file-animation {
   visibility: hidden;

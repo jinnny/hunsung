@@ -1,19 +1,29 @@
 $(function () {
 // 효과있는 입력창
+  // 사용된 클래스
+  // is--active, is--complete, is--error, error
+  // 입력후 에러난경우(형식이 틀렸을 경우): is--error
+  // 입력전에 에러난 경우(필수값인데 빼먹은 경우): error
   const inputAnimation = () => {
+    // 포커스 되었을때
     $(document).on('focus', '.input__input-animation:not(.js-date-input)', function() {
       $(this).parents('.input-animation-part').addClass('is--active');
     }).on('blur', '.input__input-animation:not(.js-date-input)' , function() {
-      // 아무것도 입력하지 않았을 때
+      // 포커스에서 나갔을때
+
       if ($(this).val().trim() === '') {
+        // 아무것도 입력하지 않았을 때
+        console.log('미입력')
         $(this).parents('.input-animation-part').removeClass('is--active');
         $(this).parents('.input-animation-part').removeClass('is--complete');
         if($(this).parents('.input-animation-part').hasClass('required')) {
           $(this).parents('.input-animation-part').addClass('error');
         }
-      }else {
+      } else {
+        console.log('입력')
         $(this).parents('.input-animation-part').addClass('is--complete');
         $(this).parents('.input-animation-part').addClass('is--complete');
+        $(this).parents('.input-animation-part').removeClass('error');
       }
     }).on('keydown', '.input__input-animation:not(.js-date-input)', function() {
       $(this).parents('.input-animation-part').removeClass('is--complete');
@@ -25,15 +35,22 @@ $(function () {
     $(document).on( 'click' , '.js-select-option .js-select-item-animation', function() {
       const option = $(this).data('option')
       const authenticationList = `
-      <div class="input-animation-part">
+      <div class="input-animation-part input-amount">
         <input type="text" class="input__input-animation" id="code">
         <label for="code" class="input__label input__label-animation">재고수량</label>
         <fieldset class="input-field-outline">
           <legend class="input-legend-text">재고수량</legend>
         </fieldset>
       </div>`
+      const parents = $(this).parents('.js-select-option')
       if (option) {
-        $(this).parents('.js-select-option').after(authenticationList)
+        if(!parents.next().hasClass('input-amount')) {
+          parents.after(authenticationList)
+        }
+      }else {
+        if(parents.next().hasClass('input-amount')) {
+          parents.next().remove()
+        }
       }
     });
   }
@@ -60,7 +77,6 @@ $(function () {
       $(this).addClass('is--selected').siblings().removeClass('is--selected');
       $($(this).parent().parent().find('.select-box__label-animation')).text($(this).text());
       $($(this).parent().parent().find('.select-box__label-animation')).addClass('is--selected');
-      console.log($(this).parents('.js-select-category'))
       if ($(this).parents('.js-select-category').hasClass('js-select-category')) {
         $('.registration4-content').addClass('show')
       }
