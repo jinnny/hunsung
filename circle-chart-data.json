@@ -1,0 +1,23 @@
+[
+  {
+    "text": "인쇄 현황",
+    "color1": "#ffda79",
+    "color2": "#ffb344",
+    "standardAmount": 234000,
+    "currentAmount": 50000
+  },
+  {
+    "text": "로타리 현황",
+    "color1": "#83c0ff",
+    "color2": "#4c8cff",
+    "standardAmount": 234000,
+    "currentAmount": 180000
+  },
+  {
+    "text": "출고 현황",
+    "color1": "#8cebd9",
+    "color2": "#35d7aa",
+    "standardAmount": 234000,
+    "currentAmount": 120000
+  }
+]

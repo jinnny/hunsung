@@ -1,0 +1,1065 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DASHBOARD_HOME_E</title>
+
+  <!-- CSS FILES.. -->
+  <link rel="stylesheet" href="common/css/style_e.css">
+  <script src="common/js/jquery-3.6.0.min.js"></script>
+  <link rel="stylesheet" href="common/scss/style.css">
+  <script src="common/js/d3.v4.min.js"></script>
+</head>
+<body>
+
+<!-- LNB BUTTON -->
+<div id="lnb-component"></div>
+
+
+<!-- DRAWER AREA -->
+<nav id="drawer-component">
+
+  <div id="drawer-logo-component">
+    <a id="drawer-logo-link-component" href="#">
+      <img src="images/E/LOGO/logo-hyunsung.webp" alt="LOGO" title="LOGO">
+      <p id="drawer-logo-p-component">Hyunsung system</p>
+    </a>
+  </div>
+
+  <ul id="drawer-main-menu-component">
+    <li class="active">
+      <div class="drawer-menu-list-icon-component"></div>
+      <span>1. Dashboard</span>
+    </li>
+    <li>
+      <div class="drawer-menu-list-icon-component"></div>
+      <span>2. Products</span>
+      <div class="drawer-right-arrow-icon-component"></div>
+
+      <ul class="drawer-sub-menu-component">
+        <li>
+          <img src="images/E/DRAWER_FILL/icon-24-x-24-line-arrow-back_sub/icon-24-x-24-line-arrow-back.webp" alt="SUB" title="SUB">
+          <span>2. Products</span>
+        </li>
+        <li>
+          <span>2-1. menu01</span>
+        </li>
+        <li>
+          <span>2-2. menu02</span>
+        </li>
+        <li>
+          <span>2-3. menu03</span>
+        </li>
+        <li>
+          <span>2-4. menu04</span>
+        </li>
+      </ul>
+    </li>
+    <li>
+      <div class="drawer-menu-list-icon-component"></div>
+      <span>3. Listings</span>
+      <div class="drawer-right-arrow-icon-component"></div>
+      <ul class="drawer-sub-menu-component">
+        <li>
+          <img src="images/E/DRAWER_FILL/icon-24-x-24-line-arrow-back_sub/icon-24-x-24-line-arrow-back.webp" alt="SUB" title="SUB">
+          <span>3. Listings</span>
+        </li>
+        <li>
+          <span>3-1. menu01</span>
+        </li>
+        <li>
+          <span>3-2. menu02</span>
+        </li>
+        <li>
+          <span>3-3. menu03</span>
+        </li>
+        <li>
+          <span>3-4. menu04</span>
+        </li>
+      </ul>
+    </li>
+    <li>
+      <div class="drawer-menu-list-icon-component"></div>
+      <span>4. Orders</span>
+      <div class="drawer-right-arrow-icon-component"></div>
+      <ul class="drawer-sub-menu-component">
+        <li>
+          <img src="images/E/DRAWER_FILL/icon-24-x-24-line-arrow-back_sub/icon-24-x-24-line-arrow-back.webp" alt="SUB" title="SUB">
+          <span>4. Orders</span>
+        </li>
+        <li>
+          <span>4-1. menu01</span>
+        </li>
+        <li>
+          <span>4-2. menu02</span>
+        </li>
+        <li>
+          <span>4-3. menu03</span>
+        </li>
+        <li>
+          <span>4-4. menu04</span>
+        </li>
+      </ul>
+    </li>
+    <li>
+      <div class="drawer-menu-list-icon-component"></div>
+      <span>5. Reports</span>
+      <div class="drawer-right-arrow-icon-component"></div>
+      <ul class="drawer-sub-menu-component">
+        <li>
+          <img src="images/E/DRAWER_FILL/icon-24-x-24-line-arrow-back_sub/icon-24-x-24-line-arrow-back.webp" alt="SUB" title="SUB">
+          <span>5. Reports</span>
+        </li>
+        <li>
+          <span>5-1. menu01</span>
+        </li>
+        <li>
+          <span>5-2. menu02</span>
+        </li>
+        <li>
+          <span>5-3. menu03</span>
+        </li>
+        <li>
+          <span>5-4. menu04</span>
+        </li>
+      </ul>
+    </li>
+    <li>
+      <div class="drawer-menu-list-icon-component"></div>
+      <span>6. 도면관리</span>
+      <div class="drawer-right-arrow-icon-component"></div>
+      <ul class="drawer-sub-menu-component">
+        <li>
+          <img src="images/E/DRAWER_FILL/icon-24-x-24-line-arrow-back_sub/icon-24-x-24-line-arrow-back.webp" alt="SUB" title="SUB">
+          <span>6. 도면관리</span>
+        </li>
+        <li>
+          <span>6-1. menu01</span>
+        </li>
+        <li>
+          <span>6-2. menu02</span>
+        </li>
+        <li>
+          <span>6-3. menu03</span>
+        </li>
+        <li>
+          <span>6-4. menu04</span>
+        </li>
+      </ul>
+    </li>
+    <li>
+      <div class="drawer-menu-list-icon-component"></div>
+      <span>7. 공정현황</span>
+      <div class="drawer-right-arrow-icon-component"></div>
+      <ul class="drawer-sub-menu-component">
+        <li>
+          <img src="images/E/DRAWER_FILL/icon-24-x-24-line-arrow-back_sub/icon-24-x-24-line-arrow-back.webp" alt="SUB" title="SUB">
+          <span>7. 공정현황</span>
+        </li>
+        <li>
+          <span>7-1. menu01</span>
+        </li>
+        <li>
+          <span>7-2. menu02</span>
+        </li>
+        <li>
+          <span>7-3. menu03</span>
+        </li>
+        <li>
+          <span>7-4. menu04</span>
+        </li>
+      </ul>
+    </li>
+    <li>
+      <div class="drawer-menu-list-icon-component"></div>
+      <span>8. 재고현황</span>
+      <div class="drawer-right-arrow-icon-component"></div>
+
+      <ul class="drawer-sub-menu-component">
+        <li>
+          <img src="images/E/DRAWER_FILL/icon-24-x-24-line-arrow-back_sub/icon-24-x-24-line-arrow-back.webp" alt="SUB" title="SUB">
+          <span>8. 재고현황</span>
+        </li>
+        <li>
+          <span>8-1. menu01</span>
+        </li>
+        <li>
+          <span>8-2. menu02</span>
+        </li>
+        <li>
+          <span>8-3. menu03</span>
+        </li>
+        <li>
+          <span>8-4. menu04</span>
+        </li>
+      </ul>
+    </li>
+    <li>
+      <div class="drawer-menu-list-icon-component"></div>
+      <span>9. 매출현황</span>
+      <div class="drawer-right-arrow-icon-component"></div>
+
+      <ul class="drawer-sub-menu-component">
+        <li>
+          <img src="images/E/DRAWER_FILL/icon-24-x-24-line-arrow-back_sub/icon-24-x-24-line-arrow-back.webp" alt="SUB" title="SUB">
+          <span>9. 매출현황</span>
+        </li>
+        <li>
+          <span>9-1. menu01</span>
+        </li>
+        <li>
+          <span>9-2. menu02</span>
+        </li>
+        <li>
+          <span>9-3. menu03</span>
+        </li>
+        <li>
+          <span>9-4. menu04</span>
+        </li>
+      </ul>
+    </li>
+    <li>
+      <div class="drawer-menu-list-icon-component"></div>
+      <span>10. 설정</span>
+      <div class="drawer-right-arrow-icon-component"></div>
+
+      <ul class="drawer-sub-menu-component">
+        <li>
+          <img src="images/E/DRAWER_FILL/icon-24-x-24-line-arrow-back_sub/icon-24-x-24-line-arrow-back.webp" alt="SUB" title="SUB">
+          <span>10. 설정</span>
+        </li>
+        <li>
+          <span>10-1. menu01</span>
+        </li>
+        <li>
+          <span>10-2. menu02</span>
+        </li>
+        <li>
+          <span>10-3. menu03</span>
+        </li>
+        <li>
+          <span>10-4. menu04</span>
+        </li>
+      </ul>
+    </li>
+  </ul>
+
+
+  <footer>© Hyunsung company.<br>All Rights Reserved</footer>
+
+</nav>
+<!-- DRAWER AREA END -->
+
+
+<!-- HEADER AREA -->
+<header id="header-component">
+  <article class="container-component">
+
+    <div class="dashboard-title-component">대시보드</div>
+
+    <div class="dashboard-notice-list-component">
+      <ul>
+        <li>
+          <span>N</span>
+          <span>[업그레이드] 2021년 3분기 업그레이드 안내</span>
+          <span>1시간 전</span>
+        </li>
+      </ul>
+      <div class="btn-dashboard-notice-list-close">
+        <img src="images/E/HEADER/icon-10-x-10-line-delete/icon-10-x-10-line-delete.webp" alt="DELETE" title="DELETE">
+      </div>
+    </div>
+
+    <div class="dashboard-right-container-component">
+      <div class="notice-container-component">
+        <div class="notice-count-component">99+</div>
+        <img src="images/E/HEADER/icon-30-x-30-notice/icon-30-x-30-notice.webp" alt="NOTICE" title="NOTICE">
+      </div>
+      <div class="notice-list-container-component">
+        <div class="notice-list-title-container-component">
+          <div class="notice-list-title-component">
+            <div class="notice-list-left-title-component">
+              <p>받은 알림</p>
+              <span>2</span>
+            </div>
+            <div class="notice-list-right-title-component">
+              <button>모두 확인</button>
+            </div>
+          </div>
+          <p><span>최근 30일 동안</span>의 알림만 보관됩니다.</p>
+        </div>
+        <div class="notice-list-check-close-container-component">
+          <div class="notice-list-check-close-item-component check">
+            <div class="notice-list-check-close-title-container">
+              <div class="notice-list-check-close-left-title-component">
+                알림 내용 내용알림 내용 내용
+              </div>
+              <div class="notice-list-check-close-right-title-component">
+                <button>확인</button>
+              </div>
+              <div class="notice-list-date-time-container-component">
+                <span>2021.11.21</span>
+                <span>|</span>
+                <span>오후 3시 30분</span>
+              </div>
+            </div>
+          </div>
+          <div class="notice-list-check-close-item-component check">
+            <div class="notice-list-check-close-title-container">
+              <div class="notice-list-check-close-left-title-component">
+                알림 내용 내용알림 내용 내용 내용이 아주 길 경우 두줄 까지 노출 놀출
+              </div>
+              <div class="notice-list-check-close-right-title-component">
+                <button>확인</button>
+              </div>
+              <div class="notice-list-date-time-container-component">
+                <span>2021.11.21</span>
+                <span>|</span>
+                <span>오후 3시 30분</span>
+              </div>
+            </div>
+          </div>
+          <div class="notice-list-check-close-item-component">
+            <div class="notice-list-check-close-title-container">
+              <div class="notice-list-check-close-left-title-component">
+                확인한 알림의 경우 우측에 삭제 버튼 노출
+              </div>
+              <div class="notice-list-check-close-right-title-component">
+                <button><img src="images/E/HEADER/icon-12-x-12-line-delete/icon-12-x-12-line-delete.webp" alt="DELETE" title="DELETE"></button>
+              </div>
+              <div class="notice-list-date-time-container-component">
+                <span>2021.11.21</span>
+                <span>|</span>
+                <span>오후 3시 30분</span>
+              </div>
+            </div>
+          </div>
+          <div class="notice-list-check-close-item-component">
+            <div class="notice-list-check-close-title-container">
+              <div class="notice-list-check-close-left-title-component">
+                알림은 시간순으로 노출 (최신이 상단에)
+              </div>
+              <div class="notice-list-check-close-right-title-component">
+                <button><img src="images/E/HEADER/icon-12-x-12-line-delete/icon-12-x-12-line-delete.webp" alt="DELETE" title="DELETE"></button>
+              </div>
+              <div class="notice-list-date-time-container-component">
+                <span>2021.11.21</span>
+                <span>|</span>
+                <span>오후 3시 30분</span>
+              </div>
+            </div>
+          </div>
+          <div class="notice-list-check-close-item-component">
+            <div class="notice-list-check-close-title-container">
+              <div class="notice-list-check-close-left-title-component">
+                알림 내용 내용알림 내용 내용
+              </div>
+              <div class="notice-list-check-close-right-title-component">
+                <button><img src="images/E/HEADER/icon-12-x-12-line-delete/icon-12-x-12-line-delete.webp" alt="DELETE" title="DELETE"></button>
+              </div>
+              <div class="notice-list-date-time-container-component">
+                <span>2021.11.21</span>
+                <span>|</span>
+                <span>오후 3시 30분</span>
+              </div>
+            </div>
+          </div>
+          <div class="notice-list-check-close-item-component">
+            <div class="notice-list-check-close-title-container">
+              <div class="notice-list-check-close-left-title-component">
+                알림은 시간순으로 노출 (최신이 상단에)
+              </div>
+              <div class="notice-list-check-close-right-title-component">
+                <button><img src="images/E/HEADER/icon-12-x-12-line-delete/icon-12-x-12-line-delete.webp" alt="DELETE" title="DELETE"></button>
+              </div>
+              <div class="notice-list-date-time-container-component">
+                <span>2021.11.21</span>
+                <span>|</span>
+                <span>오후 3시 30분</span>
+              </div>
+            </div>
+          </div>
+          <div class="notice-list-check-close-item-component">
+            <div class="notice-list-check-close-title-container">
+              <div class="notice-list-check-close-left-title-component">
+                알림 내용 내용알림 내용 내용
+              </div>
+              <div class="notice-list-check-close-right-title-component">
+                <button><img src="images/E/HEADER/icon-12-x-12-line-delete/icon-12-x-12-line-delete.webp" alt="DELETE" title="DELETE"></button>
+              </div>
+              <div class="notice-list-date-time-container-component">
+                <span>2021.11.21</span>
+                <span>|</span>
+                <span>오후 3시 30분</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="select-box-blue-component">
+        <span>관리자 님</span><img src="images/E/HEADER/icon-8-x-8-line-arrow-down/icon-8-x-8-line-arrow-down.webp" alt="ARROW DOWN" title="ARROW DOWN">
+
+        <div class="select-box-blue-option-container-component">
+          <div class="select-box-blue-option-component">
+            <div class="select-box-blue-option-img"></div>
+            <span>정보 변경</span>
+          </div>
+          <div class="select-box-blue-option-component">
+            <div class="select-box-blue-option-img"></div>
+            <span>로그아웃</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </article>
+</header>
+<!-- HEADER AREA END -->
+
+
+<!-- CONTENT AREA -->
+<section id="content-component">
+  <div class="dashboard-feed-component js-chart-feed">
+    <div class="dashboard-left-title-container-component">
+      <div class="dashboard-left-title-component">
+        <div class="dashboard-main-title-component">생산 추이</div>
+        <div class="dashboard-date-component">2021.11.20</div>
+      </div>
+      <div class="dashboard-right-title-container-component">
+        <div class="select-box-gray-component">
+          <span>금일 기준</span><img src="images/E/FEED/icon-8-x-8-line-arrow-down/icon-8-x-8-line-arrow-down.webp" alt="ARROW DOWN" title="ARROW DOWN">
+
+          <div class="select-box-blue-option-container-component">
+            <div class="select-box-blue-option-component">
+              <span>금일 기준</span>
+            </div>
+            <div class="select-box-blue-option-component">
+              <span>주간 기준</span>
+            </div>
+            <div class="select-box-blue-option-component">
+              <span>월간 기준</span>
+            </div>
+          </div>
+        </div>
+        <div class="btn-dashboard-next"><img src="images/E/FEED/icon-14-x-14-line-arrow-more/icon-14-x-14-line-arrow-more.webp" alt="ARROW RIGHT" title="ARROW RIGHT"></div>
+      </div>
+    </div>
+    <div class="dashboard-content js-dashboard-content">
+      <div class="chart-area"></div>
+      <div id="tooltip" class="tooltip" ></div>
+    </div>
+  </div>
+  <div class="dashboard-feed-component">
+    <div class="dashboard-left-title-container-component">
+      <div class="dashboard-left-title-component">
+        <div class="dashboard-main-title-component">공정현황</div>
+        <div class="dashboard-date-component">2021.11.20</div>
+      </div>
+      <div class="dashboard-right-title-container-component">
+        <div class="select-box-gray-component">
+          <span>금일 기준</span><img src="images/E/FEED/icon-8-x-8-line-arrow-down/icon-8-x-8-line-arrow-down.webp" alt="ARROW DOWN" title="ARROW DOWN">
+
+          <div class="select-box-blue-option-container-component">
+            <div class="select-box-blue-option-component">
+              <span>금일 기준</span>
+            </div>
+            <div class="select-box-blue-option-component">
+              <span>주간 기준</span>
+            </div>
+            <div class="select-box-blue-option-component">
+              <span>월간 기준</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="dashboard-list-container-component">
+      <div class="dashboard-item-container-component">
+        <div class="dashboard-pie-item-component circle-chart-area js-print-circle-chart">
+        </div>
+        <div class="dashboard-pie-title-container-component">
+          <div class="dashboard-pie-main-title-component">인쇄 현황</div>
+          <div class="dashboard-pie-sub-title-component">이즈마인 / 혼례 / 특판 인쇄현황 이즈마인 / 혼례 / 특판 인쇄현황</div>
+        </div>
+      </div>
+
+      <div class="dashboard-item-container-component">
+        <div class="dashboard-pie-item-component circle-chart-area js-rotary-circle-chart">
+        </div>
+        <div class="dashboard-pie-title-container-component">
+          <div class="dashboard-pie-main-title-component">로타리 현황</div>
+          <div class="dashboard-pie-sub-title-component">1창고 / 2창고 로타리 현황을 1창고 / 2창고 로타리 현황을</div>
+        </div>
+      </div>
+
+      <div class="dashboard-item-container-component">
+        <div class="dashboard-pie-item-component circle-chart-area js-release-circle-chart">
+        </div>
+        <div class="dashboard-pie-title-container-component">
+          <div class="dashboard-pie-main-title-component">출고 현황</div>
+          <div class="dashboard-pie-sub-title-component">출고 완료와 출고대기중을 보여 출고 완료와 출고대기중을 보여</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="dashboard-view-all-component">View All</div>
+
+  </div>
+  <div class="dashboard-feed-component">
+    <div class="feed-title-container-component">
+      <div class="feed-main-title-component">원단입고</div>
+      <div class="feed-sub-title-component">650</div>
+    </div>
+    <img class="feed-img" src="images/E/FEED/img-dashboard-wearingfabric/img-dashboard-wearingfabric.webp" alt="WEARINGFABRIC" title="WEARINGFABRIC">
+  </div>
+  <div class="dashboard-feed-component">
+    <div class="feed-title-container-component">
+      <div class="feed-main-title-component">발주현황</div>
+      <div class="feed-sub-title-component">1,289</div>
+    </div>
+    <img class="feed-img" src="images/E/FEED/img-dashboard-orderstatus/img-dashboard-orderstatus.webp" alt="ORDERSTATUS" title="ORDERSTATUS">
+  </div>
+  <div class="dashboard-feed-component">
+    <div class="feed-title-container-component">
+      <div class="feed-main-title-component">재단현황</div>
+      <div class="feed-sub-title-component">540</div>
+    </div>
+    <img class="feed-img" src="images/E/FEED/img-dashboard-foundationstatus/img-dashboard-foundationstatus.webp" alt="FOUNDATIONSTATUS" title="FOUNDATIONSTATUS">
+  </div>
+  <div class="dashboard-feed-component">
+    <div class="feed-title-container-component">
+      <div class="feed-main-title-component">패킹현황</div>
+      <div class="feed-sub-title-component">512</div>
+    </div>
+    <img class="feed-img" src="images/E/FEED/img-dashboard-packingstatus/img-dashboard-packingstatus.webp" alt="PACKINGSTATUS" title="PACKINGSTATUS">
+  </div>
+  <div class="dashboard-feed-component">
+    <div class="feed-title-container-component">
+      <div class="feed-main-title-component">출고현황</div>
+      <div class="feed-sub-title-component">495</div>
+    </div>
+    <img class="feed-img" src="images/E/FEED/img-dashboard-forwardingstatus/img-dashboard-forwardingstatus.webp" alt="FORWARDINGSTATUS" title="FORWARDINGSTATUS">
+  </div>
+  <div class="dashboard-feed-component">
+    <div class="feed-title-container-component">
+      <div class="feed-main-title-component">회수현황</div>
+      <div class="feed-sub-title-component">90</div>
+    </div>
+    <img class="feed-img" src="images/E/FEED/img-dashboard-recoverystatus/img-dashboard-recoverystatus.webp" alt="RECOVERYSTATUS" title="RECOVERYSTATUS">
+  </div>
+</section>
+<!-- CONTENT AREA END -->
+
+
+<!-- JAVASCRIPT FILES.. -->
+
+
+
+<script>
+  // 하나씩 나타나는 효과
+  let marginTopSize = 20;
+  for(let i = 1; i <= 9; i++) {
+    if(i === 3)
+      marginTopSize = 0;
+
+    $(".dashboard-feed-component").eq(i-1).delay(100*i).animate({
+      marginTop: marginTopSize + 'px',
+      opacity: 1,
+    }, 200);
+  }
+  // 하나씩 나타나는 효과
+
+  // 선형차트
+  function removeChart (element) {
+    d3.select(element).remove()
+  }
+  function drawChart (data, w, h, size) {
+    const width = w;
+    const height = h;
+    const margin = {top: 54, right: 10, bottom: 70, left: size === 'wide' ? 60: 60};
+    const startEndSpace = size === 'wide' ? 44 : 35
+    const dayArray = data[0].values.map(item =>(item.date));
+    const chartHeight = height - margin.bottom - margin.top
+
+    const x = d3.scalePoint()
+      .domain(dayArray)
+      .range([startEndSpace*2, width + (size === 'wide' ? -startEndSpace : -startEndSpace/4)])
+
+    const maxY = d3.max(data[0].values, d => d.value) >= d3.max(data[1].values, d => d.value) ? d3.max(data[0].values, d => d.value) : d3.max(data[1].values, d => d.value)
+    const y = d3.scaleLinear()
+      .domain([0, maxY]).nice()
+      .range([chartHeight + margin.top, margin.top]).clamp(true)
+
+    const xAxis =
+      g => g.attr('transform', `translate(0, ${height - 46 })`)
+      .style('font-size', `12px`).style('fill', '#4b4b4b').attr('font-weight', 800).attr('class', 'x-axis')
+      .call(
+        size === 'wide'? d3.axisBottom(x).ticks().tickFormat(d => d) : d3.axisBottom(x).ticks().tickFormat(d => d).tickValues(x.domain().filter(function(d, idx) { return idx%2==0 }))
+      )
+      .call(g => g.selectAll('line').remove())
+      .call(g => g.select('.domain').remove())
+      .call(g => g.selectAll('text').style('fill', '#9499ab')).style('font-size', `12px`).style('font-weight', 500)
+
+    const yAxis = g => g
+      .attr('transform', `translate(${margin.left},0)`).attr('class', 'y-axis')
+      .call(d3.axisLeft(y).tickFormat((d) => d.toLocaleString()))
+      .call(g => g.select('.domain').remove())
+      .call(g => g.select('.domain').remove())
+      .call(g => g.selectAll('line')
+        .attr('x2', width - margin.left)
+        .style('stroke', '#edeff4'))
+      .call(g => g.selectAll('text')
+        .style('fill', '#9499ab')).style('font-size', `12px`).style('font-weight', 500)
+
+    const line = d3.line()
+      .curve(d3.curveBasis)
+      .x(d => x(d.date))
+      .y(d => y(d.value));
+
+    const area = d3.area()
+      .curve(d3.curveBasis)
+      .x(d => x(d.date))
+      .y0(y(0))
+      .y1(d => y(d.value));
+
+    const svg = d3.select('.chart-area').append('svg').attr('class', 'chart').attr('width', width).attr('height', height);
+
+    svg.append('g').call(xAxis);
+    svg.append('g').call(yAxis);
+
+    //label
+    const labelGroup = svg.append('g')
+      .attr('transform', `translate(${width - 130}, 30)`)
+      .attr('class', 'label')
+    const label1Marker = labelGroup.append('g')
+    label1Marker.append('text')
+      .text('생산')
+      .attr('font-size','14')
+      .attr('fill', '#4b4b4b')
+    label1Marker.append('rect')
+      .attr('class', 'myPoint')
+      .attr('rx', 3).attr('ry', 3).attr('x', 0).attr('y', 0).attr('width', 12).attr('height', 5)
+      .attr('fill', data[0].color)
+      .attr("transform", "translate(30,-6)");
+
+    const label2Marker = labelGroup.append('g').attr("transform", "translate(60,0)");
+    label2Marker.append('text')
+      .text('매출')
+      .attr('font-size','14')
+      .attr('fill', '#4b4b4b')
+    label2Marker.append('rect')
+      .attr('class', 'myPoint')
+      .attr('rx', 3).attr('ry', 3).attr('x', 0).attr('y', 0).attr('width', 12).attr('height', 5)
+      .attr('fill', data[1].color)
+      .attr("transform", "translate(30,-6)");
+
+    // 선1 -- 그림자
+    const line1Shadow = svg.append("defs")
+      .append("filter")
+      .attr("id", "dropshadow")
+      .append("feDropShadow")
+      .attr("dx", 0)
+      .attr("dy", 5)
+      .attr("stdDeviation", 0.5)
+      .attr("flood-color", 'rgba(0, 0, 0, 0.08)');
+
+    // 선1 -- 영역그라데이션추가
+    const grad = svg.append('defs').append('linearGradient')
+      .attr('id', 'grad')
+      .attr('x1', '0%')
+      .attr('x2', '0%')
+      .attr('y1', '0%')
+      .attr('y2', '100%');
+
+    grad.append('stop')
+      .attr('offset', '50%')
+      .style('stop-color', 'rgba(34, 113, 255, 0.15)')
+      .style('stop-opacity', 1);
+
+    grad.append('stop')
+      .attr('offset', '100%')
+      .style('stop-color', 'rgba(128, 214, 255, 0.02')
+      .style('stop-opacity', 0);
+
+
+    // 선1 데이터
+    const value1 = data[0].values
+    // 선2 데이터
+    const value2 = data[1].values
+    // 선1 -- 영역 추가
+    svg.append('path')
+      .datum(value1)
+      .style('fill', 'url(#grad)')
+      .attr('d', line)
+      .attr('d', area)
+      .attr('class', 'area')
+
+    // 선1 -- 선추가
+    svg.append('path')
+      .datum(value1)
+      .attr('fill', 'none')
+      .attr('stroke', '#4c8cff')
+      .attr('stroke-width', 2.5)
+      .attr('stroke-linejoin', 'round')
+      .attr('stroke-linecap', 'round')
+      .attr('d', line)
+      .attr('class', 'path line')
+
+
+    // 선1 -- 선추가
+    svg.append('path')
+      .datum(value1)
+      .attr('fill', 'none')
+      .attr('stroke', '#4c8cff')
+      .attr('stroke-width', 2.5)
+      .attr('stroke-linejoin', 'round')
+      .attr('stroke-linecap', 'round')
+      .attr('d', line)
+      .attr('class', 'path shadow')
+
+    const areaOutlineT = d3.select('.area')
+    const clipPath = svg.append('clipPath').attr('id', 'clip1')
+    const clip = clipPath.append('rect').attr('class','clip-path')
+    clip.attr('x', -width).attr('y', 0).attr('width', width).attr('height', height);
+
+    const pathOutline = document.querySelector('.path');
+    const pathOutlineT = d3.select('.path');
+    const pathLineL = pathOutline.getTotalLength();
+
+    areaOutlineT.attr('id', 'poly-1').attr('clip-path', `url('#clip1')`)
+    pathOutlineT.attr('stroke-dasharray', pathLineL).attr('stroke-dashoffset', pathLineL)
+    clip.transition().duration(1500).ease(d3.easeQuadInOut).attr('transform', `matrix(1,0,0,1,${width},0)`)
+
+    // 선2
+
+
+    // 선2 -- 영역그라데이션추가
+    const grad2 = svg.append('defs').append('linearGradient')
+      .attr('id', 'grad2')
+      .attr('x1', '0%')
+      .attr('x2', '0%')
+      .attr('y1', '0%')
+      .attr('y2', '100%');
+
+    grad2.append('stop')
+      .attr('offset', '16%')
+      .style('stop-color', 'rgba(53, 215, 170, 0.2)')
+      .style('stop-opacity', 1);
+
+    grad2.append('stop')
+      .attr('offset', '100%')
+      .style('stop-color', 'rgba(53, 215, 170, 0.02)')
+      .style('stop-opacity', 0);
+
+
+    //선2 -- 영역 추가
+    svg.append('path')
+      .datum(value2)
+      .style('fill', 'url(#grad2)')
+      .attr('d', line)
+      .attr('d', area)
+      .attr('class', 'area2')
+
+    // 선2 -- 선추가
+    svg.append('path')
+      .datum(value2)
+      .attr('fill', 'none')
+      .attr('stroke', '#35d7aa')
+      .attr('stroke-width', 2.5)
+      .attr('stroke-linejoin', 'round')
+      .attr('stroke-linecap', 'round')
+      .attr('d', line)
+      .attr('class', 'path2 line')
+
+    // 선2 -- 선 그림자
+    svg.append('path')
+      .datum(value2)
+      .attr('fill', 'none')
+      .attr('stroke', '#35d7aa')
+      .attr('stroke-width', 2.5)
+      .attr('stroke-linejoin', 'round')
+      .attr('stroke-linecap', 'round')
+      .attr('d', line)
+      .attr('class', 'path2 shadow')
+
+    const area2OutlineT = d3.select('.area2')
+    const clipPath2 = svg.append('clipPath').attr('id', 'clip2')
+    const clip2 = clipPath2.append('rect').attr('class','clip-path')
+    clip2.attr('x', -width).attr('y', 0).attr('width', width).attr('height', height);
+
+    const pathOutline2 = document.querySelector('.path2');
+    const pathOutlineT2 = d3.select('.path2');
+    const pathLineL2 = pathOutline2.getTotalLength();
+
+    area2OutlineT.attr('id', 'poly-1').attr('clip-path', `url('#clip2')`)
+    pathOutlineT2.attr('stroke-dasharray', pathLineL2).attr('stroke-dashoffset', pathLineL2)
+    clip2.transition().duration(1500).ease(d3.easeQuadInOut).attr('transform', `matrix(1,0,0,1,${width},0)`)
+
+
+    const tooltip = d3.select('#tooltip');
+    const mouseG = svg.append("g")
+      .attr("class", "mouse-over-effects")
+
+    mouseG.append("path")
+      .attr("class", "mouse-line")
+      .style("stroke", "#4c8cff")
+      .style("stroke-width", "1px")
+      .style("opacity", "0");
+
+    const lines = document.getElementsByClassName('line');
+
+    const mousePerLine = mouseG.selectAll('.mouse-per-line')
+      .data(data)
+      .enter()
+      .append("g")
+      .attr("class", "mouse-per-line");
+
+    mousePerLine.append("circle")
+      .attr("r", 3.5)
+      .style("stroke", (d) => {
+        return d.color;
+      })
+      .style("fill", (d) => {
+        return d.color;
+      })
+      .style("stroke-width", "1px")
+      .style("opacity", "0");
+
+    mousePerLine.append("text")
+      .attr("transform", "translate(10,3)");
+
+    mouseG.append('svg:rect')
+      .attr('width', width -  (size === 'wide' ? startEndSpace*3 : startEndSpace*2 + startEndSpace/4))
+      .attr('height', height - margin.bottom)
+      .attr("transform", `translate(${startEndSpace*2},${margin.top})`)
+      .attr('fill', 'none')
+      .attr('pointer-events', 'all')
+      .on('mouseout', function() {
+        d3.select(".mouse-line")
+          .style("opacity", "0");
+        d3.selectAll(".mouse-per-line circle")
+          .style("opacity", "0");
+        d3.selectAll(".mouse-per-line text")
+          .style("opacity", "0");
+        removeTooltip()
+      })
+      .on('mouseover', function() {
+        d3.select(".mouse-line")
+          .style("opacity", "1");
+        d3.selectAll(".mouse-per-line circle")
+          .style("opacity", "1");
+        d3.selectAll(".mouse-per-line text")
+          .style("opacity", "1");
+      })
+      .on('mousemove', function() {
+        const mouse = d3.mouse(this),
+          xPos = mouse[0] + startEndSpace*2,
+          domain = x.domain(),
+          range = x.range(),
+          rangePoints = d3.range(range[0]-(startEndSpace), range[1]-(startEndSpace), x.step()),
+          yPos = domain[d3.bisect(rangePoints, (xPos - startEndSpace*2))];
+
+        d3.select(".mouse-line")
+          .attr("d", function() {
+            let d = "M" + xPos + "," + (height - margin.bottom);
+            d += " " + xPos + "," + 54;
+            return d;
+          });
+        d3.selectAll(".mouse-per-line")
+          .attr("transform", function(d, i) {
+            let pos,
+              beginning = 0,
+              end = lines[i].getTotalLength(),
+              target = null;
+
+            while (true){
+              target = Math.floor((beginning + end) / 2);
+              pos = lines[i].getPointAtLength(target);
+              if ((target === end || target === beginning) && pos.x !== xPos) {
+                break;
+              }
+              if (pos.x > xPos)      end = target;
+              else if (pos.x < xPos) beginning = target;
+              else break;
+            }
+
+            return "translate(" + xPos + "," + pos.y +")";
+          });
+        tooltip.html(yPos)
+          .style('display', 'block')
+          .style('left', size !== 'wide' && d3.event.pageX > 600 ? `calc(${ d3.event.pageX }px - 42vw)`: `calc(${d3.event.pageX}px - 15vw)`)
+          // .style(d3.event.pageX > 600 ? 'left': 'right','auto')
+          // .style('left', `calc(${d3.event.pageX}px - 15vw)`)
+          .style('top', `calc(${d3.event.pageY - 200}px)`)
+          .selectAll()
+          .data(data).enter()
+          .append('div')
+          .attr('class', 'tooltip-content')
+          .style('color',d => d.color)
+          .html(d => d.name + ': ' + d.values.find(h => h.date === yPos)?.value)
+          .append('div')
+          .attr('class', 'tooltip-content-data')
+          .html(d =>
+            `<span class="tooltip-content-data__data in">
+                <span class="data-label in">IN </span>
+                <span class="data-data">
+                  <img src="images/E/DASHBOARD/in-icon.svg" alt="">
+                  ${d.values.find(h => h.date === yPos)?.in}
+                </span>
+              </span>
+              <span class="tooltip-content-data-line"></span>
+              <span class="tooltip-content-data__data out">
+                <span class="data-label out">OUT </span>
+                <span class="data-data">
+                 <img src="images/E/DASHBOARD/out-icon.svg" alt="">
+                ${d.values.find(h => h.date === yPos)?.out}
+                </div>
+              </span>
+              `
+          )
+      });
+
+    function removeTooltip() {
+      if (tooltip) tooltip.style('display', 'none');
+    }
+  }
+
+  const jsonLocation = 'line-chart-data.json';
+  $.getJSON(jsonLocation, function (data) {
+    window.addEventListener('load', function(event) {
+      const content = document.querySelector('.js-chart-feed')
+      const innerContent = document.querySelector('.js-dashboard-content')
+      const width = document.querySelector('body').clientWidth
+      if(width <= 1050) {
+        drawChart(data, innerContent.clientWidth, content.clientHeight - 68, 'narrow')
+      }else {
+        drawChart(data, innerContent.clientWidth, content.clientHeight - 68, 'wide')
+      }
+    })
+    window.addEventListener('resize', function(event) {
+      removeChart('.chart')
+      const content = document.querySelector('.js-chart-feed')
+      const innerContent = document.querySelector('.js-dashboard-content')
+      const width = document.querySelector('body').clientWidth
+      if(width <= 1050) {
+        drawChart(data, innerContent.clientWidth, content.clientHeight - 68, 'narrow')
+      }else {
+        drawChart(data, innerContent.clientWidth, content.clientHeight - 68, 'wide')
+      }
+    })
+  })
+  // 선형차트
+
+  //원차트
+  const jsonCircleChart = 'circle-chart-data.json';
+  $.getJSON(jsonCircleChart, function (data) {
+    circleChart('js-print-circle-chart', data[0])
+    circleChart('js-rotary-circle-chart', data[1])
+    circleChart('js-release-circle-chart', data[2])
+  })
+  function circleChart (element, data) {
+    const width = 90,
+      height = 90,
+      twoPi = -2 * Math.PI,
+      current = data.currentAmount,
+      max = data.standardAmount,
+      arc = d3.arc()
+        .startAngle(0)
+        .innerRadius(width/3-1)
+        .outerRadius(width/3-1),
+      smallArc = d3.arc()
+        .startAngle(0)
+        .innerRadius(width/2-8)
+        .outerRadius(width/2-8)
+    let progress = 0
+    const ratio = parseInt(current/max*100)
+
+    const svg = d3.select(`.${element}`)
+      .append('svg')
+      .attr('class',`${element}-svg`)
+      .attr('width', width)
+      .attr('height', height)
+      .append('g')
+      .attr('transform', 'translate(' + width / 2 + ',' + height / 2 + ')');
+
+    const grad = svg.append('defs').append('linearGradient')
+      .attr('id', `${element}-grid`)
+      .attr('x1', '0%')
+      .attr('x2', '0%')
+      .attr('y1', '0%')
+      .attr('y2', '100%')
+
+    grad.append('stop')
+      .attr('offset', '0%')
+      .style('stop-color', data.color1);
+
+    grad.append('stop')
+      .attr('offset', '100%')
+      .style('stop-color', data.color2);
+
+    svg.append('path')
+      .attr('class', 'inner-circle')
+      .attr('stroke-width','5')
+      .attr('stroke', '#edeff4')
+      .attr('d', arc.endAngle(twoPi));
+
+    const foreground = svg.append('path')
+      .attr('class', 'foreground').attr('stroke-width','5')
+      .attr('stroke',`url(#${element}-grid)`)
+      .attr('fill','none')
+      .attr('stroke-linecap','round')
+      .attr('stroke-linejoin','round')
+
+    svg.append('text').datum(progress)
+      .attr('class','text-percentage')
+      .attr('fill', '#32373c')
+      .attr('font-size', '16')
+      .attr('text-anchor', 'middle')
+      .attr('y',5)
+      .attr('font-weight', '800')
+
+
+    // 가운데 수치표시
+    function countText(time,progress){
+      const textPercentageContainer = d3.select(`.${element} .text-percentage`);
+      let i = 0;
+      const intervalTime = Math.abs(time / progress)
+      if(progress > 100) {
+        const timerID = setInterval(function () {
+          i++;
+          textPercentageContainer.html(`${i}%`);
+          if (i === Math.abs(progress-100)) clearInterval(timerID);
+        }, intervalTime);
+      }else if(progress === 100) {
+        const timerID = setInterval(function () {
+          i++;
+          textPercentageContainer.html(`${i}%`);
+          if (i === Math.abs(progress)) clearInterval(timerID);
+        }, intervalTime);
+      }else {
+        const timerID = setInterval(function () {
+          i++;
+          textPercentageContainer.html(`${i}%`);
+          if (i === Math.abs(progress)) clearInterval(timerID);
+        }, intervalTime);
+      }
+    }
+    countText(1300,ratio);
+
+    const maxCompare = current / max > 1 ? 1 : (current / max)
+    const i = d3.interpolate(progress, maxCompare);
+    foreground.transition().duration(500).delay(500).tween('progress', function() {
+      return function(t) {
+        progress = i(t);
+        foreground.attr('d', smallArc.endAngle(twoPi * (progress)));
+      };
+    })
+  }
+  //원차트
+</script>
+
+</body>
+</html>

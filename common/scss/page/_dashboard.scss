@@ -1,0 +1,113 @@
+.dashboard-content {
+  .dashboard-left-title-container-component {
+  }
+  .x-axis {
+    //@include respond-to(1030) {
+    //  font-size: 11px !important;
+    //}
+    .tick {
+      &:last-child {
+        text {
+          @media screen and (max-width: 1050px) {
+            transform: translate(-12px, 0);
+          }
+          @media screen and (max-width: 900px) {
+            //transform: translate(-10px, 0);
+          }
+        }
+      }
+    }
+  }
+  .x-axis .tick:hover text {
+    fill: #32373c !important;
+  }
+  .y-axis .tick:nth-child(even):not(:last-child) {
+    line {
+      stroke-dasharray: 4;
+    }
+    text {
+      display: none;
+    }
+  }
+
+  .path {
+    -moz-animation: lineani 1.3s linear forwards;
+    -webkit-animation: lineani 1.3s linear forwards;
+    animation: lineani 1.3s linear forwards;
+  }
+  @-moz-keyframes lineani {
+    to {
+      stroke-dashoffset: 0;
+    }
+  }
+  @-webkit-keyframes lineani {
+    to {
+      stroke-dashoffset: 0;
+    }
+  }
+  @keyframes lineani {
+    to {
+      stroke-dashoffset: 0;
+    }
+  }
+  .shadow {
+    filter: url('#dropshadow');
+  }
+  .dashboard-content {
+    position: relative;
+    .chart-area {
+      width: 100%;
+      height: 320px;
+    }
+  }
+  .tooltip {
+    z-index: 100;
+    display: none;
+    padding: 12px 21px 12px 20px;
+    position: absolute;
+    border-radius: 4px;
+    box-shadow: 0 2px 8px 0 rgba(39, 70, 127, 0.3);
+    border: solid 1px #4c8cff;
+    background-color: rgba(255, 255, 255, 0.95);
+    text-align: center;
+    font-size: 14px;
+    .tooltip-content {
+      margin-top: 17px;
+    }
+    .data-data {
+      font-size: 14px;
+      color: #32373c;
+    }
+    .data-label {
+      font-size: 12px;
+      display: block;
+    }
+    .tooltip-content-data {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-top: 12px;
+      position: relative;
+      height: 45px;
+      &-line {
+        position: absolute;
+        left: 50%;
+        top: 0;
+        width: 1px;
+        height: 45px;
+        background-color: #e8f0ff;
+      }
+      &__data {
+        width: 80px;
+        display: inline-block;
+        &.in {
+          position: relative;
+          color: #ff4d75;
+        }
+        &.out {
+          color: #4c8cff;
+        }
+      }
+    }
+  }
+}
