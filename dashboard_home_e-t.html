@@ -595,13 +595,13 @@
 
     const xAxis =
       g => g.attr('transform', `translate(0, ${height - 46 })`)
-      .style('font-size', `12px`).style('fill', '#4b4b4b').attr('font-weight', 800).attr('class', 'x-axis')
-      .call(
-        size === 'wide'? d3.axisBottom(x).ticks().tickFormat(d => d) : d3.axisBottom(x).ticks().tickFormat(d => d).tickValues(x.domain().filter(function(d, idx) { return idx%2==0 }))
-      )
-      .call(g => g.selectAll('line').remove())
-      .call(g => g.select('.domain').remove())
-      .call(g => g.selectAll('text').style('fill', '#9499ab')).style('font-size', `12px`).style('font-weight', 500)
+        .style('font-size', `12px`).style('fill', '#4b4b4b').attr('font-weight', 800).attr('class', 'x-axis')
+        .call(
+          size === 'wide'? d3.axisBottom(x).ticks().tickFormat(d => d) : d3.axisBottom(x).ticks().tickFormat(d => d).tickValues(x.domain().filter(function(d, idx) { return idx%2==0 }))
+        )
+        .call(g => g.selectAll('line').remove())
+        .call(g => g.select('.domain').remove())
+        .call(g => g.selectAll('text').style('fill', '#9499ab')).style('font-size', `12px`).style('font-weight', 500)
 
     const yAxis = g => g
       .attr('transform', `translate(${margin.left},0)`).attr('class', 'y-axis')
@@ -838,21 +838,15 @@
       .attr('fill', 'none')
       .attr('pointer-events', 'all')
       .on('mouseout', function() {
-        d3.select(".mouse-line")
-          .style("opacity", "0");
-        d3.selectAll(".mouse-per-line circle")
-          .style("opacity", "0");
-        d3.selectAll(".mouse-per-line text")
-          .style("opacity", "0");
+        d3.select(".mouse-line").style("opacity", "0");
+        d3.selectAll(".mouse-per-line circle").style("opacity", "0");
+        d3.selectAll(".mouse-per-line text").style("opacity", "0");
         removeTooltip()
       })
       .on('mouseover', function() {
-        d3.select(".mouse-line")
-          .style("opacity", "1");
-        d3.selectAll(".mouse-per-line circle")
-          .style("opacity", "1");
-        d3.selectAll(".mouse-per-line text")
-          .style("opacity", "1");
+        d3.select(".mouse-line").style("opacity", "1");
+        d3.selectAll(".mouse-per-line circle").style("opacity", "1");
+        d3.selectAll(".mouse-per-line text").style("opacity", "1");
       })
       .on('mousemove', function() {
         const mouse = d3.mouse(this),
@@ -890,9 +884,8 @@
           });
         tooltip.html(yPos)
           .style('display', 'block')
-          .style('left', size !== 'wide' && d3.event.pageX > 600 ? `calc(${ d3.event.pageX }px - 42vw)`: `calc(${d3.event.pageX}px - 15vw)`)
-          // .style(d3.event.pageX > 600 ? 'left': 'right','auto')
-          // .style('left', `calc(${d3.event.pageX}px - 15vw)`)
+          .style('left', leftPosition())
+          // .style('left',`calc(${ d3.event.pageX }px - 30vw)`)
           .style('top', `calc(${d3.event.pageY - 200}px)`)
           .selectAll()
           .data(data).enter()
@@ -904,57 +897,219 @@
           .attr('class', 'tooltip-content-data')
           .html(d =>
             `<span class="tooltip-content-data__data in">
-                <span class="data-label in">IN </span>
-                <span class="data-data">
-                  <img src="images/E/DASHBOARD/in-icon.svg" alt="">
-                  ${d.values.find(h => h.date === yPos)?.in}
-                </span>
-              </span>
-              <span class="tooltip-content-data-line"></span>
-              <span class="tooltip-content-data__data out">
-                <span class="data-label out">OUT </span>
-                <span class="data-data">
-                 <img src="images/E/DASHBOARD/out-icon.svg" alt="">
-                ${d.values.find(h => h.date === yPos)?.out}
-                </div>
-              </span>
-              `
+                            <span class="data-label in">IN </span>
+                            <span class="data-data">
+                              ${d.values.find(h => h.date === yPos)?.in}
+                            </span>
+                          </span>
+                          <span class="tooltip-content-data-line"></span>
+                          <span class="tooltip-content-data__data out">
+                            <span class="data-label out">OUT </span>
+                            <span class="data-data">
+                            ${d.values.find(h => h.date === yPos)?.out}
+                            </div>
+                          </span>
+                      `
           )
-      });
+      })
+
+    function leftPosition () {
+      const width = document.querySelector('body').clientWidth
+      console.log(size, width, svg.event, d3.event.layerX, d3.event.pageX)
+      if(size === 'wide') {
+        return `${d3.event.layerX + 20}px`
+      }else {
+        if (d3.event.pageX <= 400 ) {
+          return `${d3.event.layerX + 20}px`
+        } else {
+          if(width <= 810) {
+            return `${d3.event.layerX - 250}px`
+          }
+          if(width <= 950) {
+            return `${d3.event.layerX - 250}px`
+          }
+          return `calc(${d3.event.pageX}px - 30vw)`
+        }
+      }
+    }
 
     function removeTooltip() {
       if (tooltip) tooltip.style('display', 'none');
     }
   }
 
-  const jsonLocation = 'line-chart-data.json';
-  $.getJSON(jsonLocation, function (data) {
-    window.addEventListener('load', function(event) {
-      const content = document.querySelector('.js-chart-feed')
-      const innerContent = document.querySelector('.js-dashboard-content')
-      const width = document.querySelector('body').clientWidth
-      if(width <= 1050) {
-        drawChart(data, innerContent.clientWidth, content.clientHeight - 68, 'narrow')
-      }else {
-        drawChart(data, innerContent.clientWidth, content.clientHeight - 68, 'wide')
-      }
-    })
-    window.addEventListener('resize', function(event) {
-      removeChart('.chart')
-      const content = document.querySelector('.js-chart-feed')
-      const innerContent = document.querySelector('.js-dashboard-content')
-      const width = document.querySelector('body').clientWidth
-      if(width <= 1050) {
-        drawChart(data, innerContent.clientWidth, content.clientHeight - 68, 'narrow')
-      }else {
-        drawChart(data, innerContent.clientWidth, content.clientHeight - 68, 'wide')
-      }
-    })
+  const lineChartData = [
+    {
+      "name": "생산",
+      "color": "#4c8cff",
+      "values": [
+        {
+          "date": "10월 1주",
+          "value": 23775,
+          "in": "1K",
+          "out": "2K"
+        },
+        {
+          "date": "10월 2주",
+          "value": 34268,
+          "in": "2K",
+          "out": "3K"
+        },
+        {
+          "date": "10월 3주",
+          "value": 56772,
+          "in": "4K",
+          "out": "5K"
+        },
+        {
+          "date": "10월 4주",
+          "value": 69073,
+          "in": "2K",
+          "out": "3K"
+        },
+        {
+          "date":  "11월 1주",
+          "value": 105862,
+          "in": "10K",
+          "out": "2K"
+        },
+        {
+          "date": "11월 2주",
+          "value": 34268,
+          "in": "5K",
+          "out": "4K"
+        },
+        {
+          "date": "11월 3주",
+          "value": 10000,
+          "in": "40K",
+          "out": "35K"
+        },
+        {
+          "date": "11월 4주",
+          "value": 23667,
+          "in": "4K",
+          "out": "35K"
+        },
+        {
+          "date":  "11월 5주",
+          "value": 29760,
+          "in": "20K",
+          "out": "25K"
+        },
+        {
+          "date": "12월 1주",
+          "value": 33871,
+          "in": "30K",
+          "out": "45K"
+        },
+        {
+          "date": "12월 2주",
+          "value": 37253,
+          "in": "5K",
+          "out": "3K"
+        }
+      ]
+    },
+    {
+      "name": "매출",
+      "color": "#35d7aa",
+      "values": [
+        {
+          "date": "10월 1주",
+          "value": 100000,
+          "in": "40K",
+          "out": "35K"
+        },
+        {
+          "date": "10월 2주",
+          "value": 36684,
+          "in": "4K",
+          "out": "3K"
+        },
+        {
+          "date": "10월 3주",
+          "value": 48423,
+          "in": "40K",
+          "out": "35K"
+        },
+        {
+          "date": "10월 4주",
+          "value": 52561,
+          "in": "2K",
+          "out": "5K"
+        },
+        {
+          "date": "11월 1주",
+          "value": 63717,
+          "in": "40K",
+          "out": "35K"
+        },
+        {
+          "date": "11월 2주",
+          "value": 78231,
+          "in": "10K",
+          "out": "20K"
+        },
+        {
+          "date": "11월 3주",
+          "value": 88750,
+          "in": "40K",
+          "out": "35K"
+        },
+        {
+          "date": "11월 4주",
+          "value": 10000,
+          "in": "40K",
+          "out": "35K"
+        },
+        {
+          "date": "11월 5주",
+          "value": 92952,
+          "in": "40K",
+          "out": "35K"
+        },
+        {
+          "date": "12월 1주",
+          "value": 99384,
+          "in": "10K",
+          "out": "20K"
+        },
+        {
+          "date": "12월 2주",
+          "value": 98836,
+          "in": "4K",
+          "out": "3K"
+        }
+      ]
+    }
+  ]
+
+  $(window).on('load', function (e) {
+    const content = document.querySelector('.js-chart-feed')
+    const innerContent = document.querySelector('.js-dashboard-content')
+    const width = document.querySelector('body').clientWidth
+    if(width <= 1100) {
+      drawChart(lineChartData, innerContent.clientWidth, content.clientHeight - 68, 'narrow')
+    }else {
+      drawChart(lineChartData, innerContent.clientWidth, content.clientHeight - 68, 'wide')
+    }
+  })
+  window.addEventListener('resize', function(event) {
+    removeChart('.chart')
+    const content = document.querySelector('.js-chart-feed')
+    const innerContent = document.querySelector('.js-dashboard-content')
+    const width = document.querySelector('body').clientWidth
+    if(width <= 1100) {
+      drawChart(lineChartData, innerContent.clientWidth, content.clientHeight - 68, 'narrow')
+    }else {
+      drawChart(lineChartData, innerContent.clientWidth, content.clientHeight - 68, 'wide')
+    }
   })
   // 선형차트
 
   //원차트
-  const jsonCircleChart = 'circle-chart-data.json';
+  const jsonCircleChart = '/assets/json/circle-chart-data.json';
   $.getJSON(jsonCircleChart, function (data) {
     circleChart('js-print-circle-chart', data[0])
     circleChart('js-rotary-circle-chart', data[1])
