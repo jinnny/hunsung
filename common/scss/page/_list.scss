@@ -1,8 +1,14 @@
+.container-component {
+  display: flex;
+  justify-content: space-between;
+  height: 100%;
+}
 .header-page-info {
   font-size: 14px;
   color: $neutral-gray-9499-ab;
-  margin: 26px 0 0 20px;
-  display: inline-block;
+  margin: 0 0 0 20px;
+  display: inline-flex;
+  align-items: center;
   &__current {
     color: $primary-blue-4-c-8-cff;
     text-decoration: underline;

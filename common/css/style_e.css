@@ -201,7 +201,7 @@ button {
 #drawer-main-menu-component > li:nth-child(10) .drawer-menu-list-icon-component {
     background-image: url(../../images/E/DRAWER_FILL/icon-24-x-24-fill-setting/icon-24-x-24-fill-setting.webp);
 }
-#drawer-main-menu-component > li > span {
+#drawer-main-menu-component > li span {
     color: #9499ab;
     font-size: 14px;
     float: left;
@@ -218,6 +218,13 @@ button {
     height: 46px;
     background-color: #4c8cff;
 }
+
+#drawer-component #drawer-main-menu-component .menu__link {
+    color: #9499ab;
+    font-size: 14px;
+    float: left;
+}
+
 #drawer-main-menu-component > li:nth-child(1).active .drawer-menu-list-icon-component {
     background-image: url(../../images/E/DRAWER_FILL/icon-24-x-24-fill-dashboard_selected/icon-24-x-24-fill-dashboard.webp);
 }
@@ -288,7 +295,7 @@ button {
 #drawer-main-menu-component > li.active .drawer-right-arrow-icon-component {
     background-image: url(../../images/E/DRAWER_FILL/icon-10-x-10-line-arrow-right_selected/icon-10-x-10-line-arrow-right.webp) !important;
 }
-#drawer-main-menu-component > li.active > span {
+#drawer-main-menu-component > li.active span {
     font-weight: bold;
     color: #32373c;
 }
@@ -634,7 +641,7 @@ footer {
     padding: 0 12px;
     line-height: 36px;
     cursor: pointer;
-    margin-top: 17px;
+    margin-top: 13px;
     font-size: 14px;
     position: relative;
 }
@@ -726,7 +733,7 @@ footer {
     background-color: #ffffff;
     float: left;
     margin-top: 10%;
-    opacity: 0;
+    /*opacity: 0;*/
     position: relative;
 }
 
@@ -843,7 +850,6 @@ footer {
 .dashboard-left-title-container-component {
     width: 100%;
     height: 68px;
-    float: left;
 }
 .dashboard-left-title-component {
     float: left;
@@ -930,8 +936,8 @@ footer {
 }
 
 .dashboard-pie-item-component {
-    width: 76px;
-    height: 76px;
+    width: 90px;
+    height: 90px;
     float: left;
     margin: 10px 0;
 }
@@ -939,7 +945,7 @@ footer {
     transform: rotate(-180deg);
 } */
 .dashboard-pie-title-container-component {
-    width: calc(100% - 94px);
+    width: calc(100% - 108px);
     float: left;
     margin-left: 18px;
     border-bottom: dashed 1px #dadde4;
