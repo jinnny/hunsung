@@ -3844,3 +3844,526 @@
 .condition-text-success {
   color: #2fd0a3;
 }
+
+.select-box.width--120 {
+  width: 120px;
+}
+.select-box.width--143 {
+  width: 143px;
+}
+.select-box.full {
+  width: 100%;
+}
+.select-box.is--disabled {
+  cursor: default;
+  border: solid 1px #e6e9f0;
+  background-color: #f6f7fc;
+}
+.select-box.is--disabled .select-box__label {
+  color: #dadde4;
+}
+.select-box.is--disabled .select-box__icon {
+  opacity: 0.2;
+}
+
+.schedule-top {
+  padding: 17px 0 17px 24px;
+  border-radius: 6px;
+  box-shadow: 0 0 5px 0 rgba(39, 70, 127, 0.05);
+  background-color: #fff;
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+.schedule-top .select-box + .schedule-top-label {
+  margin-left: 45px;
+}
+.schedule-top-label {
+  font-size: 13px;
+  font-weight: 500;
+  margin-right: 20px;
+  color: #32373c;
+  padding-left: 9px;
+  position: relative;
+}
+.schedule-top-label:before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: calc(50% - 1.5px);
+  width: 3px;
+  height: 3px;
+  border-radius: 50%;
+  background-color: #32373c;
+}
+.schedule-tab-content .shop-setting-button {
+  width: 56px;
+  height: 28px;
+  border-radius: 14px;
+  border: solid 1px #edeff4;
+  background-color: #fff;
+  color: #9499ab;
+  font-size: 12px;
+  margin-right: 8px;
+}
+.schedule-tab-content .shop-setting-button:hover {
+  border-color: #dadde4;
+}
+.schedule-tab-content .shop-setting-button.is--active {
+  color: #fff;
+  border-color: #2fd0a3;
+  background-color: #2fd0a3;
+}
+
+.schedule-layer-content {
+  border-radius: 10px;
+  box-shadow: 0 4px 15px 0 rgba(0, 0, 0, 0.15);
+  border: solid 1px #e6e6e6;
+  background-color: #fff;
+  z-index: 10;
+}
+.schedule-layer-content__title {
+  font-size: 16px;
+  font-weight: 600;
+  color: #32373c;
+}
+.schedule-layer-content .schedule-layer-button {
+  display: inline-flex;
+  width: 90px;
+  font-size: 13px;
+  font-weight: 500;
+  color: #808596;
+  align-items: center;
+  justify-content: center;
+  height: 32px;
+  padding: 8px 0;
+  border-radius: 16px;
+  border: solid 1px #dadde4;
+  background-color: #fff;
+}
+.schedule-layer-content .schedule-layer-button.confirm {
+  background-color: #4c8cff;
+  margin-left: 8px;
+  color: #fff;
+  border-color: #4c8cff;
+}
+.schedule-layer-content .schedule-layer-button:disabled {
+  background-color: #dadde4;
+  border-color: #dadde4;
+}
+.schedule-layer-content .schedule-layer-button-area {
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  height: 64px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #f6f7fc;
+}
+
+.shop-setting {
+  display: none;
+  width: 424px;
+  height: 570px;
+  position: absolute;
+  top: 60px;
+  left: 445px;
+  padding: 0 20px;
+}
+@media screen and (max-height: 900px) {
+  .shop-setting {
+    max-height: 40vh;
+  }
+}
+.shop-setting-header {
+  padding: 0 4px;
+  height: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.shop-setting .shop-setting-radio-label {
+  font-size: 12px;
+  font-weight: normal;
+  color: #808596;
+  margin-right: 8px;
+}
+.shop-setting .shop-setting-radio-label b {
+  font-weight: normal;
+  font-size: 12px;
+  color: #4c8cff;
+}
+.shop-setting-list {
+  height: 436px;
+  overflow-y: auto;
+  padding-right: 5px;
+}
+@media screen and (max-height: 900px) {
+  .shop-setting-list {
+    max-height: calc(40vh - 70px - 64px);
+  }
+}
+.shop-setting-list::-webkit-scrollbar {
+  width: 4px;
+}
+.shop-setting__item {
+  padding: 15px 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.02);
+  border: solid 1px #edeff4;
+  background-color: #fff;
+  margin-bottom: 12px;
+}
+.shop-setting__item:last-child {
+  margin-bottom: 20px;
+}
+.shop-setting__item-label {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  align-items: center;
+  justify-content: space-between;
+}
+.shop-setting__item .shop-info {
+  display: flex;
+  align-items: center;
+}
+.shop-setting__item .shop-info__logo {
+  width: 40px;
+  height: 40px;
+  display: inline-block;
+  border-radius: 50%;
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+  background-image: url("../../images/E/img-shop-default.svg");
+  margin-right: 12px;
+  flex: none;
+  border: 1px solid rgba(237, 239, 244, 0.08);
+}
+.shop-setting__item .shop-info__name {
+  width: calc(100% - 12px - 17px);
+  font-size: 14px;
+  font-weight: 500;
+  color: #32373c;
+}
+@media screen and (max-width: 1090px) {
+  .shop-setting {
+    left: 70px;
+  }
+}
+
+.schedule-bottom {
+  padding: 24px 30px 30px;
+  border-radius: 6px;
+  box-shadow: 0 0 12px 0 rgba(0, 0, 0, 0.03);
+  background-color: #fff;
+  margin-top: 20px;
+}
+
+.schedule-use-left {
+  display: flex;
+  align-items: center;
+}
+.schedule-use__subject {
+  font-size: 15px;
+  font-weight: 600;
+  color: #32373c;
+  margin-right: 10px;
+}
+.schedule-use__text {
+  margin-left: 18px;
+  font-size: 14px;
+  font-weight: normal;
+  color: #32373c;
+}
+.schedule-use__text .text-primary {
+  font-weight: normal;
+}
+.schedule-use-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.schedule-use-button {
+  padding: 8px 15px;
+  border-radius: 25px;
+  border: solid 1px #dadde4;
+  background-color: #fff;
+  font-size: 13px;
+  font-weight: 500;
+  color: #dadde4;
+}
+.schedule-use-button.is--active {
+  color: #4c8cff;
+  border-color: #4c8cff;
+  background-color: #fff;
+}
+.schedule-use-button:disabled {
+  cursor: default;
+}
+.schedule-use-button:not([disabled]):hover {
+  color: #3b78e5;
+  border-color: #3b78e5;
+  background-color: #fff;
+}
+
+.input__input-switch {
+  position: relative;
+  display: inline-block;
+  width: 28px;
+  height: 10px;
+}
+.input__input-switch.large {
+  width: 36px;
+  height: 14px;
+}
+.input__input-switch.large .input__input-slider:before {
+  width: 18px;
+  height: 18px;
+  -webkit-transform: translateX(19px);
+  -ms-transform: translateX(19px);
+  transform: translateX(19px);
+}
+.input__input-checkbox-switch {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+.input__input-checkbox-switch:checked + .input__input-slider:before {
+  -webkit-transform: translateX(0px);
+  -ms-transform: translateX(0px);
+  transform: translateX(0px);
+  background-color: #4c8cff;
+}
+.input__input-checkbox-switch:disabled + .input__input-slider {
+  cursor: default;
+}
+.input__input-checkbox-switch:disabled + .input__input-slider:before {
+  background-color: #e6e9f0;
+}
+.input__input-slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #edeff4;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+  border-radius: 34px;
+}
+.input__input-slider:before {
+  position: absolute;
+  content: "";
+  height: 14px;
+  width: 14px;
+  left: 0;
+  bottom: -2px;
+  box-shadow: 0 1px 0.5px 0 rgba(0, 0, 0, 0.1);
+  background-color: #C6C9D3;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+  border-radius: 50%;
+  -webkit-transform: translateX(14px);
+  -ms-transform: translateX(14px);
+  transform: translateX(14px);
+}
+
+.time-select-box .select-box-list {
+  height: 280px;
+  overflow-y: auto;
+}
+.time-select-box .select-box-list::-webkit-scrollbar {
+  width: 4px;
+}
+
+.time-setting {
+  position: fixed;
+  top: calc(50% - 153.5px);
+  left: calc(50% - 200px);
+  width: 400px;
+  padding: 0 24px;
+  display: none;
+}
+.time-setting .time-setting-list {
+  margin-bottom: 14px;
+  padding-bottom: 64px;
+}
+.time-setting .time-setting__item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 16px;
+}
+.time-setting .time-setting-select-area {
+  display: flex;
+  align-items: center;
+  margin-left: 24px;
+}
+.time-setting .select-box {
+  margin-right: 0;
+}
+.time-setting .select-separator {
+  padding: 0 6px;
+  font-size: 14px;
+  color: #32373c;
+}
+
+.schedule-use-week-list {
+  margin-top: 32px;
+  position: relative;
+}
+.schedule-use-week__item {
+  display: flex;
+  margin-bottom: 24px;
+}
+.schedule-use-week__item:last-child .schedule-use-week-content .schedule-use-time-table:after {
+  height: 100%;
+}
+.schedule-use-week-subject {
+  margin-right: 24px;
+  display: inline-flex;
+  align-items: center;
+}
+.schedule-use-week-subject .schedule-use-week__subject {
+  min-width: 30px;
+  font-size: 14px;
+  font-weight: normal;
+  line-height: 1.21;
+  margin-right: 10px;
+  color: #32373c;
+}
+.schedule-use-week-subject .schedule-use-week__subject.is--disabled {
+  color: #c6c9d3;
+}
+.schedule-use-week-content {
+  width: calc(100% - 92px);
+  height: 46px;
+  border-radius: 6px;
+  border: solid 1px rgba(128, 133, 150, 0.2);
+  background-color: rgba(218, 221, 228, 0.2);
+  position: relative;
+}
+.schedule-use-week-content.has--time:not(.is--disabled):hover {
+  border-color: transparent;
+  background-color: transparent;
+}
+.schedule-use-week-content.has--time:not(.is--disabled).is--disabled:after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: rgba(230, 233, 240, 0.9);
+  top: 0;
+  left: 0;
+  border-radius: 6px;
+  backdrop-filter: grayscale(1);
+}
+.schedule-use-week-content .time-table-area {
+  width: 100%;
+  height: 100%;
+  grid-template-columns: repeat(3, 1fr);
+  display: grid;
+}
+.schedule-use-week-content .time-table__time {
+  border-radius: 6px;
+  background-color: #4c8cff;
+  width: 100%;
+  height: 100%;
+  color: #fff;
+}
+.schedule-use-week-content .time-table-button {
+  display: none;
+  width: 100%;
+  height: 100%;
+  font-size: 15px;
+  font-weight: bold;
+  text-align: center;
+  color: #4c8cff;
+  border-radius: 6px;
+  border: solid 1px rgba(125, 171, 255, 0.92);
+  background-color: rgba(237, 244, 255, 0.92);
+  position: absolute;
+  z-index: 1;
+}
+.schedule-use-week-content .schedule-use-time-table {
+  position: relative;
+  padding: 8px 40px;
+}
+.schedule-use-week-content .schedule-use-time-table + .schedule-use-time-table:after {
+  content: "";
+  opacity: 0.44;
+  background-color: #c6c9d3;
+  width: 1px;
+  height: calc(100% + 24px);
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+.schedule-use-not-layer {
+  position: absolute;
+  right: 0;
+  top: 0;
+  z-index: 1;
+  width: calc(100% - 92px);
+  height: 100%;
+  border-radius: 6px;
+  border: solid 1px rgba(198, 201, 211, 0.9);
+  background-color: rgba(230, 233, 240, 0.9);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.schedule-use-not-layer .schedule-use-not__description {
+  font-size: 15px;
+  font-weight: 600;
+  color: #fff;
+  padding: 11px 34px;
+  display: inline-block;
+  border-radius: 25px;
+  background-color: #c6c9d3;
+}
+
+.schedule-bottom-button-area {
+  margin-top: 30px;
+  margin-bottom: 86px;
+  text-align: right;
+}
+.schedule-bottom-button-area .schedule-bottom-submit {
+  width: 120px;
+  height: 40px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 25px;
+  font-size: 15px;
+  font-weight: 600;
+  color: #fff;
+  background-color: #4c8cff;
+}
+.schedule-bottom-button-area .schedule-bottom-submit:disabled {
+  cursor: default;
+  background-color: #dadde4;
+}
+.schedule-bottom-button-area .schedule-bottom-submit:not(:disabled):hover {
+  background-color: #3b78e5;
+}
+
+.table-to-button.button-excel {
+  width: auto !important;
+  padding: 4px 12px 4px 32px;
+  background-repeat: no-repeat;
+  background-position: 10px 50%;
+}
+.table-to-button.button-excel.button-excel-download {
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg width='16' height='16' xmlns='http://www.w3.org/2000/svg'%3E%3Cg stroke='%236a6c75' stroke-width='1.5' fill='none' fill-rule='evenodd' stroke-linecap='round'%3E%3Cpath d='M14.5 9.8v1.5a2.5 2.5 0 0 1-2.5 2.5H4a2.5 2.5 0 0 1-2.5-2.5V9.8'/%3E%3Cpath d='M11.5 7.2 8 10.445 4.5 7.2' stroke-linejoin='round'/%3E%3Cpath d='M8 9.58V2'/%3E%3C/g%3E%3C/svg%3E");
+}
+.table-to-button.button-excel.button-excel-upload {
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg width='16' height='16' xmlns='http://www.w3.org/2000/svg'%3E%3Cg stroke='%236a6c75' stroke-width='1.5' fill='none' fill-rule='evenodd' stroke-linecap='round'%3E%3Cpath d='M14.5 9.8v1.5a2.5 2.5 0 0 1-2.5 2.5H4a2.5 2.5 0 0 1-2.5-2.5V9.8'/%3E%3Cpath d='M4.5 5.245 8 2l3.5 3.245' stroke-linejoin='round'/%3E%3Cpath d='M8 10.58V3'/%3E%3C/g%3E%3C/svg%3E");
+}
