@@ -4253,7 +4253,7 @@
   border-color: transparent;
   background-color: transparent;
 }
-.schedule-use-week-content.has--time:not(.is--disabled).is--disabled:after {
+.schedule-use-week-content.has--time.is--disabled:after {
   content: "";
   position: absolute;
   width: 100%;

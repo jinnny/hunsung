@@ -1331,6 +1331,36 @@
 
     // 전체 시간 설정 확인
     $('.js-time-setting-confirm').on('click', function () {
+      const timeItem = $(this).parent().prev().find('.js-time-setting-item')
+      const targetButton = $('.js-setting-time-button')
+      const targetTimeContent = $('.schedule-use-week-content')
+
+      timeItem.each(function (index) {
+        // 체크상태일때
+        const selectedEle = $(this).find('.select-box__label.is--selected')
+        if($(this).find('.js-time-input-checkbox').is(':checked')) {
+          // 체크
+          if (selectedEle.length > 1) {
+            $('.js-schedule-switch-input').prop('checked', true)
+            targetTimeContent.removeClass('is--disabled')
+            const startTime = selectedEle[0].innerText
+            const endTime = selectedEle[1].innerText
+            targetButton.fadeOut(400)
+            targetTimeContent.addClass('has--time')
+            if ($(`.js-schedule-use-week-item .js-time-table:nth-child(${index+1})`).find('.time-table__time').length > 0) {
+              $('.js-schedule-use-week-item').find(`.js-time-table:nth-child(${index+1})`).find('.time-table__time').remove()
+            }
+            $('.js-schedule-use-week-item').find(`.js-time-table:nth-child(${index+1})`).prepend(`<button class="time-table__time">${startTime} ~ ${endTime}</button>`)
+          }
+        } else {
+          // 체크아닌상태
+          $(`.js-schedule-use-week-item .js-time-table:nth-child(${index+1}`).find('.time-table__time').remove()
+          if ($(`.js-schedule-use-week-item .js-time-table:nth-child(${index+1}`).find('.time-table__time').length === 0) {
+            //targetTimeContent.removeClass('has--time')
+            // targetButton.fadeIn(400)
+          }
+        }
+      })
       $(this).parent().parent().fadeOut(400)
     })
 
@@ -1370,39 +1400,20 @@
 
     // 요일별 시간 스케줄 on/off
     $(document).on('change', '.js-schedule-switch-input', function() {
+      //check 상태
       if($(this).is(':checked')) {
-        $(this).parent().parent().next().find('.js-setting-time-button').show()
+        if($(this).parent().parent().next().hasClass('has--time')) {
+          //시간이 설정되 있는 경우 시간설정하기 버튼 숨김
+          $(this).parent().parent().next().find('.js-setting-time-button').hide()
+        } else {
+          $(this).parent().parent().next().find('.js-setting-time-button').show()
+        }
+
         $(this).parent().parent().next().removeClass('is--disabled')
       } else {
         $(this).prop('checked', true)
         // 시간이 설정된 상태에서 off를 할 경우
         if($(this).parent().parent().next().hasClass('has--time')) {
-          // swal({
-          //   title: '확인',
-          //   text: '시간이 설정되어있습니다. 시간 설정을 사용하지 않으시겠습니까?',
-          //   icon: 'info',
-          //   closeOnClickOutside: false,
-          //   buttons: {
-          //     cancle: {
-          //       text: '취소',
-          //       value: false,
-          //       className: 'red'
-          //     },
-          //     confirm: {
-          //       text: '확인',
-          //       value: true,
-          //       className: 'primary'
-          //     }
-          //   }
-          // })
-          //   .then((willDelete) => {
-          //     if (willDelete) {
-          //       $(this).prop('checked', false)
-          //       $(this).parent().parent().next().addClass('is--disabled')
-          //     } else {
-          //       $(this).prop('checked', true)
-          //     }
-          //   });
           Swal.fire({
             title: '확인',
             text: "시간이 설정되어있습니다. 시간 설정을 사용하지 않으시겠습니까?",

@@ -444,6 +444,8 @@
           }
 
         }
+      }
+      &.has--time {
         &.is--disabled {
           &:after {
             content: '';
