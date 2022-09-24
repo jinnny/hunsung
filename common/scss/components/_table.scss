@@ -33,6 +33,32 @@
     top: 0;
     bottom: 0;
     margin: auto;
+    &.layer-content-shop-setting {
+      max-width: 600px;
+      height: 666px;
+      overflow-y: hidden;
+      @include respond-to(950, 'max-height') {
+        height: 80%;
+      }
+      .first-content,
+      .next-content,
+      form {
+        height: 100%;
+      }
+      .layer-popup-content-content {
+        padding: 30px 10px 0;
+        height: calc(100% - 58px);
+        &-inner {
+          padding: 0 30px;
+          overflow-y: auto;
+          height: calc(100% - 101px);
+          //height: 447px;
+          .layer-popup-content-scroll {
+            padding-bottom: 40px;
+          }
+        }
+      }
+    }
     &.register {
       max-width: 1100px;
       height: 900px;

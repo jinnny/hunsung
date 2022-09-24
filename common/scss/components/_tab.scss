@@ -3,6 +3,9 @@
   justify-content: space-between;
   align-items: center;
   position: relative;
+  &.without-button .tab__item:after {
+    bottom: 1px;
+  }
   &:after {
     position: absolute;
     content: '';

@@ -120,6 +120,15 @@
       background-position: 95% 50%;
       background-image: icon(calendar, '6A6C75');
     }
+    &.error {
+      border-color: $secondary-red-ff-4-d-75;
+    }
+  }
+  &__error {
+    color: $secondary-red-ff-4-d-75;
+    font-size: 13px;
+    letter-spacing: -.2px;
+    margin-top: 5px;
   }
   &__notice {
     color: #f44336;
@@ -239,6 +248,9 @@
     padding: 15px 14px 15px;
     box-sizing: border-box;
     border: none;
+    &:focus {
+      outline: none;
+    }
     &:-webkit-autofill,
     &:-webkit-autofill:hover,
     &:-webkit-autofill:focus, {

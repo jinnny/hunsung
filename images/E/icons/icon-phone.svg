@@ -1,0 +1,19 @@
+<svg width="34" height="34" viewBox="0 0 34 34" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+        <filter x="-56.5%" y="-37.2%" width="212.9%" height="174.5%" filterUnits="objectBoundingBox" id="r9dbu97q2a">
+            <feOffset dy="1" in="SourceAlpha" result="shadowOffsetOuter1"/>
+            <feGaussianBlur stdDeviation="1.5" in="shadowOffsetOuter1" result="shadowBlurOuter1"/>
+            <feColorMatrix values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.1 0" in="shadowBlurOuter1" result="shadowMatrixOuter1"/>
+            <feMerge>
+                <feMergeNode in="shadowMatrixOuter1"/>
+                <feMergeNode in="SourceGraphic"/>
+            </feMerge>
+        </filter>
+    </defs>
+    <g filter="url(#r9dbu97q2a)" transform="translate(9.25 5.25)" fill="none" fill-rule="evenodd">
+        <path d="M13 23.5H2.5A2.5 2.5 0 0 1 0 21V2.5A2.5 2.5 0 0 1 2.5 0H13a2.5 2.5 0 0 1 2.5 2.5V21a2.5 2.5 0 0 1-2.5 2.5" fill="#FFF"/>
+        <path d="M13 23.5H2.5A2.5 2.5 0 0 1 0 21V2.5A2.5 2.5 0 0 1 2.5 0H13a2.5 2.5 0 0 1 2.5 2.5V21a2.5 2.5 0 0 1-2.5 2.5z" stroke="#4C8CFF" stroke-width="1.5" stroke-linejoin="round"/>
+        <path d="M12.311 18.25H3.189c-.519 0-.939-.474-.939-1.058V3.308c0-.584.42-1.058.939-1.058h9.122c.519 0 .939.474.939 1.058v13.884c0 .584-.42 1.058-.939 1.058" fill="#CADDFF"/>
+        <rect fill="#4C8CFF" x="4.75" y="19.75" width="6" height="1.5" rx=".75"/>
+    </g>
+</svg>

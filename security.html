@@ -1,0 +1,902 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>보안 설정</title>
+  <!-- CSS FILES.. -->
+  <link rel="stylesheet" href="common/css/style_e.css">
+  <!--add-->
+  <link rel="stylesheet" href="common/scss/style.css">
+  <!--add-->
+</head>
+<body>
+
+<!-- LNB BUTTON -->
+<div id="lnb-component"></div>
+
+
+<!-- DRAWER AREA -->
+<nav id="drawer-component">
+
+  <div id="drawer-logo-component">
+    <a id="drawer-logo-link-component" href="#">
+      <img src="images/E/LOGO/logo-hyunsung.webp" alt="LOGO" title="LOGO">
+      <p id="drawer-logo-p-component">Hyunsung system</p>
+    </a>
+  </div>
+
+  <ul class="header-menu">
+    <li class="header-menu-item">
+      <a href="/" class="header-menu-item__link">
+        <i class="header-menu-item__icon"></i>
+        <span class="header-menu-item__text"></span>
+      </a>
+    </li>
+  </ul>
+  <ul id="drawer-main-menu-component">
+    <li class="active">
+      <a class="menu__link" href="/">
+        <div class="drawer-menu-list-icon-component"></div>
+        <span>1. Dashboard</span>
+      </a>
+    </li>
+    <li>
+      <div class="drawer-menu-list-icon-component"></div>
+      <span>2. Products</span>
+      <div class="drawer-right-arrow-icon-component"></div>
+
+      <ul class="drawer-sub-menu-component">
+        <li>
+          <img src="images/E/DRAWER_FILL/icon-24-x-24-line-arrow-back_sub/icon-24-x-24-line-arrow-back.webp" alt="SUB"
+               title="SUB">
+          <span>2. Products</span>
+        </li>
+        <li>
+          <a href="/admin/product/prodreg/basic">
+            <span>2-1.상품등록</span>
+          </a>
+        </li>
+        <li onclick="window.location.href='/admin/product/prodlist'">
+          <a href="/admin/product/prodlist">
+            <span>2-2. 상품리스트</span>
+          </a>
+        </li>
+      </ul>
+    </li>
+    <li>
+      <div class="drawer-menu-list-icon-component"></div>
+      <span>10. 설정</span>
+      <div class="drawer-right-arrow-icon-component"></div>
+
+      <ul class="drawer-sub-menu-component">
+        <li>
+          <img src="images/E/DRAWER_FILL/icon-24-x-24-line-arrow-back_sub/icon-24-x-24-line-arrow-back.webp" alt="SUB"
+               title="SUB">
+          <span>10. 설정</span>
+        </li>
+        <li>
+          <span>10-1. menu01</span>
+        </li>
+        <li>
+          <span>10-2. menu02</span>
+        </li>
+        <li>
+          <span>10-3. menu03</span>
+        </li>
+        <li>
+          <span>10-4. menu04</span>
+        </li>
+      </ul>
+    </li>
+  </ul>
+
+
+  <footer>© Hyunsung company.<br>All Rights Reserved</footer>
+
+</nav>
+<!-- DRAWER AREA END -->
+
+<div class="layer-popup js-task-monitory-layer" id="js-task-monitory-layer">
+  <article class="task-monitory">
+    <button class="task-monitory__close-button js-task-monitory-close" ><span class="blind">닫기</span></button>
+    <header class="task-monitory-header">
+      <h2 class="task-monitory__title">
+        TASK<br/>
+        MONITORY
+      </h2>
+      <div class="task-monitory-menu">
+        <button class="task-monitory-button condition active js-task-monitory-button" data-task-index="0">작업 현황</button>
+        <button class="task-monitory-button history js-task-monitory-button" data-task-index="1">작업 히스토리</button>
+      </div>
+      <!-- 작업 진행 중 -->
+      <mark class="task-monitory-label">
+        <i class="task-monitory-label-circle condition-color-progress"></i>
+        작업 진행 중
+      </mark>
+      <!-- 작업 대기 중 -->
+      <mark class="task-monitory-label">
+        <i class="task-monitory-label-circle condition-color-waiting"></i>
+        작업 대기 중
+      </mark>
+      <!-- 작업 오류 -->
+      <mark class="task-monitory-label">
+        <i class="task-monitory-label-circle condition-color-error"></i>
+        작업 오류
+      </mark>
+      <!-- 작업 성공 -->
+      <mark class="task-monitory-label">
+        <i class="task-monitory-label-circle condition-color-success"></i>
+        작업 성공
+      </mark>
+    </header>
+    <div class="task-monitory-content-area">
+      <!--작업현황-->
+      <div class="task-monitory-content js-task-monitory-content">
+        <!--좌측패널-->
+        <div class="task-monitory-content-left">
+          <ul class="task-condition-list">
+            <li class="task-condition-item">
+              <a href="">
+                <p class="task-condition-top">동기화 시스템</p>
+                <div class="task-condition-bottom">
+                  <strong class="task-condition-subject">재고 동기화 진행</strong>
+                  <mark class="task-condition-label condition-text-success">
+                    <i class="task-condition-label-circle condition-color-success"></i>
+                    작업 성공
+                  </mark>
+                  <span class="task-condition-separator"></span>
+                  <span class="task-condition-time">작업 시간 (총 60분) : 19:00 ~ 20:00</span>
+                </div>
+              </a>
+            </li>
+            <li class="task-condition-item">
+              <a href="">
+                <p class="task-condition-top">동기화 시스템</p>
+                <div class="task-condition-bottom">
+                  <strong class="task-condition-subject">재고 동기화 진행</strong>
+                  <mark class="task-condition-label condition-text-progress">
+                    <i class="task-condition-label-circle condition-color-progress"></i>
+                    작업 중
+                  </mark>
+                  <span class="task-condition-separator"></span>
+                  <span class="task-condition-time">작업 시간 (총 60분) : 19:00 ~ --:--</span>
+                </div>
+              </a>
+            </li>
+            <li class="task-condition-item">
+              <a href="">
+                <p class="task-condition-top">동기화 시스템</p>
+                <div class="task-condition-bottom">
+                  <strong class="task-condition-subject">재고 동기화 진행</strong>
+                  <mark class="task-condition-label condition-text-error">
+                    <i class="task-condition-label-circle condition-color-error"></i>
+                    작업 오류
+                  </mark>
+                  <span class="task-condition-separator"></span>
+                  <span class="task-condition-time">작업 시간 (총 60분) : 19:00 ~ 20:00</span>
+                </div>
+              </a>
+            </li>
+            <li class="task-condition-item">
+              <a href="">
+                <p class="task-condition-top">동기화 시스템</p>
+                <div class="task-condition-bottom">
+                  <strong class="task-condition-subject">재고 동기화 진행</strong>
+                  <mark class="task-condition-label condition-text-waiting">
+                    <i class="task-condition-label-circle condition-color-waiting"></i>
+                    대기 중
+                  </mark>
+                  <span class="task-condition-separator"></span>
+                  <span class="task-condition-time">작업 시간 (총 60분) : 19:00 ~ 20:00</span>
+                </div>
+              </a>
+            </li>
+          </ul>
+        </div>
+        <!--좌측패널-->
+        <!--우측패널-->
+        <div class="task-monitory-content-right">
+          <div class="task-right-button-area">
+            <button class="task-right-button list active js-task-right-button" data-task-right-index="0">
+              <span class="task-right-button-text">진행 중 목록</span>
+            </button>
+            <button class="task-right-button user js-task-right-button" data-task-right-index="1">
+              <span class="task-right-button-text">현재 접속자</span>
+            </button>
+          </div>
+          <!--우측패널 컨텐츠모음-->
+          <div class="task-right-content-area">
+            <!--우측패널: 진행중목록-->
+            <div class="task-right-content js-task-right-content active">
+              <ul class="task-right-task-list">
+                <li class="task-list-item">
+                  <i class="task-list-item-circle condition-color-waiting"></i>
+                  <p class="task-list-item-text">동기화 시스템</p>
+                </li>
+                <li class="task-list-item">
+                  <i class="task-list-item-circle condition-color-progress"></i>
+                  <p class="task-list-item-text">동기화 시스템</p>
+                </li>
+                <li class="task-list-item">
+                  <i class="task-list-item-circle condition-color-error"></i>
+                  <p class="task-list-item-text">동기화 시스템</p>
+                </li>
+                <li class="task-list-item">
+                  <i class="task-list-item-circle condition-color-success"></i>
+                  <p class="task-list-item-text">동기화 시스템</p>
+                </li>
+                <li class="task-list-item">
+                  <i class="task-list-item-circle condition-color-success"></i>
+                  <p class="task-list-item-text">동기화 시스템</p>
+                </li>
+              </ul>
+            </div>
+            <!--우측패널: 진행중목록-->
+            <!--우측패널: 현재접속자-->
+            <div class="task-right-content js-task-right-content">
+              <ul class="task-right-task-list user">
+                <li class="task-list-item">
+                  <i class="task-list-item-profile"></i>
+                  <p class="task-list-item-text">유예슬</p>
+                </li>
+                <li class="task-list-item">
+                  <i class="task-list-item-profile"></i>
+                  <p class="task-list-item-text">Yooyeseul</p>
+                </li>
+              </ul>
+            </div>
+            <!--우측패널: 현재접속자-->
+          </div>
+          <!--우측패널 컨텐츠모음-->
+          <a href="" class="task-right-setting"></a>
+        </div>
+        <!--우측패널-->
+      </div>
+      <!--작업현황-->
+      <!--작업히스토리-->
+      <div class="task-monitory-content history js-task-monitory-content active">
+        <div class="task-monitory-history-top">
+          <div class="history-input-group">
+            <input type="text" placeholder="날짜 선택" aria-label="First date" class="js-history-start-date history-input__date">
+            <span class="input__separator">~</span>
+            <input type="text" placeholder="날짜 선택" aria-label="Last date" class="js-history-end-date history-input__date">
+          </div>
+          <div class="history-input-search">
+            <input type="text" class="history-input-input js-history-input">
+            <button class="history-input-button"></button>
+          </div>
+        </div>
+        <div class="task-monitory-history-bottom">
+          <!--좌측패널-->
+          <div class="task-monitory-content-left">
+            <p class="task-search-count">검색 <span class="text-primary">10000</span>건</p>
+            <ul class="task-condition-list">
+              <li class="task-condition-item">
+                <a href="">
+                  <p class="task-condition-top">동기화 시스템</p>
+                  <div class="task-condition-bottom">
+                    <strong class="task-condition-subject">재고 동기화 진행</strong>
+                    <mark class="task-condition-label condition-text-success">
+                      <i class="task-condition-label-circle condition-color-success"></i>
+                      작업 성공
+                    </mark>
+                    <span class="task-condition-separator"></span>
+                    <span class="task-condition-time">작업 시간 (총 60분) : 19:00 ~ 20:00</span>
+                  </div>
+                </a>
+              </li>
+              <li class="task-condition-item">
+                <a href="">
+                  <p class="task-condition-top">동기화 시스템</p>
+                  <div class="task-condition-bottom">
+                    <strong class="task-condition-subject">재고 동기화 진행</strong>
+                    <mark class="task-condition-label condition-text-progress">
+                      <i class="task-condition-label-circle condition-color-progress"></i>
+                      작업 중
+                    </mark>
+                    <span class="task-condition-separator"></span>
+                    <span class="task-condition-time">작업 시간 (총 60분) : 19:00 ~ --:--</span>
+                  </div>
+                </a>
+              </li>
+              <li class="task-condition-item">
+                <a href="">
+                  <p class="task-condition-top">동기화 시스템</p>
+                  <div class="task-condition-bottom">
+                    <strong class="task-condition-subject">재고 동기화 진행</strong>
+                    <mark class="task-condition-label condition-text-error">
+                      <i class="task-condition-label-circle condition-color-error"></i>
+                      작업 오류
+                    </mark>
+                    <span class="task-condition-separator"></span>
+                    <span class="task-condition-time">작업 시간 (총 60분) : 19:00 ~ 20:00</span>
+                  </div>
+                </a>
+              </li>
+              <li class="task-condition-item">
+                <a href="">
+                  <p class="task-condition-top">동기화 시스템</p>
+                  <div class="task-condition-bottom">
+                    <strong class="task-condition-subject">재고 동기화 진행</strong>
+                    <mark class="task-condition-label condition-text-waiting">
+                      <i class="task-condition-label-circle condition-color-waiting"></i>
+                      대기 중
+                    </mark>
+                    <span class="task-condition-separator"></span>
+                    <span class="task-condition-time">작업 시간 (총 60분) : 19:00 ~ 20:00</span>
+                  </div>
+                </a>
+              </li>
+            </ul>
+          </div>
+          <!--좌측패널-->
+          <!--우측패널-->
+          <div class="task-monitory-content-right">
+            <div class="task-right-button-area">
+              <button class="task-right-button list active js-task-right-button" data-task-right-index="0">
+                <span class="task-right-button-text">진행 중 목록</span>
+              </button>
+              <button class="task-right-button user js-task-right-button" data-task-right-index="1">
+                <span class="task-right-button-text">현재 접속자</span>
+              </button>
+            </div>
+            <!--우측패널 컨텐츠모음-->
+            <div class="task-right-content-area">
+              <!--우측패널: 진행중목록-->
+              <div class="task-right-content js-task-right-content active">
+                <ul class="task-right-task-list">
+                  <li class="task-list-item">
+                    <i class="task-list-item-circle condition-color-waiting"></i>
+                    <p class="task-list-item-text">동기화 시스템</p>
+                  </li>
+                  <li class="task-list-item">
+                    <i class="task-list-item-circle condition-color-progress"></i>
+                    <p class="task-list-item-text">동기화 시스템</p>
+                  </li>
+                  <li class="task-list-item">
+                    <i class="task-list-item-circle condition-color-error"></i>
+                    <p class="task-list-item-text">동기화 시스템</p>
+                  </li>
+                  <li class="task-list-item">
+                    <i class="task-list-item-circle condition-color-success"></i>
+                    <p class="task-list-item-text">동기화 시스템</p>
+                  </li>
+                  <li class="task-list-item">
+                    <i class="task-list-item-circle condition-color-success"></i>
+                    <p class="task-list-item-text">동기화 시스템</p>
+                  </li>
+                </ul>
+              </div>
+              <!--우측패널: 진행중목록-->
+              <!--우측패널: 현재접속자-->
+              <div class="task-right-content js-task-right-content">
+                <ul class="task-right-task-list user">
+                  <li class="task-list-item">
+                    <i class="task-list-item-profile"></i>
+                    <p class="task-list-item-text">유예슬</p>
+                  </li>
+                  <li class="task-list-item">
+                    <i class="task-list-item-profile"></i>
+                    <p class="task-list-item-text">Yooyeseul</p>
+                  </li>
+                </ul>
+              </div>
+              <!--우측패널: 현재접속자-->
+            </div>
+            <!--우측패널 컨텐츠모음-->
+            <a href="" class="task-right-setting"></a>
+          </div>
+          <!--우측패널-->
+        </div>
+      </div>
+      <!--작업히스토리-->
+    </div>
+  </article>
+</div>
+<!-- HEADER AREA -->
+<header id="header-component">
+  <article class="container-component">
+    <!--add-->
+    <p class="header-page-info">
+      홈&nbsp; &#62; &nbsp;상품관리 &nbsp;&#62;&nbsp; <strong class="header-page-info__current">상품등록</strong>
+      <!--    작업진행상태-->
+      <button class="progress-condition working js-working-button">
+        <span class="progress-condition-left">
+          <svg class="circle-progress" width="18" height="18" viewBox="0 0 18 18">
+            <circle class="bar" cx="9" cy="9" r="6" stroke-width="3.5" />
+            <circle class="frame" cx="9" cy="9" r="6" stroke-width="3.5" />
+          </svg>
+          <span class="progress-condition-text">작업 중</span>
+        </span>
+        <i class="progress-condition-icon"></i>
+      </button>
+      <span class="progress-condition">
+        <span class="progress-condition-left">
+          <i class="progress-condition-waiting"></i>
+          <span class="progress-condition-text">작업 대기 중</span>
+        </span>
+      </span>
+      <!--    작업진행상태-->
+    </p>
+    <!--add-->
+    <div class="dashboard-right-container-component">
+      <div class="notice-container-component">
+        <div class="notice-count-component">99+</div>
+        <img src="images/E/HEADER/icon-30-x-30-notice/icon-30-x-30-notice.webp" alt="NOTICE" title="NOTICE">
+      </div>
+      <div class="notice-list-container-component">
+        <div class="notice-list-title-container-component">
+          <div class="notice-list-title-component">
+            <div class="notice-list-left-title-component">
+              <p>받은 알림</p>
+              <span>2</span>
+            </div>
+            <div class="notice-list-right-title-component">
+              <button>모두 확인</button>
+            </div>
+          </div>
+          <p><span>최근 30일 동안</span>의 알림만 보관됩니다.</p>
+        </div>
+        <div class="notice-list-check-close-container-component">
+          <div class="notice-list-check-close-item-component check">
+            <div class="notice-list-check-close-title-container">
+              <div class="notice-list-check-close-left-title-component">
+                알림 내용 내용알림 내용 내용
+              </div>
+              <div class="notice-list-check-close-right-title-component">
+                <button>확인</button>
+              </div>
+              <div class="notice-list-date-time-container-component">
+                <span>2021.11.21</span>
+                <span>|</span>
+                <span>오후 3시 30분</span>
+              </div>
+            </div>
+          </div>
+          <div class="notice-list-check-close-item-component check">
+            <div class="notice-list-check-close-title-container">
+              <div class="notice-list-check-close-left-title-component">
+                알림 내용 내용알림 내용 내용 내용이 아주 길 경우 두줄 까지 노출 놀출
+              </div>
+              <div class="notice-list-check-close-right-title-component">
+                <button>확인</button>
+              </div>
+              <div class="notice-list-date-time-container-component">
+                <span>2021.11.21</span>
+                <span>|</span>
+                <span>오후 3시 30분</span>
+              </div>
+            </div>
+          </div>
+          <div class="notice-list-check-close-item-component">
+            <div class="notice-list-check-close-title-container">
+              <div class="notice-list-check-close-left-title-component">
+                확인한 알림의 경우 우측에 삭제 버튼 노출
+              </div>
+              <div class="notice-list-check-close-right-title-component">
+                <button><img src="images/E/HEADER/icon-12-x-12-line-delete/icon-12-x-12-line-delete.webp" alt="DELETE"
+                             title="DELETE"></button>
+              </div>
+              <div class="notice-list-date-time-container-component">
+                <span>2021.11.21</span>
+                <span>|</span>
+                <span>오후 3시 30분</span>
+              </div>
+            </div>
+          </div>
+          <div class="notice-list-check-close-item-component">
+            <div class="notice-list-check-close-title-container">
+              <div class="notice-list-check-close-left-title-component">
+                알림은 시간순으로 노출 (최신이 상단에)
+              </div>
+              <div class="notice-list-check-close-right-title-component">
+                <button><img src="images/E/HEADER/icon-12-x-12-line-delete/icon-12-x-12-line-delete.webp" alt="DELETE"
+                             title="DELETE"></button>
+              </div>
+              <div class="notice-list-date-time-container-component">
+                <span>2021.11.21</span>
+                <span>|</span>
+                <span>오후 3시 30분</span>
+              </div>
+            </div>
+          </div>
+          <div class="notice-list-check-close-item-component">
+            <div class="notice-list-check-close-title-container">
+              <div class="notice-list-check-close-left-title-component">
+                알림 내용 내용알림 내용 내용
+              </div>
+              <div class="notice-list-check-close-right-title-component">
+                <button><img src="images/E/HEADER/icon-12-x-12-line-delete/icon-12-x-12-line-delete.webp" alt="DELETE"
+                             title="DELETE"></button>
+              </div>
+              <div class="notice-list-date-time-container-component">
+                <span>2021.11.21</span>
+                <span>|</span>
+                <span>오후 3시 30분</span>
+              </div>
+            </div>
+          </div>
+          <div class="notice-list-check-close-item-component">
+            <div class="notice-list-check-close-title-container">
+              <div class="notice-list-check-close-left-title-component">
+                알림은 시간순으로 노출 (최신이 상단에)
+              </div>
+              <div class="notice-list-check-close-right-title-component">
+                <button><img src="images/E/HEADER/icon-12-x-12-line-delete/icon-12-x-12-line-delete.webp" alt="DELETE"
+                             title="DELETE"></button>
+              </div>
+              <div class="notice-list-date-time-container-component">
+                <span>2021.11.21</span>
+                <span>|</span>
+                <span>오후 3시 30분</span>
+              </div>
+            </div>
+          </div>
+          <div class="notice-list-check-close-item-component">
+            <div class="notice-list-check-close-title-container">
+              <div class="notice-list-check-close-left-title-component">
+                알림 내용 내용알림 내용 내용
+              </div>
+              <div class="notice-list-check-close-right-title-component">
+                <button><img src="images/E/HEADER/icon-12-x-12-line-delete/icon-12-x-12-line-delete.webp" alt="DELETE"
+                             title="DELETE"></button>
+              </div>
+              <div class="notice-list-date-time-container-component">
+                <span>2021.11.21</span>
+                <span>|</span>
+                <span>오후 3시 30분</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="select-box-blue-component">
+        <span>관리자 님</span><img src="images/E/HEADER/icon-8-x-8-line-arrow-down/icon-8-x-8-line-arrow-down.webp"
+                               alt="ARROW DOWN" title="ARROW DOWN">
+
+        <div class="select-box-blue-option-container-component">
+          <div class="select-box-blue-option-component">
+            <div class="select-box-blue-option-img"></div>
+            <span>정보 변경</span>
+          </div>
+          <div class="select-box-blue-option-component">
+            <div class="select-box-blue-option-img"></div>
+            <span>로그아웃</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </article>
+</header>
+<!-- HEADER AREA END -->
+<!-- CONTENT AREA -->
+<section id="content-component">
+  <article class="list-content member-content">
+    <h2 class="list-header__title">사용자 관리</h2>
+    <div class="product-registration-top">
+      <div class="tab without-button">
+        <div class="tab-item-area">
+          <a href="member.html" class="tab__item">사용자 계정 리스트</a>
+          <a href="security.html" class="tab__item is--selected">보안 설정</a>
+          <a href="approach.html" class="tab__item">접근권한 설정</a>
+        </div>
+      </div>
+    </div>
+    <div class="security-content">
+      <i class="security-content__icon security"></i>
+      <div class="security-content-text">
+        <strong class="security-content__subject">2차인증 사용</strong>
+        <p class="security-content__text">1차 로그인 후 추가 sms인증이 되어야 로그인이 되는 기능입니다.</p>
+      </div>
+      <label class="input__input-switch type-with-text">
+        <input type="checkbox" class="input__input-checkbox-switch js-switch-input">
+        <span class="input__input-slider round"></span>
+        <span class="input__input-switch-text">OFF</span>
+      </label>
+    </div>
+    <div class="security-content">
+      <i class="security-content__icon phone"></i>
+      <div class="security-content-text">
+        <strong class="security-content__subject">휴대폰 번호 사용</strong>
+        <p class="security-content__text">2차인증을 위한 설정된 휴대폰번호로 sms번호가 발송됩니다.</p>
+      </div>
+      <label class="input__input-switch type-with-text">
+        <input type="checkbox" class="input__input-checkbox-switch js-switch-input">
+        <span class="input__input-slider round"></span>
+        <span class="input__input-switch-text">OFF</span>
+      </label>
+    </div>
+    <div class="security-content">
+      <i class="security-content__icon synchronization"></i>
+      <div class="security-content-text">
+        <strong class="security-content__subject">동기화 사용</strong>
+        <p class="security-content__text">자동스케줄을 통해 설정된 시간만큼 자동 동기화 기능입니다.</p>
+      </div>
+      <label class="input__input-switch type-with-text">
+        <input type="checkbox" class="input__input-checkbox-switch js-switch-input">
+        <span class="input__input-slider round"></span>
+        <span class="input__input-switch-text">OFF</span>
+      </label>
+    </div>
+    <div class="security-content">
+      <i class="security-content__icon notice"></i>
+      <div class="security-content-text">
+        <strong class="security-content__subject">공지사항</strong>
+        <p class="security-content__text">시스템 이슈나 정책 이슈 발생시 공지를 노티해주는 기능입니다.</p>
+      </div>
+      <label class="input__input-switch type-with-text">
+        <input type="checkbox" class="input__input-checkbox-switch js-switch-input">
+        <span class="input__input-slider round"></span>
+        <span class="input__input-switch-text">OFF</span>
+      </label>
+    </div>
+  </article>
+</section>
+
+<!--사용자등록 레이어 팝업-->
+<div class="layer-popup js-layer-popup js-member-register-popup">
+  <article class="layer-popup-content js-layer-popup-content member common">
+    <header class="layer-popup-header">
+      <h2 class="layer-popup__title">
+          <span class="first-title js-first-title">
+            사용자 추가
+          </span>
+      </h2>
+      <button class="layer-popup__close-button js-layer-popup-close" ><span class="blind">닫기</span></button>
+    </header>
+    <div class="layer-popup-content-content">
+      <form action="">
+        <div class="layer-popup-content-content-inner">
+          <div class="layer-popup-content-scroll">
+              <div class="member-register-part">
+                <label for="registerId" class="member-register__label">사용자 ID (계정) <i class="required">*</i></label>
+                <div class="input-part-with-condition">
+                  <input type="text" class="input__input member-register__input" id="registerId" placeholder="최대 20자 입력">
+                  <p class="input__error">이미 사용중인 아이디입니다</p>
+                </div>
+<!--                <div class="input-animation-part">-->
+<!--                  <input type="text" class="input__input-animation" id="modelNo">-->
+<!--                  <label for="modelNo" class="input__label input__label-animation">최대 20자 입력</label>-->
+<!--                  <fieldset class="input-field-outline">-->
+<!--                    <legend class="input-legend-text">사용자 ID (계정)</legend>-->
+<!--                  </fieldset>-->
+<!--                </div>-->
+              </div>
+              <div class="member-register-part">
+                <label for="registerNickName" class="member-register__label">사용자 닉네임 <i class="required">*</i></label>
+                <div class="input-part-with-condition">
+                  <input type="text" class="input__input member-register__input" id="registerNickName" placeholder="최대 20자 입력">
+                  <p class="input__error">이미 사용중인 닉네임입니다</p>
+                </div>
+              </div>
+              <div class="member-register-part">
+                <label for="registerPassword" class="member-register__label">비밀번호 <i class="required">*</i></label>
+                <div class="input-part-with-condition">
+                  <input type="password" class="input__input member-register__input" id="registerPassword" placeholder="영문,숫자,특수문자 혼합하여 8자 이상 입력">
+                  <p class="input__error">비밀번호 조건에 맞지 않습니다</p>
+                </div>
+              </div>
+              <div class="member-register-part">
+                <label for="registerPassword2" class="member-register__label">비밀번호 확인 <i class="required">*</i></label>
+                <div class="input-part-with-condition">
+                  <input type="password" class="input__input member-register__input" id="registerPassword2" placeholder="비밀번호 확인">
+                  <p class="input__error">비밀번호가 일치하지 않습니다</p>
+                </div>
+              </div>
+              <div class="member-register-part">
+                <label for="registerMemo" class="member-register__label memo">
+                  메모
+                  <small>(0/300)</small>
+                </label>
+                <div class="input-part-with-condition">
+                  <textarea id="registerMemo" cols="40" rows="25" class="input__input input__input-textarea member-register__textarea" placeholder="최대 300자 입력"></textarea>
+                </div>
+              </div>
+          </div>
+        </div>
+        <div class="member-register-submit-area">
+          <button class="member-register__submit-button" disabled>저장</button>
+        </div>
+      </form>
+    </div>
+  </article>
+  <div class="layer-popup-bg"></div>
+</div>
+<!--사용자등록 레이어 팝업-->
+<!--계정 관리 레이어 팝업-->
+<div class="layer-popup js-layer-popup js-member-admin-popup">
+  <article class="layer-popup-content js-layer-popup-content member common admin">
+    <header class="layer-popup-header">
+      <h2 class="layer-popup__title">
+          <span class="first-title js-first-title">
+            계정 관리
+          </span>
+      </h2>
+      <button class="layer-popup__close-button js-layer-popup-close" ><span class="blind">닫기</span></button>
+    </header>
+    <div class="layer-popup-content-content">
+      <form action="">
+        <div class="layer-popup-content-content-inner">
+          <div class="layer-popup-content-scroll">
+            <div class="member-register-part">
+              <label for="registerId" class="member-register__label">사용자 ID (계정)</label>
+              <div class="input-part-with-condition">
+                <input type="text" class="input__input member-register__input" id="registerId" placeholder="최대 20자 입력">
+                <p class="input__error">이미 사용중인 아이디입니다</p>
+              </div>
+              <!--                <div class="input-animation-part">-->
+              <!--                  <input type="text" class="input__input-animation" id="modelNo">-->
+              <!--                  <label for="modelNo" class="input__label input__label-animation">최대 20자 입력</label>-->
+              <!--                  <fieldset class="input-field-outline">-->
+              <!--                    <legend class="input-legend-text">사용자 ID (계정)</legend>-->
+              <!--                  </fieldset>-->
+              <!--                </div>-->
+            </div>
+            <div class="member-register-part">
+              <label for="registerNickName" class="member-register__label">사용자 닉네임</label>
+              <div class="input-part-with-condition">
+                <input type="text" class="input__input member-register__input" id="registerNickName" placeholder="최대 20자 입력">
+                <p class="input__error">이미 사용중인 닉네임입니다</p>
+              </div>
+            </div>
+            <div class="member-register-part">
+              <label for="registerCurrentPassword" class="member-register__label">현재 비밀번호</label>
+              <div class="input-part-with-condition">
+                <input type="password" class="input__input member-register__input" id="registerCurrentPassword" placeholder="현재 비밀번호 확인">
+                <p class="input__error">비밀번호 조건에 맞지 않습니다</p>
+              </div>
+            </div>
+            <div class="member-register-part">
+              <label for="registerNewPassword" class="member-register__label">새로운 비밀번호</label>
+              <div class="input-part-with-condition">
+                <input type="password" class="input__input member-register__input" id="registerNewPassword" placeholder="영문,숫자,특수문자 혼합하여 8자 이상 입력">
+                <p class="input__error">비밀번호가 일치하지 않습니다</p>
+              </div>
+            </div>
+            <div class="member-register-part">
+              <label for="registerNewPassword2" class="member-register__label">비밀번호 확인</label>
+              <div class="input-part-with-condition">
+                <input type="password" class="input__input member-register__input" id="registerNewPassword2" placeholder="새로 입력한 비밀번호 확인">
+                <p class="input__error">비밀번호가 일치하지 않습니다</p>
+              </div>
+            </div>
+            <div class="member-register-part">
+              <label for="registerMemo" class="member-register__label memo">
+                메모
+                <small>(0/300)</small>
+              </label>
+              <div class="input-part-with-condition">
+                <textarea id="registerMemo" cols="40" rows="25" class="input__input input__input-textarea member-register__textarea" placeholder="최대 300자 입력"></textarea>
+              </div>
+            </div>
+            <div class="member-register-part">
+              <span class="member-register__label">마지막 수정일</span>
+              <p class="member-register__input-text">2022.08.07 / <span>13:16:35</span></p>
+            </div>
+          </div>
+        </div>
+        <div class="member-register-submit-area">
+          <button class="member-register__submit-button" disabled>저장</button>
+        </div>
+      </form>
+    </div>
+  </article>
+  <div class="layer-popup-bg"></div>
+</div>
+<!--계정 관리 레이어 팝업-->
+
+<!-- CONTENT AREA -->
+<!-- JAVASCRIPT FILES.. -->
+<script src="common/js/jquery-3.6.0.min.js"></script>
+<!--add-->
+<script src="common/js/datepicker.min.js"></script>
+<script src="common/js/datepicker.ko-KR.js"></script>
+<script src="common/js/sweetalert2.min.js"></script>
+<script src="common/js/list.js"></script>
+<!--add-->
+<script>
+  $(function () {
+    // 효과있는 입력창
+    // 사용된 클래스
+    // is--active, is--complete, is--error, error
+    // 입력후 에러난경우(형식이 틀렸을 경우): is--error
+    // 입력전에 에러난 경우(필수값인데 빼먹은 경우): error
+    const inputAnimation = () => {
+      // 포커스 되었을때
+      $(document).on('focus', '.input__input-animation:not(.js-date-input)', function() {
+        $(this).parents('.input-animation-part').addClass('is--active');
+      }).on('blur', '.input__input-animation:not(.js-date-input)' , function() {
+        // 포커스에서 나갔을때
+
+        if ($(this).val().trim() === '') {
+          // 아무것도 입력하지 않았을 때
+          console.log('미입력')
+          $(this).parents('.input-animation-part').removeClass('is--active');
+          $(this).parents('.input-animation-part').removeClass('is--complete');
+          if($(this).parents('.input-animation-part').hasClass('required')) {
+            $(this).parents('.input-animation-part').addClass('error');
+          }
+        } else {
+          console.log('입력')
+          $(this).parents('.input-animation-part').addClass('is--complete');
+          $(this).parents('.input-animation-part').addClass('is--complete');
+          $(this).parents('.input-animation-part').removeClass('error');
+        }
+      }).on('keydown', '.input__input-animation:not(.js-date-input)', function() {
+        $(this).parents('.input-animation-part').removeClass('is--complete');
+        $(this).parents('.input-animation-part').addClass('is--active');
+      })
+    }
+
+    //사용여부 switch
+    $('.js-switch-input').on('change', function (){
+      if($(this).is(':checked')) {
+        $(this).parent().parent().addClass('check')
+        $(this).next().next().text('ON')
+      } else {
+        $(this).parent().parent().removeClass('check')
+        $(this).next().next().text('OFF')
+      }
+    })
+
+
+    // 사용자 추가
+    $('.js-member-register-button').on('click', function () {
+      $('.js-member-register-popup').fadeIn(400);
+    })
+
+    // 날짜선택
+    const searchDatePickerHandler = () => {
+      const $searchDate = $('.js-search-date');
+      $searchDate.datepicker(
+        {
+          format: 'yyyy.mm.dd',
+          autoPick: false,
+          autoHide: true,
+          language: 'ko-KR',
+          template: `
+        <div class="datepicker-container">
+         <div class="datepicker-panel years" data-view="years picker">
+          <ul class="datepicker-top">
+            <li data-view="years prev" class="arrow prev"></li>
+            <li class="datepicker-top-current" data-view="years current"></li>
+            <li data-view="years next" class="arrow next"></li>
+          </ul>
+          <ul class="years-list" data-view="years"></ul>
+         </div>
+          <div class="datepicker-panel months" data-view="months picker">
+            <ul class="datepicker-top">
+              <li data-view="year prev" class="arrow prev"></li>
+              <li class="datepicker-top-current" data-view="year current"></li>
+              <li data-view="year next" class="arrow next"></li>
+            </ul>
+            <ul class="months-list" data-view="months"></ul>
+          </div>
+          <div class="datepicker-panel days" data-view="days picker">
+            <ul class="datepicker-top">
+              <li data-view="month prev" class="arrow prev"></li>
+              <li class="datepicker-top-current" data-view="month current"></li>
+              <li data-view="month next" class="arrow next"></li>
+            </ul>
+            <ul class="datepicker-week" data-view="week"></ul>
+            <ul class="datepicker-days" data-view="days"></ul>
+          </div>
+        </div>`,
+          show: function() {
+            $(this).addClass('is--open')
+          },
+          hide: function() {
+            $(this).removeClass('is--open')
+          }
+        },
+      );
+    }
+    searchDatePickerHandler()
+    inputAnimation()
+  })
+</script>
+</body>
+</html>

@@ -1,0 +1,21 @@
+<svg width="34" height="34" viewBox="0 0 34 34" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <defs>
+        <filter x="-7.7%" y="-3.8%" width="115.4%" height="115.4%" filterUnits="objectBoundingBox" id="sagkejio2a">
+            <feOffset dy="1" in="SourceAlpha" result="shadowOffsetOuter1"/>
+            <feGaussianBlur stdDeviation=".5" in="shadowOffsetOuter1" result="shadowBlurOuter1"/>
+            <feComposite in="shadowBlurOuter1" in2="SourceAlpha" operator="out" result="shadowBlurOuter1"/>
+            <feColorMatrix values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.06 0" in="shadowBlurOuter1"/>
+        </filter>
+        <circle id="cql9vp7krb" cx="17" cy="17" r="13"/>
+    </defs>
+    <g fill="none" fill-rule="evenodd">
+        <g>
+            <use fill="#000" filter="url(#sagkejio2a)" xlink:href="#cql9vp7krb"/>
+            <circle stroke="#4C8CFF" stroke-width="1.5" stroke-linejoin="square" fill="#A8C7FF" cx="17" cy="17" r="12.25"/>
+        </g>
+        <g stroke="#FFF" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M20.972 12.43A6.125 6.125 0 0 1 23 17c0 3.367-2.686 6.097-6 6.097M12.876 21.429A6.126 6.126 0 0 1 11 17c0-3.367 2.686-6.097 6-6.097" stroke-width="1.5"/>
+            <path stroke-width="1.4" d="m16.5 9 2 2-2 2M17.5 25l-2-2 2-2"/>
+        </g>
+    </g>
+</svg>
