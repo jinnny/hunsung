@@ -634,7 +634,7 @@
             <li class="list-table-li">
               <div class="list-table-content">
                 <div class="list-table-td list-table-item table-id">
-                  <strong class="list-table__content">shoplinker_yeseul</strong>
+                  <strong class="list-table__content js-member-admin-button">shoplinker_yeseul</strong>
                 </div>
                 <div class="list-table-td list-table-item table-name">
                   <div class="list-table__content">가가가가가가가가가가 띄어쓰기포함20자</div>
@@ -669,7 +669,7 @@
             <li class="list-table-li">
               <div class="list-table-content">
                 <div class="list-table-td list-table-item table-id">
-                  <strong class="list-table__content">shoplinker_yeseul</strong>
+                  <strong class="list-table__content js-member-admin-button">shoplinker_yeseul</strong>
                 </div>
                 <div class="list-table-td list-table-item table-name">
                   <div class="list-table__content">가가가가가가가가가가 띄어쓰기포함20자</div>
@@ -739,37 +739,46 @@
           <div class="layer-popup-content-scroll">
               <div class="member-register-part">
                 <label for="registerId" class="member-register__label">사용자 ID (계정) <i class="required">*</i></label>
-<!--                <div class="input-part-with-condition">-->
-<!--                  <input type="text" class="input__input member-register__input" id="registerId" placeholder="최대 20자 입력">-->
-<!--                  <p class="input__error">이미 사용중인 아이디입니다</p>-->
-<!--                </div>-->
-                <div class="input-animation-part">
-                  <input type="text" class="input__input-animation" id="modelNo">
-                  <label for="modelNo" class="input__label input__label-animation">최대 20자 입력</label>
-                  <fieldset class="input-field-outline">
-                    <legend class="input-legend-text">사용자 ID (계정)</legend>
+                <!-- 에러인 경우 error 클래스 추가-->
+                <div class="input-error-animation-part error">
+                  <input type="text" class="input__input-animation-error" id="modelNo" placeholder="최대 20자 입력">
+                  <label for="modelNo" class="input__label-animation input__label-animation-error">이미 사용중인 ID입니다</label>
+                  <fieldset class="input-field-outline-error">
+                    <legend class="input-legend-text-error">이미 사용중인 ID입니다</legend>
                   </fieldset>
                 </div>
               </div>
               <div class="member-register-part">
                 <label for="registerNickName" class="member-register__label">사용자 닉네임 <i class="required">*</i></label>
-                <div class="input-part-with-condition">
-                  <input type="text" class="input__input member-register__input" id="registerNickName" placeholder="최대 20자 입력">
-                  <p class="input__error">이미 사용중인 닉네임입니다</p>
+                <!-- 에러인 경우 error 클래스 추가-->
+                <div class="input-error-animation-part error">
+                  <input type="text" class="input__input-animation-error" id="registerNickName" placeholder="최대 20자 입력">
+                  <label for="registerNickName" class="input__label-animation input__label-animation-error">이미 사용중인 닉네임입니다</label>
+                  <fieldset class="input-field-outline-error">
+                    <legend class="input-legend-text-error">이미 사용중인 닉네임입니다</legend>
+                  </fieldset>
                 </div>
               </div>
               <div class="member-register-part">
                 <label for="registerPassword" class="member-register__label">비밀번호 <i class="required">*</i></label>
-                <div class="input-part-with-condition">
-                  <input type="password" class="input__input member-register__input" id="registerPassword" placeholder="영문,숫자,특수문자 혼합하여 8자 이상 입력">
-                  <p class="input__error">비밀번호 조건에 맞지 않습니다</p>
+                <!-- 에러인 경우 error 클래스 추가-->
+                <div class="input-error-animation-part error">
+                  <input type="password" class="input__input-animation-error" id="registerPassword" placeholder="영문,숫자,특수문자 혼합하여 8자 이상 입력">
+                  <label for="registerPassword" class="input__label-animation input__label-animation-error">비밀번호 조건에 맞지 않습니다</label>
+                  <fieldset class="input-field-outline-error">
+                    <legend class="input-legend-text-error">비밀번호 조건에 맞지 않습니다</legend>
+                  </fieldset>
                 </div>
               </div>
               <div class="member-register-part">
                 <label for="registerPassword2" class="member-register__label">비밀번호 확인 <i class="required">*</i></label>
-                <div class="input-part-with-condition">
-                  <input type="password" class="input__input member-register__input" id="registerPassword2" placeholder="비밀번호 확인">
-                  <p class="input__error">비밀번호가 일치하지 않습니다</p>
+                <!-- 에러인 경우 error 클래스 추가-->
+                <div class="input-error-animation-part">
+                  <input type="password" class="input__input-animation-error" id="registerPassword2" placeholder="비밀번호 확인">
+                  <label for="registerPassword2" class="input__label-animation input__label-animation-error">비밀번호가 일치하지 않습니다</label>
+                  <fieldset class="input-field-outline-error">
+                    <legend class="input-legend-text-error">비밀번호가 일치하지 않습니다</legend>
+                  </fieldset>
                 </div>
               </div>
               <div class="member-register-part">
@@ -809,44 +818,56 @@
           <div class="layer-popup-content-scroll">
             <div class="member-register-part">
               <label for="registerId" class="member-register__label">사용자 ID (계정)</label>
-              <div class="input-part-with-condition">
-                <input type="text" class="input__input member-register__input" id="registerId" placeholder="최대 20자 입력">
-                <p class="input__error">이미 사용중인 아이디입니다</p>
+              <div class="input-error-animation-part">
+                <input type="text" class="input__input-animation-error" id="registerId" placeholder="최대 20자 입력" disabled value="ididid">
+                <label for="registerId" class="input__label-animation input__label-animation-error">이미 사용중인 ID입니다</label>
+                <fieldset class="input-field-outline-error">
+                  <legend class="input-legend-text-error">이미 사용중인 ID입니다</legend>
+                </fieldset>
               </div>
-              <!--                <div class="input-animation-part">-->
-              <!--                  <input type="text" class="input__input-animation" id="modelNo">-->
-              <!--                  <label for="modelNo" class="input__label input__label-animation">최대 20자 입력</label>-->
-              <!--                  <fieldset class="input-field-outline">-->
-              <!--                    <legend class="input-legend-text">사용자 ID (계정)</legend>-->
-              <!--                  </fieldset>-->
-              <!--                </div>-->
             </div>
             <div class="member-register-part">
               <label for="registerNickName" class="member-register__label">사용자 닉네임</label>
-              <div class="input-part-with-condition">
-                <input type="text" class="input__input member-register__input" id="registerNickName" placeholder="최대 20자 입력">
-                <p class="input__error">이미 사용중인 닉네임입니다</p>
+              <!-- 에러인 경우 error 클래스 추가-->
+              <div class="input-error-animation-part error">
+                <input type="text" class="input__input-animation-error" id="registerNickName" placeholder="최대 20자 입력">
+                <label for="registerNickName" class="input__label-animation input__label-animation-error">이미 사용중인 닉네임입니다</label>
+                <fieldset class="input-field-outline-error">
+                  <legend class="input-legend-text-error">이미 사용중인 닉네임입니다</legend>
+                </fieldset>
               </div>
             </div>
             <div class="member-register-part">
               <label for="registerCurrentPassword" class="member-register__label">현재 비밀번호</label>
-              <div class="input-part-with-condition">
-                <input type="password" class="input__input member-register__input" id="registerCurrentPassword" placeholder="현재 비밀번호 확인">
-                <p class="input__error">비밀번호 조건에 맞지 않습니다</p>
+              <!-- 에러인 경우 error 클래스 추가-->
+              <div class="input-error-animation-part error">
+                <input type="password" class="input__input-animation-error" id="registerCurrentPassword" placeholder="현재 비밀번호 확인">
+                <label for="registerCurrentPassword" class="input__label-animation input__label-animation-error">현재 비밀번호와 일치하지 않습니다</label>
+                <fieldset class="input-field-outline-error">
+                  <legend class="input-legend-text-error">현재 비밀번호와 일치하지 않습니다</legend>
+                </fieldset>
               </div>
             </div>
             <div class="member-register-part">
               <label for="registerNewPassword" class="member-register__label">새로운 비밀번호</label>
-              <div class="input-part-with-condition">
-                <input type="password" class="input__input member-register__input" id="registerNewPassword" placeholder="영문,숫자,특수문자 혼합하여 8자 이상 입력">
-                <p class="input__error">비밀번호가 일치하지 않습니다</p>
+              <!-- 에러인 경우 error 클래스 추가-->
+              <div class="input-error-animation-part">
+                <input type="password" class="input__input-animation-error" id="registerNewPassword" placeholder="영문,숫자,특수문자 혼합하여 8자 이상 입력">
+                <label for="registerNewPassword" class="input__label-animation input__label-animation-error">비밀번호 조건에 맞지 않습니다</label>
+                <fieldset class="input-field-outline-error">
+                  <legend class="input-legend-text-error">비밀번호 조건에 맞지 않습니다</legend>
+                </fieldset>
               </div>
             </div>
             <div class="member-register-part">
               <label for="registerNewPassword2" class="member-register__label">비밀번호 확인</label>
-              <div class="input-part-with-condition">
-                <input type="password" class="input__input member-register__input" id="registerNewPassword2" placeholder="새로 입력한 비밀번호 확인">
-                <p class="input__error">비밀번호가 일치하지 않습니다</p>
+              <!-- 에러인 경우 error 클래스 추가-->
+              <div class="input-error-animation-part">
+                <input type="password" class="input__input-animation-error" id="registerNewPassword2" placeholder="새로 입력한 비밀번호 확인">
+                <label for="registerNewPassword2" class="input__label-animation input__label-animation-error">비밀번호가 일치하지 않습니다</label>
+                <fieldset class="input-field-outline-error">
+                  <legend class="input-legend-text-error">비밀번호가 일치하지 않습니다</legend>
+                </fieldset>
               </div>
             </div>
             <div class="member-register-part">
@@ -885,38 +906,6 @@
 <!--add-->
 <script>
   $(function () {
-    // 효과있는 입력창
-    // 사용된 클래스
-    // is--active, is--complete, is--error, error
-    // 입력후 에러난경우(형식이 틀렸을 경우): is--error
-    // 입력전에 에러난 경우(필수값인데 빼먹은 경우): error
-    const inputAnimation = () => {
-      // 포커스 되었을때
-      $(document).on('focus', '.input__input-animation:not(.js-date-input)', function() {
-        $(this).parents('.input-animation-part').addClass('is--active');
-      }).on('blur', '.input__input-animation:not(.js-date-input)' , function() {
-        // 포커스에서 나갔을때
-
-        if ($(this).val().trim() === '') {
-          // 아무것도 입력하지 않았을 때
-          console.log('미입력')
-          $(this).parents('.input-animation-part').removeClass('is--active');
-          $(this).parents('.input-animation-part').removeClass('is--complete');
-          if($(this).parents('.input-animation-part').hasClass('required')) {
-            $(this).parents('.input-animation-part').addClass('error');
-          }
-        } else {
-          console.log('입력')
-          $(this).parents('.input-animation-part').addClass('is--complete');
-          $(this).parents('.input-animation-part').addClass('is--complete');
-          $(this).parents('.input-animation-part').removeClass('error');
-        }
-      }).on('keydown', '.input__input-animation:not(.js-date-input)', function() {
-        $(this).parents('.input-animation-part').removeClass('is--complete');
-        $(this).parents('.input-animation-part').addClass('is--active');
-      })
-    }
-
     //사용여부 switch
     $('.js-switch-input').on('change', function (){
       if($(this).is(':checked')) {
@@ -932,6 +921,11 @@
     // 사용자 추가
     $('.js-member-register-button').on('click', function () {
       $('.js-member-register-popup').fadeIn(400);
+    })
+
+    // 사용자 관리
+    $('.js-member-admin-button').on('click', function () {
+      $('.js-member-admin-popup').fadeIn(400);
     })
 
     // 날짜선택
@@ -981,7 +975,6 @@
       );
     }
     searchDatePickerHandler()
-    inputAnimation()
   })
 </script>
 </body>

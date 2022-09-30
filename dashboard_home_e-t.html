@@ -892,19 +892,19 @@
           .append('div')
           .attr('class', 'tooltip-content')
           .style('color',d => d.color)
-          .html(d => d.name + ': ' + d.values.find(h => h.date === yPos)?.value)
+          .html(d => `<a href="${d.url}" class="tooltip-content__link">${d.name}:${d.values.find(h => h.date === yPos)?.value}</a>`)
           .append('div')
           .attr('class', 'tooltip-content-data')
           .html(d =>
             `<span class="tooltip-content-data__data in">
-                            <span class="data-label in">IN </span>
+                            <span class="data-label in">${d.subName[0]}</span>
                             <span class="data-data">
                               ${d.values.find(h => h.date === yPos)?.in}
                             </span>
                           </span>
                           <span class="tooltip-content-data-line"></span>
                           <span class="tooltip-content-data__data out">
-                            <span class="data-label out">OUT </span>
+                            <span class="data-label out">${d.subName[1]}</span>
                             <span class="data-data">
                             ${d.values.find(h => h.date === yPos)?.out}
                             </div>
@@ -940,8 +940,10 @@
 
   const lineChartData = [
     {
-      "name": "생산",
+      "name": "타이틀1",
+      "url": "https://www.google.com/",
       "color": "#4c8cff",
+      "subName": ["항목1", "항목2"],
       "values": [
         {
           "date": "10월 1주",
@@ -1012,8 +1014,10 @@
       ]
     },
     {
-      "name": "매출",
+      "name": "타이틀2",
+      "url": "https://about.google/google-in-korea/",
       "color": "#35d7aa",
+      "subName": ["항목3", "항목4"],
       "values": [
         {
           "date": "10월 1주",

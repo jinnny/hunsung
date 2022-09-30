@@ -636,157 +636,6 @@
   </article>
 </section>
 
-<!--사용자등록 레이어 팝업-->
-<div class="layer-popup js-layer-popup js-member-register-popup">
-  <article class="layer-popup-content js-layer-popup-content member common">
-    <header class="layer-popup-header">
-      <h2 class="layer-popup__title">
-          <span class="first-title js-first-title">
-            사용자 추가
-          </span>
-      </h2>
-      <button class="layer-popup__close-button js-layer-popup-close" ><span class="blind">닫기</span></button>
-    </header>
-    <div class="layer-popup-content-content">
-      <form action="">
-        <div class="layer-popup-content-content-inner">
-          <div class="layer-popup-content-scroll">
-              <div class="member-register-part">
-                <label for="registerId" class="member-register__label">사용자 ID (계정) <i class="required">*</i></label>
-                <div class="input-part-with-condition">
-                  <input type="text" class="input__input member-register__input" id="registerId" placeholder="최대 20자 입력">
-                  <p class="input__error">이미 사용중인 아이디입니다</p>
-                </div>
-<!--                <div class="input-animation-part">-->
-<!--                  <input type="text" class="input__input-animation" id="modelNo">-->
-<!--                  <label for="modelNo" class="input__label input__label-animation">최대 20자 입력</label>-->
-<!--                  <fieldset class="input-field-outline">-->
-<!--                    <legend class="input-legend-text">사용자 ID (계정)</legend>-->
-<!--                  </fieldset>-->
-<!--                </div>-->
-              </div>
-              <div class="member-register-part">
-                <label for="registerNickName" class="member-register__label">사용자 닉네임 <i class="required">*</i></label>
-                <div class="input-part-with-condition">
-                  <input type="text" class="input__input member-register__input" id="registerNickName" placeholder="최대 20자 입력">
-                  <p class="input__error">이미 사용중인 닉네임입니다</p>
-                </div>
-              </div>
-              <div class="member-register-part">
-                <label for="registerPassword" class="member-register__label">비밀번호 <i class="required">*</i></label>
-                <div class="input-part-with-condition">
-                  <input type="password" class="input__input member-register__input" id="registerPassword" placeholder="영문,숫자,특수문자 혼합하여 8자 이상 입력">
-                  <p class="input__error">비밀번호 조건에 맞지 않습니다</p>
-                </div>
-              </div>
-              <div class="member-register-part">
-                <label for="registerPassword2" class="member-register__label">비밀번호 확인 <i class="required">*</i></label>
-                <div class="input-part-with-condition">
-                  <input type="password" class="input__input member-register__input" id="registerPassword2" placeholder="비밀번호 확인">
-                  <p class="input__error">비밀번호가 일치하지 않습니다</p>
-                </div>
-              </div>
-              <div class="member-register-part">
-                <label for="registerMemo" class="member-register__label memo">
-                  메모
-                  <small>(0/300)</small>
-                </label>
-                <div class="input-part-with-condition">
-                  <textarea id="registerMemo" cols="40" rows="25" class="input__input input__input-textarea member-register__textarea" placeholder="최대 300자 입력"></textarea>
-                </div>
-              </div>
-          </div>
-        </div>
-        <div class="member-register-submit-area">
-          <button class="member-register__submit-button" disabled>저장</button>
-        </div>
-      </form>
-    </div>
-  </article>
-  <div class="layer-popup-bg"></div>
-</div>
-<!--사용자등록 레이어 팝업-->
-<!--계정 관리 레이어 팝업-->
-<div class="layer-popup js-layer-popup js-member-admin-popup">
-  <article class="layer-popup-content js-layer-popup-content member common admin">
-    <header class="layer-popup-header">
-      <h2 class="layer-popup__title">
-          <span class="first-title js-first-title">
-            계정 관리
-          </span>
-      </h2>
-      <button class="layer-popup__close-button js-layer-popup-close" ><span class="blind">닫기</span></button>
-    </header>
-    <div class="layer-popup-content-content">
-      <form action="">
-        <div class="layer-popup-content-content-inner">
-          <div class="layer-popup-content-scroll">
-            <div class="member-register-part">
-              <label for="registerId" class="member-register__label">사용자 ID (계정)</label>
-              <div class="input-part-with-condition">
-                <input type="text" class="input__input member-register__input" id="registerId" placeholder="최대 20자 입력">
-                <p class="input__error">이미 사용중인 아이디입니다</p>
-              </div>
-              <!--                <div class="input-animation-part">-->
-              <!--                  <input type="text" class="input__input-animation" id="modelNo">-->
-              <!--                  <label for="modelNo" class="input__label input__label-animation">최대 20자 입력</label>-->
-              <!--                  <fieldset class="input-field-outline">-->
-              <!--                    <legend class="input-legend-text">사용자 ID (계정)</legend>-->
-              <!--                  </fieldset>-->
-              <!--                </div>-->
-            </div>
-            <div class="member-register-part">
-              <label for="registerNickName" class="member-register__label">사용자 닉네임</label>
-              <div class="input-part-with-condition">
-                <input type="text" class="input__input member-register__input" id="registerNickName" placeholder="최대 20자 입력">
-                <p class="input__error">이미 사용중인 닉네임입니다</p>
-              </div>
-            </div>
-            <div class="member-register-part">
-              <label for="registerCurrentPassword" class="member-register__label">현재 비밀번호</label>
-              <div class="input-part-with-condition">
-                <input type="password" class="input__input member-register__input" id="registerCurrentPassword" placeholder="현재 비밀번호 확인">
-                <p class="input__error">비밀번호 조건에 맞지 않습니다</p>
-              </div>
-            </div>
-            <div class="member-register-part">
-              <label for="registerNewPassword" class="member-register__label">새로운 비밀번호</label>
-              <div class="input-part-with-condition">
-                <input type="password" class="input__input member-register__input" id="registerNewPassword" placeholder="영문,숫자,특수문자 혼합하여 8자 이상 입력">
-                <p class="input__error">비밀번호가 일치하지 않습니다</p>
-              </div>
-            </div>
-            <div class="member-register-part">
-              <label for="registerNewPassword2" class="member-register__label">비밀번호 확인</label>
-              <div class="input-part-with-condition">
-                <input type="password" class="input__input member-register__input" id="registerNewPassword2" placeholder="새로 입력한 비밀번호 확인">
-                <p class="input__error">비밀번호가 일치하지 않습니다</p>
-              </div>
-            </div>
-            <div class="member-register-part">
-              <label for="registerMemo" class="member-register__label memo">
-                메모
-                <small>(0/300)</small>
-              </label>
-              <div class="input-part-with-condition">
-                <textarea id="registerMemo" cols="40" rows="25" class="input__input input__input-textarea member-register__textarea" placeholder="최대 300자 입력"></textarea>
-              </div>
-            </div>
-            <div class="member-register-part">
-              <span class="member-register__label">마지막 수정일</span>
-              <p class="member-register__input-text">2022.08.07 / <span>13:16:35</span></p>
-            </div>
-          </div>
-        </div>
-        <div class="member-register-submit-area">
-          <button class="member-register__submit-button" disabled>저장</button>
-        </div>
-      </form>
-    </div>
-  </article>
-  <div class="layer-popup-bg"></div>
-</div>
-<!--계정 관리 레이어 팝업-->
 
 <!-- CONTENT AREA -->
 <!-- JAVASCRIPT FILES.. -->
@@ -799,38 +648,6 @@
 <!--add-->
 <script>
   $(function () {
-    // 효과있는 입력창
-    // 사용된 클래스
-    // is--active, is--complete, is--error, error
-    // 입력후 에러난경우(형식이 틀렸을 경우): is--error
-    // 입력전에 에러난 경우(필수값인데 빼먹은 경우): error
-    const inputAnimation = () => {
-      // 포커스 되었을때
-      $(document).on('focus', '.input__input-animation:not(.js-date-input)', function() {
-        $(this).parents('.input-animation-part').addClass('is--active');
-      }).on('blur', '.input__input-animation:not(.js-date-input)' , function() {
-        // 포커스에서 나갔을때
-
-        if ($(this).val().trim() === '') {
-          // 아무것도 입력하지 않았을 때
-          console.log('미입력')
-          $(this).parents('.input-animation-part').removeClass('is--active');
-          $(this).parents('.input-animation-part').removeClass('is--complete');
-          if($(this).parents('.input-animation-part').hasClass('required')) {
-            $(this).parents('.input-animation-part').addClass('error');
-          }
-        } else {
-          console.log('입력')
-          $(this).parents('.input-animation-part').addClass('is--complete');
-          $(this).parents('.input-animation-part').addClass('is--complete');
-          $(this).parents('.input-animation-part').removeClass('error');
-        }
-      }).on('keydown', '.input__input-animation:not(.js-date-input)', function() {
-        $(this).parents('.input-animation-part').removeClass('is--complete');
-        $(this).parents('.input-animation-part').addClass('is--active');
-      })
-    }
-
     //사용여부 switch
     $('.js-switch-input').on('change', function (){
       if($(this).is(':checked')) {
@@ -840,12 +657,6 @@
         $(this).parent().parent().removeClass('check')
         $(this).next().next().text('OFF')
       }
-    })
-
-
-    // 사용자 추가
-    $('.js-member-register-button').on('click', function () {
-      $('.js-member-register-popup').fadeIn(400);
     })
 
     // 날짜선택
@@ -895,7 +706,6 @@
       );
     }
     searchDatePickerHandler()
-    inputAnimation()
   })
 </script>
 </body>

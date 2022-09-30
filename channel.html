@@ -688,7 +688,7 @@
             </div>
             <div class="list-table-td list-table-item table-id-count text-center has--separator">
               <div class="id-count-area">
-                100개 <button class="id-count-button js-id-count-button" type="button"></button>
+                100개 <button class="id-count-button js-account-button" type="button"></button>
               </div>
             </div>
             <div class="list-table-td list-table-item table-use has--separator">
@@ -702,7 +702,7 @@
               <p class="list-table__content">비고내용</p>
             </div>
             <div class="list-table-td list-table-item table-edit text-center has--separator">
-              <button type="button" class="channel-table-button">수정</button>
+              <button type="button" class="channel-table-button js-account-button">수정</button>
             </div>
             <div class="list-table-td list-table-item table-date text-center">
               <p class="list-table__content">2022.08.07  <span class="table-date-time">13:16:35</span></p>
@@ -722,7 +722,7 @@
             </div>
             <div class="list-table-td list-table-item table-id-count text-center has--separator">
               <div class="id-count-area">
-                100개 <button class="id-count-button js-list-more-button" type="button"></button>
+                100개 <button class="id-count-button js-list-more-button js-account-button" type="button"></button>
               </div>
             </div>
             <div class="list-table-td list-table-item table-use has--separator">
@@ -736,41 +736,7 @@
               <p class="list-table__content">비고내용</p>
             </div>
             <div class="list-table-td list-table-item table-edit text-center has--separator">
-              <button type="button" class="channel-table-button">수정</button>
-            </div>
-            <div class="list-table-td list-table-item table-date text-center">
-              <p class="list-table__content">2022.08.07  <span class="table-date-time">13:16:35</span></p>
-            </div>
-          </div>
-        </li>
-        <li class="list-table-li">
-          <div class="list-table-content">
-            <div class="list-table-td list-table-item table-check">
-              <input type="checkbox" class="input__input-checkbox js-input-checkbox">
-            </div>
-            <div class="list-table-td list-table-item table-shop-name has--separator">
-              <div class="shop-info-area">
-                <img src="images/E/img-shop-default.svg" alt="" class="shop-logo__img shop-setting__logo">
-                <p class="shop-name">스마트스토어</p>
-              </div>
-            </div>
-            <div class="list-table-td list-table-item table-id-count text-center has--separator">
-              <div class="id-count-area">
-                100개 <button class="id-count-button js-list-more-button" type="button"></button>
-              </div>
-            </div>
-            <div class="list-table-td list-table-item table-use has--separator">
-              <label class="input__input-switch type-with-text">
-                <input type="checkbox" class="input__input-checkbox-switch js-switch-input">
-                <span class="input__input-slider round"></span>
-                <span class="input__input-switch-text">OFF</span>
-              </label>
-            </div>
-            <div class="list-table-td list-table-item table-note text-center has--separator">
-              <p class="list-table__content">비고내용</p>
-            </div>
-            <div class="list-table-td list-table-item table-edit text-center has--separator">
-              <button type="button" class="channel-table-button">수정</button>
+              <button type="button" class="channel-table-button js-account-button">수정</button>
             </div>
             <div class="list-table-td list-table-item table-date text-center">
               <p class="list-table__content">2022.08.07  <span class="table-date-time">13:16:35</span></p>
@@ -786,12 +752,60 @@
 
 <!--계정 레이어 팝업-->
 <div class="layer-popup js-account-layer shop-setting-layer-popup">
-  <article class="account-layer js-account-layer schedule-layer-content">
+  <article class="account-layer schedule-layer-content">
     <header class="account-layer-header">
       <h2 class="account-layer__title">11번가</h2>
     </header>
     <div class="account-list-area">
       <ol class="account-list">
+        <li class="account-list__item">
+          <i class="account-item__number">1.</i>
+          <div class="account-item-text">
+            <strong class="account-item__id">Yooyeseul</strong>
+            <small class="account-item__key">고유 key 영역 123456788</small>
+          </div>
+          <div class="account-item-buttons">
+            <button class="account-item__button edit js-account-item-edit">
+              <span class="blind">수정</span>
+            </button>
+            <span class="account-item__button-separator"></span>
+            <button class="account-item__button remove js-account-item-remove">
+              <span class="blind">삭제</span>
+            </button>
+          </div>
+        </li>
+        <li class="account-list__item">
+          <i class="account-item__number">1.</i>
+          <div class="account-item-text">
+            <strong class="account-item__id">Yooyeseul</strong>
+            <small class="account-item__key">고유 key 영역 123456788</small>
+          </div>
+          <div class="account-item-buttons">
+            <button class="account-item__button edit js-account-item-edit">
+              <span class="blind">수정</span>
+            </button>
+            <span class="account-item__button-separator"></span>
+            <button class="account-item__button remove js-account-item-remove">
+              <span class="blind">삭제</span>
+            </button>
+          </div>
+        </li>
+        <li class="account-list__item">
+          <i class="account-item__number">1.</i>
+          <div class="account-item-text">
+            <strong class="account-item__id">Yooyeseul</strong>
+            <small class="account-item__key">고유 key 영역 123456788</small>
+          </div>
+          <div class="account-item-buttons">
+            <button class="account-item__button edit js-account-item-edit">
+              <span class="blind">수정</span>
+            </button>
+            <span class="account-item__button-separator"></span>
+            <button class="account-item__button remove js-account-item-remove">
+              <span class="blind">삭제</span>
+            </button>
+          </div>
+        </li>
         <li class="account-list__item">
           <i class="account-item__number">1.</i>
           <div class="account-item-text">
@@ -888,42 +902,58 @@
                 <img src="images/E/img-shop-default.svg" alt="" class="shop-setting__logo">
                 롯데온
               </div>
-              <div class="member-register-part">
-                <label for="id" class="member-register__label">아이디 <i class="required">*</i></label>
-                <div class="input-part-with-condition">
-                  <input type="text" class="input__input member-register__input" id="id" required placeholder="최대 20자 입력">
-                  <p class="input__error">이미 사용중인 아이디입니다</p>
+              <div class="member-register-part shop-setting-part">
+                <strong class="member-register__label">아이디 <i class="required">*</i></strong>
+                <!-- 에러인 경우 error 클래스 추가-->
+                <div class="input-error-animation-part error">
+                  <input type="text" class="input__input-animation-error" id="id" required placeholder="최대 20자 입력">
+                  <label for="id" class="input__label-animation input__label-animation-error">이미 사용중인 ID입니다</label>
+                  <fieldset class="input-field-outline-error">
+                    <legend class="input-legend-text-error">이미 사용중인 ID입니다</legend>
+                  </fieldset>
                 </div>
               </div>
-              <div class="member-register-part">
-                <label for="password" class="member-register__label">비밀번호 <i class="required">*</i></label>
-                <div class="input-part-with-condition">
-                  <input type="password" class="input__input member-register__input" id="password" required placeholder="영문,숫자,특수문자 혼합하여 8자 이상 입력">
-                  <p class="input__error">비밀번호 조건에 맞지 않습니다</p>
+              <div class="member-register-part shop-setting-part">
+                <strong class="member-register__label">비밀번호 <i class="required">*</i></strong>
+                <div class="input-error-animation-part">
+                  <input type="password" class="input__input-animation-error" id="password" required placeholder="영문,숫자,특수문자 혼합하여 8자 이상 입력">
+                  <label for="password" class="input__label-animation input__label-animation-error">비밀번호 조건에 맞지 않습니다</label>
+                  <fieldset class="input-field-outline-error">
+                    <legend class="input-legend-text-error">비밀번호 조건에 맞지 않습니다</legend>
+                  </fieldset>
                 </div>
               </div>
-              <div class="member-register-part">
-                <label for="apiId" class="member-register__label narrow-line-height">API 연동용 판매자 아이디 <i class="required">*</i></label>
-                <div class="input-part-with-condition">
-                  <input type="text" class="input__input member-register__input" id="apiId" required placeholder="최대 20자 입력">
-                  <p class="input__error">이미 사용중인 닉네임입니다</p>
+              <div class="member-register-part shop-setting-part">
+                <strong class="member-register__label narrow-line-height">API 연동용 판매자<br/> 아이디 <i class="required">*</i></strong>
+                <div class="input-error-animation-part">
+                  <input type="text" class="input__input-animation-error" id="apiId" required placeholder="최대 20자 입력">
+                  <label for="apiId" class="input__label-animation input__label-animation-error">에러메세지</label>
+                  <fieldset class="input-field-outline-error">
+                    <legend class="input-legend-text-error">에러메세지</legend>
+                  </fieldset>
                 </div>
               </div>
-              <div class="member-register-part">
-                <label for="apiId2" class="member-register__label">API 아이디 <i class="required">*</i></label>
-                <div class="input-part-with-condition">
-                  <input type="text" class="input__input member-register__input" id="apiId2" required placeholder="최대 20자 입력">
-                  <p class="input__error">이미 사용중인 닉네임입니다</p>
+              <div class="member-register-part shop-setting-part">
+                <strong class="member-register__label">API 아이디 <i class="required">*</i></strong>
+                <div class="input-error-animation-part">
+                  <input type="text" class="input__input-animation-error" id="apiId2" required placeholder="최대 20자 입력">
+                  <label for="apiId2" class="input__label-animation input__label-animation-error">에러메세지</label>
+                  <fieldset class="input-field-outline-error">
+                    <legend class="input-legend-text-error">에러메세지</legend>
+                  </fieldset>
                 </div>
               </div>
-              <div class="member-register-part">
-                <label for="domainId" class="member-register__label">도메인 아이디<i class="required">*</i></label>
-                <div class="input-part-with-condition">
-                  <input type="text" class="input__input member-register__input" id="domainId" required placeholder="최대 20자 입력">
-                  <p class="input__error">이미 사용중인 닉네임입니다</p>
+              <div class="member-register-part shop-setting-part">
+                <strong class="member-register__label">도메인 아이디<i class="required">*</i></strong>
+                <div class="input-error-animation-part">
+                  <input type="text" class="input__input-animation-error" id="domainId" required placeholder="최대 20자 입력">
+                  <label for="domainId" class="input__label-animation input__label-animation-error">에러메세지</label>
+                  <fieldset class="input-field-outline-error">
+                    <legend class="input-legend-text-error">에러메세지</legend>
+                  </fieldset>
                 </div>
               </div>
-              <div class="member-register-part with--button">
+              <div class="member-register-part with--button shop-setting-part">
                 <label for="domainId" class="member-register__label">세부 설정</label>
                 <div class="input-part-with-condition">
                   <button type="button" class="shop-setting-setting-button js-next-layer-button">설정</button>
@@ -945,31 +975,44 @@
                 롯데온
               </div>
               <div class="member-register-part">
-                <label for="" class="member-register__label">Label <i class="required">*</i></label>
-                <div class="input-part-with-condition">
-                  <input type="text" class="input__input member-register__input" placeholder="최대 20자 입력">
-                  <p class="input__error">이미 사용중인 아이디입니다</p>
+                <strong class="member-register__label">Label <i class="required">*</i></strong>
+                <!-- 에러인 경우 error 클래스 추가-->
+                <div class="input-error-animation-part error">
+                  <input type="text" class="input__input-animation-error" id="" required placeholder="최대 20자 입력">
+                  <label for="" class="input__label-animation input__label-animation-error">에러메세지</label>
+                  <fieldset class="input-field-outline-error">
+                    <legend class="input-legend-text-error">에러메세지</legend>
+                  </fieldset>
                 </div>
               </div>
               <div class="member-register-part">
-                <label for="" class="member-register__label">Label <i class="required">*</i></label>
-                <div class="input-part-with-condition">
-                  <input type="text" class="input__input member-register__input" placeholder="최대 20자 입력">
-                  <p class="input__error">이미 사용중인 아이디입니다</p>
+                <strong class="member-register__label">Label <i class="required">*</i></strong>
+                <div class="input-error-animation-part">
+                  <input type="text" class="input__input-animation-error" id="" required placeholder="최대 20자 입력">
+                  <label for="" class="input__label-animation input__label-animation-error">에러메세지</label>
+                  <fieldset class="input-field-outline-error">
+                    <legend class="input-legend-text-error">에러메세지</legend>
+                  </fieldset>
                 </div>
               </div>
               <div class="member-register-part">
-                <label for="" class="member-register__label">Label <i class="required">*</i></label>
-                <div class="input-part-with-condition">
-                  <input type="text" class="input__input member-register__input" placeholder="최대 20자 입력">
-                  <p class="input__error">이미 사용중인 아이디입니다</p>
+                <strong class="member-register__label">Label <i class="required">*</i></strong>
+                <div class="input-error-animation-part">
+                  <input type="text" class="input__input-animation-error" id="" required placeholder="최대 20자 입력">
+                  <label for="" class="input__label-animation input__label-animation-error">에러메세지</label>
+                  <fieldset class="input-field-outline-error">
+                    <legend class="input-legend-text-error">에러메세지</legend>
+                  </fieldset>
                 </div>
               </div>
               <div class="member-register-part">
-                <label for="" class="member-register__label">Label <i class="required">*</i></label>
-                <div class="input-part-with-condition">
-                  <input type="text" class="input__input member-register__input" placeholder="최대 20자 입력">
-                  <p class="input__error">이미 사용중인 아이디입니다</p>
+                <strong class="member-register__label">Label <i class="required">*</i></strong>
+                <div class="input-error-animation-part">
+                  <input type="text" class="input__input-animation-error" id="" required placeholder="최대 20자 입력">
+                  <label for="" class="input__label-animation input__label-animation-error">에러메세지</label>
+                  <fieldset class="input-field-outline-error">
+                    <legend class="input-legend-text-error">에러메세지</legend>
+                  </fieldset>
                 </div>
               </div>
             </div>
@@ -1021,6 +1064,12 @@
       })
     })
 
+    //삭제, 계정수> 누른경우 레이어 팝업
+    $('.js-account-button').on('click', function () {
+      $('.js-account-layer').css('display','flex').hide().fadeIn(400)
+    })
+
+
     //사용여부 switch
     $('.js-switch-input').on('change', function (){
       if($(this).is(':checked')) {
@@ -1036,7 +1085,14 @@
     $('.js-shop-setting-popup .js-next-layer-button').on('click', function () {
       const popupContent = $(this).parents('.js-layer-popup-content')
       //속도 제어
-      popupContent.animate({'max-width':'600px', height: '500px'}, 300)
+
+      // 개수에 따라 다른 높이적용
+      if (true) {
+        popupContent.animate({'max-width':'580px', height: '400px'}, 300)
+      }else {
+        popupContent.animate({'max-width':'580px', height: '600px'}, 300)
+      }
+
       popupContent.find('.js-layer-popup-close').fadeOut(300)
       popupContent.find('.js-layer-popup-prev').fadeIn(300)
       popupContent.find('.js-next-content').fadeIn(300)

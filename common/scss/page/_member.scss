@@ -206,7 +206,12 @@
   &-register {
     &-part {
       display: flex;
-      align-items: flex-start;
+      align-items: center;
+      &.shop-setting-part  + .shop-setting-part{
+        margin-top: 0;
+        &:last-child {
+        }
+      }
       & + .member-register-part {
         margin-top: 13px;
       }
@@ -214,7 +219,6 @@
     &__label {
       font-size: 14px;
       font-weight: normal;
-      line-height: 46px;
       color: $neutral-gray-808596;
       min-width: 105px;
       margin-right: 15px;
@@ -395,7 +399,7 @@
   }
   &.member {
     max-width: 600px;
-    height: 661px;
+    height: 613px;
     max-height: 80vh;
     .layer-popup-content-content {
       padding: 0;
@@ -414,7 +418,7 @@
     }
   }
   &.admin {
-    height: 799px;
+    height: 695px;
     max-height: 80vh;
   }
 }
@@ -679,6 +683,9 @@
     line-height: 1.11;
     color: $neutral-black-32373-c;
     margin-bottom: 20px;
+    &:last-child {
+      margin-bottom: 0;
+    }
     .shop-setting__logo {
       margin-right: 10px;
     }

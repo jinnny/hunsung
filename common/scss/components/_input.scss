@@ -318,6 +318,186 @@
       top: 0;
     }
   }
+
+  // 에러만 표시되는 경우
+  &-error {
+    &-animation {
+      &-part {
+        position: relative;
+        width: 400px;
+        flex: none;
+        &.multiple {
+          display: flex;
+          justify-content: space-between;
+          align-items: flex-start;
+        }
+
+        &.full {
+          width: 100%;
+        }
+
+        &.third {
+          width: calc(33.33% - 26.67px);
+        }
+        &.two {
+          width: calc(66.67% - 26.67px);
+        }
+
+        &.long-label {
+          &.is--active,
+          &.is--complete,
+          &.is--error,
+          &.error {
+            .input__label-animation {
+              transform: translate(0, -6px) scale(0.846);
+            }
+          }
+        }
+
+        &.is--complete {
+          .input__label-animation {
+            transform: translate(7px, -6px) scale(0.846);
+            color: $neutral-gray-9499-ab;
+          }
+          .input-field-outline {
+            border-color: $neutral-gray-9499-ab;
+          }
+          .required {
+            color: $neutral-gray-9499-ab;
+          }
+          .input-legend-text {
+            max-width: 1000px;
+            padding: 0 5px;
+            transition: max-width 100ms cubic-bezier(0.0, 0, 0.2, 1) 50ms
+          }
+        }
+
+        &.error {
+          .input__input-animation-error {
+            &:focus {
+              outline: none;
+              ~ .input-field-outline-error {
+                border-color: $secondary-red-ff-4-d-75;
+              }
+            }
+          }
+          .input__label-animation-error {
+            opacity: 1;
+            transform: translate(7px, -6px) scale(0.846);
+            color: $secondary-red-ff-4-d-75;
+          }
+          .input-field-outline-error {
+            border-color: $secondary-red-ff-4-d-75;
+          }
+          .required {
+            color: $secondary-red-ff-4-d-75;
+          }
+          .input-legend-text-error {
+            max-width: 1000px;
+            padding: 0 5px;
+            transition: max-width 100ms cubic-bezier(0.0, 0, 0.2, 1) 50ms
+          }
+        }
+      }
+      &-error {
+        color: $secondary-red-ff-4-d-75;
+        font-size: 11px;
+        margin: 10px 0;
+      }
+    }
+  }
+  &__input-animation-error {
+    width: 100%;
+    height: 46px;
+    font-size: 13px;
+    line-height: 1;
+    color: $neutral-black-32373-c;
+    padding: 15px 14px 15px;
+    box-sizing: border-box;
+    border: none;
+    &::-webkit-input-placeholder {
+      color: $neutral-gray-b-3-b-7-c-5;
+    }
+    &:-ms-input-placeholder {
+      color: $neutral-gray-b-3-b-7-c-5;
+    }
+    &::placeholder {
+      color: $neutral-gray-b-3-b-7-c-5;
+    }
+    &:disabled {
+      background-color: $neutral-gray-f-6-f-7-fc;
+      border-radius: 4px;
+      ~ .input-field-outline-error {
+        border-color: $neutral-gray-f-6-f-7-fc;
+        box-shadow: none;
+      }
+    }
+    &:focus {
+      outline: none;
+      ~ .input-field-outline-error {
+        border-color: $primary-blue-4-c-8-cff;
+      }
+    }
+    &:-webkit-autofill,
+    &:-webkit-autofill:hover,
+    &:-webkit-autofill:focus, {
+      -webkit-box-shadow: 0 0 0px 1000px $neutral-white-ffffff inset;
+    }
+    &.input__file-animation {
+      visibility: hidden;
+      height: 0;
+      padding: 0;
+    }
+    &.condition-height {
+      height: 113px;
+    }
+    &.as-height {
+      height: 73px;
+    }
+  }
+  &__label-animation-error {
+    font-size: 13px;
+    text-align: left;
+    color: $neutral-gray-b-3-b-7-c-5;
+    top: -3px;
+    left: 0;
+    position: absolute;
+    padding: 0 5px;
+    opacity: 0;
+    transform: translate(9px, 18px) scale(1);
+    -webkit-transition: transform 200ms cubic-bezier(0.0, 0, 0.2, 1) 0ms, color 200ms cubic-bezier(0.0, 0, 0.2, 1) 0ms;
+    transition: transform 200ms cubic-bezier(0.0, 0, 0.2, 1) 0ms, color 200ms cubic-bezier(0.0, 0, 0.2, 1) 0ms;
+    &-file {
+      width: 90%;
+    }
+  }
+  &-field-outline-error {
+    top: -5px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: 0;
+    padding: 0 8px;
+    overflow: hidden;
+    position: absolute;
+    border-style: solid;
+    border-width: 1px;
+    pointer-events: none;
+    border-radius: 4px;
+    box-shadow: 0 1px 3px 0 rgba(39, 70, 127, 0.05);
+    border-color: $neutral-gray-dadde-4;
+  }
+  &-legend-text-error {
+    width: auto;
+    height: 11px;
+    display: block;
+    padding: 0;
+    font-size: 0.75em;
+    max-width: 0.01px;
+    text-align: left;
+    transition: max-width 50ms cubic-bezier(0.0, 0, 0.2, 1) 0ms;
+    visibility: hidden;
+  }
 }
 
 .required {
