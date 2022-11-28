@@ -61,6 +61,7 @@ button {
 /* DRAWER STYLE */
 #drawer-component {
     width: 15.3%;
+    /*    width: 12%;  */
     min-height: 100vh;
     box-shadow: 2px 0 4px 0 rgba(39, 70, 127, 0.05);
     background-color: #ffffff;
@@ -208,6 +209,7 @@ button {
     margin-left: 10px;
 }
 
+#drawer-main-menu-component > li.current::before,
 #drawer-main-menu-component > li.active::before {
     content: '';
     position: absolute;
@@ -225,34 +227,44 @@ button {
     float: left;
 }
 
-#drawer-main-menu-component > li:nth-child(1).active .drawer-menu-list-icon-component {
+#drawer-main-menu-component > li:nth-child(1).active .drawer-menu-list-icon-component,
+#drawer-main-menu-component > li:nth-child(1).current .drawer-menu-list-icon-component {
     background-image: url(../../images/E/DRAWER_FILL/icon-24-x-24-fill-dashboard_selected/icon-24-x-24-fill-dashboard.webp);
 }
-#drawer-main-menu-component > li:nth-child(2).active .drawer-menu-list-icon-component {
+#drawer-main-menu-component > li:nth-child(2).active .drawer-menu-list-icon-component,
+#drawer-main-menu-component > li:nth-child(2).current .drawer-menu-list-icon-component {
     background-image: url(../../images/E/DRAWER_FILL/icon-24-x-24-fill-products_selected/icon-24-x-24-fill-drawing-management.webp);
 }
-#drawer-main-menu-component > li:nth-child(3).active .drawer-menu-list-icon-component {
+#drawer-main-menu-component > li:nth-child(3).active .drawer-menu-list-icon-component,
+#drawer-main-menu-component > li:nth-child(3).current .drawer-menu-list-icon-component {
     background-image: url(../../images/E/DRAWER_FILL/icon-24-x-24-fill-listings_selected/icon-24-x-24-fill-listings.webp);
 }
-#drawer-main-menu-component > li:nth-child(4).active .drawer-menu-list-icon-component {
+#drawer-main-menu-component > li:nth-child(4).active .drawer-menu-list-icon-component,
+#drawer-main-menu-component > li:nth-child(4).current .drawer-menu-list-icon-component {
     background-image: url(../../images/E/DRAWER_FILL/icon-24-x-24-fill-orders_selected/icon-24-x-24-fill-orders.webp);
 }
-#drawer-main-menu-component > li:nth-child(5).active .drawer-menu-list-icon-component {
+#drawer-main-menu-component > li:nth-child(5).active .drawer-menu-list-icon-component,
+#drawer-main-menu-component > li:nth-child(5).current .drawer-menu-list-icon-component {
     background-image: url(../../images/E/DRAWER_FILL/icon-24-x-24-fill-reports_selected/icon-24-x-24-fill-reports.webp);
 }
-#drawer-main-menu-component > li:nth-child(6).active .drawer-menu-list-icon-component {
+#drawer-main-menu-component > li:nth-child(6).active .drawer-menu-list-icon-component,
+#drawer-main-menu-component > li:nth-child(6).current .drawer-menu-list-icon-component {
     background-image: url(../../images/E/DRAWER_FILL/icon-24-x-24-fill-drawing-management_selected/icon-24-x-24-fill-drawing-management.webp);
 }
-#drawer-main-menu-component > li:nth-child(7).active .drawer-menu-list-icon-component {
+#drawer-main-menu-component > li:nth-child(7).active .drawer-menu-list-icon-component,
+#drawer-main-menu-component > li:nth-child(7).current .drawer-menu-list-icon-component {
     background-image: url(../../images/E/DRAWER_FILL/icon-24-x-24-fill-process-status_selected/icon-24-x-24-fill-process-status.webp);
 }
-#drawer-main-menu-component > li:nth-child(8).active .drawer-menu-list-icon-component {
+#drawer-main-menu-component > li:nth-child(8).active .drawer-menu-list-icon-component,
+#drawer-main-menu-component > li:nth-child(8).current .drawer-menu-list-icon-component {
     background-image: url(../../images/E/DRAWER_FILL/icon-24-x-24-fill-inventory-status_selected/icon-24-x-24-fill-inventory-status.webp);
 }
-#drawer-main-menu-component > li:nth-child(9).active .drawer-menu-list-icon-component {
+#drawer-main-menu-component > li:nth-child(9).active .drawer-menu-list-icon-component,
+#drawer-main-menu-component > li:nth-child(9).current .drawer-menu-list-icon-component {
     background-image: url(../../images/E/DRAWER_FILL/icon-24-x-24-fill-sales-status_selected/icon-24-x-24-fill-sales-status.webp);
 }
-#drawer-main-menu-component > li:nth-child(10).active .drawer-menu-list-icon-component {
+#drawer-main-menu-component > li:nth-child(10).active .drawer-menu-list-icon-component,
+#drawer-main-menu-component > li:nth-child(10).current .drawer-menu-list-icon-component {
     background-image: url(../../images/E/DRAWER_FILL/icon-24-x-24-fill-setting_selected/icon-24-x-24-fill-setting.webp);
 }
 
@@ -292,16 +304,25 @@ button {
 #drawer-main-menu-component > li:not(.active):hover .drawer-right-arrow-icon-component {
     background-image: url(../../images/E/DRAWER_FILL/icon-10-x-10-line-arrow-right_hover/icon-10-x-10-line-arrow-right.webp) !important;
 }
-#drawer-main-menu-component > li.active .drawer-right-arrow-icon-component {
+#drawer-main-menu-component > li.active .drawer-right-arrow-icon-component,
+#drawer-main-menu-component > li.current .drawer-right-arrow-icon-component {
     background-image: url(../../images/E/DRAWER_FILL/icon-10-x-10-line-arrow-right_selected/icon-10-x-10-line-arrow-right.webp) !important;
 }
-#drawer-main-menu-component > li.active span {
+#drawer-main-menu-component > li.active .header-menu-depth-subject,
+#drawer-main-menu-component > li.active  .header-menu-subject,
+#drawer-main-menu-component > li.current  .header-menu-subject,
+#drawer-main-menu-component > li.active  .header-menu-depth-item.current span,
+#drawer-main-menu-component > li.active  .header-menu-depth-item.active span,
+#drawer-main-menu-component > li.current .header-menu-depth-item.current span,
+#drawer-main-menu-component > li.current .header-menu-depth-item.active span {
     font-weight: bold;
     color: #32373c;
 }
-#drawer-main-menu-component > li.active svg {
+#drawer-main-menu-component > li.active svg,
+#drawer-main-menu-component > li.current svg {
     display: none;
 }
+#drawer-main-menu-component > li.current .dashboard-active-icon,
 #drawer-main-menu-component > li.active .dashboard-active-icon {
     display: block;
 }
@@ -316,7 +337,7 @@ button {
     opacity: 0;
     visibility: hidden;
 }
-.drawer-sub-menu-component.active {
+.header-menu-item.active .drawer-sub-menu-component.active {
     left: 100%;
     visibility: visible;
     opacity: 1;
@@ -410,6 +431,7 @@ footer {
 /* HEADER STYLE */
 #header-component {
     width: 84.7%;
+    /*    width: 88%;  */
     height: 70px;
     float: left;
     background-color: #ffffff;
@@ -633,6 +655,7 @@ footer {
 }
 
 
+
 .select-box-blue-component {
     height: 36px;
     background-color: #4c8cff;
@@ -661,7 +684,6 @@ footer {
     top: 44px;
     right: 0;
     width: 100px;
-    height: 82px;
     border-radius: 5px;
     box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.05);
     border: solid 1px #dadde4;
@@ -692,12 +714,18 @@ footer {
     background-image: url(../../images/E/HEADER/icon-16-x-16-user/icon-16-x-16-user.webp);
 }
 .select-box-blue-option-component:nth-child(2) .select-box-blue-option-img {
+    background-image: url(../../images/E/HEADER/icon-setting.png);
+}
+.select-box-blue-option-component:nth-child(3) .select-box-blue-option-img {
     background-image: url(../../images/E/HEADER/icon-16-x-16-logout/icon-16-x-16-logout.webp);
 }
 .select-box-blue-option-component span {
     font-size: 14px;
     font-weight: 500;
     color: #32373c;
+}
+.select-box-blue-option-component span a {
+    color: inherit;
 }
 .select-box-blue-option-component:hover {
     background-color: #f4f8ff;
@@ -709,6 +737,9 @@ footer {
     background-image: url(../../images/E/HEADER/icon-16-x-16-user_hover/icon-16-x-16-user.webp);
 }
 .select-box-blue-option-component:nth-child(2):hover .select-box-blue-option-img {
+    background-image: url(../../images/E/HEADER/icon-setting-hover.png);
+}
+.select-box-blue-option-component:nth-child(3):hover .select-box-blue-option-img {
     background-image: url(../../images/E/HEADER/icon-16-x-16-logout_hover/icon-16-x-16-logout.webp);
 }
 /* HEADER STYLE END */
@@ -717,6 +748,7 @@ footer {
 /* CONTENT STYLE */
 #content-component {
     width: 84.7%;
+    /*    width: 88%;  */
     /* height: calc(100vh - 70px); */
     float: left;
     background-color: #f9fafc;

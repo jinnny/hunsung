@@ -189,3 +189,52 @@ $breakpoints: (
   font-weight: $font-weight;
   line-height: #{$line-height};
 }
+
+
+@mixin input-type-file {
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 100%;
+  font-size: 90px;
+  height: 100%;
+  opacity: 0;
+  cursor: pointer;
+}
+
+
+
+@mixin text-clam-one() {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  word-break: break-all;
+}
+
+
+@mixin placeholder($color: #B3B7C5) {
+  &::placeholder {
+    color: $color;
+  }
+  &::-webkit-input-placeholder {
+    color: $color;
+  }
+  &:-ms-input-placeholder {
+    color: $color;
+  }
+}
+
+
+@mixin setScrollbar($color: $point-blue) {
+  &::-webkit-scrollbar {
+    width: 4px;
+    height: 4px;
+  }
+  &::-webkit-scrollbar-track {
+    background-color: #DED8D9;
+  }
+  &::-webkit-scrollbar-thumb {
+    border-radius: 15px;
+    box-shadow: inset 7px 10px 12px $color;
+  }
+}

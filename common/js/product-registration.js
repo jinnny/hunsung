@@ -441,31 +441,6 @@ $(function () {
     })
   }
 
-  //select box
-  const selectDefaultHandler = () => {
-    $(document).on('click', '.js-select', function() {
-      const select = $(this);
-      if($(this).hasClass('is--open')) {
-        $(this).removeClass('is--open')
-      }else {
-        $(this).addClass('is--open')
-      }
-      const seting = $(this).find('.select-box-list');
-      $(document).on('mouseup', function(e) {
-        if (seting.has(e.target).length === 0) {
-          if(e.target.className !== select[0].className) {
-            select.removeClass('is--open');
-          }
-        }
-      });
-    });
-    $(document).on('click', '.js-select-item', function() {
-      $(this).parents('.js-select').addClass('is--selected')
-      $(this).addClass('is--selected').siblings().removeClass('is--selected');
-      $($(this).parent().parent().find('.select-box__label')).text($(this).text());
-      $($(this).parent().parent().find('.select-box__label')).addClass('is--selected');
-    });
-  }
 
   // 안전인증
   const certificationRadio = () => {
@@ -626,6 +601,12 @@ $(function () {
     })
   }
 
+  // 상품등록 탭 클릭한 경우
+  $('.js-tab-item').on('click', function () {
+    const idx = $(this).data('tab-index')
+    $(this).addClass('is--selected').siblings().removeClass('is--selected')
+    $('.js-tab-content').eq(idx).addClass('is--selected').siblings().removeClass('is--selected')
+  })
 
 
   datePickerHandler()
@@ -635,7 +616,6 @@ $(function () {
   previewLayerPopupHandler()
   fileHandler()
   optionHandler()
-  selectDefaultHandler()
   certificationRadio()
 })
 

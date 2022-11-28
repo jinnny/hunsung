@@ -134,6 +134,7 @@ $(function () {
     });
 
     $startDate.on('change', function () {
+      console.log($startDate.datepicker('getDate'))
       $endDate.datepicker('setStartDate', $startDate.datepicker('getDate'));
     });
 
