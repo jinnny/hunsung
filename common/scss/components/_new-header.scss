@@ -1546,14 +1546,20 @@ button {
     background-repeat: no-repeat;
     background-position: 95% 50%;
     color: $neutral-black-32373-c;
-    &:hover {
-      color: $primary-blue-4-c-8-cff;
-      background-color: $primary-pastel-blue-f-4-f-8-ff;
+    &:not(.is--disabled) {
+      &:hover {
+        color: $primary-blue-4-c-8-cff;
+        background-color: $primary-pastel-blue-f-4-f-8-ff;
+      }
     }
     &.is--selected {
       color: $primary-blue-4-c-8-cff;
       background-color: $primary-pastel-blue-f-4-f-8-ff;
       background-image: icon(selectCheck, $iconDefaultColor);
+    }
+    &.is--disabled {
+      color: #999999;
+      cursor: default;
     }
   }
 }

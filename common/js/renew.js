@@ -579,7 +579,9 @@ $(function () {
     $(this).parent().parent().next().hide()
   })
 
+
   const multipleSearch = () => {
+
     $(document).on('click', '.js-renew-search-category', function () {
       const select = $(this)
       if ($(this).hasClass('is--open')) {
@@ -596,14 +598,31 @@ $(function () {
         }
       })
     })
+    const listData = ['판매상태', '채널명', '인증정보']
+    let cutListData
 
+    // 다중 검색 검색구분 선택
     $(document).on('click', '.js-renew-search-category .js-renew-select-item', function () {
       $(this).parents('.js-renew-search-category').addClass('is--selected')
       $(this).addClass('is--selected').siblings().removeClass('is--selected')
       $($(this).parent().parent().find('.renew-select-box__label')).text($(this).text())
       $($(this).parent().parent().find('.renew-select-box__label')).addClass('is--selected')
+
+      //
+      const child = $('#content-multiple-search').find('.js-renew-select-item').text()
+      console.log(child, $(this).text())
+
+      for (let i = 0; i < listData.length; i ++) {
+        if (listData[i] === $(this).text()) {
+          cutListData = listData.slice(i, i+1)
+        }
+      }
+
+      console.log(listData, cutListData)
+
       const category = $(this).attr('data-category')
       const target = $(this).parent().parent().next().find('.js-renew-multiple-input')
+
       switch (category) {
         case 'condition':
           if (!target.children().hasClass('condition')) {
@@ -657,6 +676,7 @@ $(function () {
     })
 
     function appendFilter (current) {
+      console.log('ㅇㅇㅇㅇ', listData, cutListData, current)
       current.after(`<div class="renew-multiple-part">
               <div class="renew-select-box js-renew-search-category">
                 <strong class="renew-select-box__label">검색 구분</strong><span class="renew-select-box__icon"></span>
@@ -676,11 +696,29 @@ $(function () {
                 <button class="multiple-input-button remove js-renew-part-remove"><span class="blind">제거</span></button>
               </div>
             </div>`)
+
+      switch (cutListData && cutListData[0]) {
+        case '판매상태':
+          current.parent().find('.js-renew-select-item').removeClass('is--disabled')
+          current.parent().find('.js-renew-select-item:first-child').addClass('is--disabled')
+          break
+        case '채널명':
+          current.parent().find('.js-renew-select-item').removeClass('is--disabled')
+          current.parent().find('.js-renew-select-item:nth-child(2)').addClass('is--disabled')
+          break;
+        case '인증정보':
+          current.parent().find('.js-renew-select-item').removeClass('is--disabled')
+          current.parent().find('.js-renew-select-item:nth-child(3)').addClass('is--disabled')
+          break;
+      }
+
+
     }
 
     // 검색창에서 검색조건 추가버튼 눌렀을 경우
     $(document).on('click', '.js-renew-part-add', function () {
       appendFilter($(this).parents('.renew-multiple-part'))
+
     })
     // 검색창에서 검색조건 삭제버튼 눌렀을 경우
     $(document).on('click', '.js-renew-part-remove', function () {

@@ -747,7 +747,8 @@ footer {
 
 /* CONTENT STYLE */
 #content-component {
-    width: 84.7%;
+    width: 100%;
+    /*width: 84.7%;*/
     /*    width: 88%;  */
     /* height: calc(100vh - 70px); */
     float: left;
@@ -756,7 +757,7 @@ footer {
     /* padding: 20px; */
 }
 #content-component.active {
-    width: calc(100% - 62px);
+    /*width: calc(100% - 62px);*/
 }
 
 .dashboard-feed-component {
