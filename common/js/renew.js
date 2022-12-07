@@ -125,10 +125,24 @@ $(function () {
     $('.js-excel-register-layer').next('.js-right-layer-bg').addClass('open')
   })
 
+  function resetMultipleData (parentId) {
+    switch (parentId) {
+      case 'content-multiple-search': cutListData = []
+        break;
+      case 'layer-multiple-search': cutListData2 = []
+        break;
+      case 'layer-double-multiple-search': cutListData3 = []
+        break;
+    }
+  }
   // 멀티플 검색창 리셋버튼 클릭
   $('.js-renew-multiple-reset').on('click', function () {
     $(this).parent().parent().prev().prev('.js-renew-label-area').children('.renew-label-mark').remove()
     $(this).parent().parent().children('.renew-multiple-part').remove()
+    // 검색구분 리셋
+    const multipleSearchName = $(this).parent().parent().attr('id')
+    resetMultipleData(multipleSearchName)
+
     $(this).parent().parent().prepend(
       `<div class="renew-multiple-part">
               <div class="renew-select-box js-renew-search-category">
@@ -152,6 +166,7 @@ $(function () {
   })
   // 우측팝업 닫기
   $('.js-right-layer-close-button').on('click', function () {
+
     if ($(this).data('content') === 'multiple') {
       const filter = $(this).next('.right-layer-content').find('.renew-list-filter')
       filter.find('.js-renew-calendar-layer').hide()
@@ -161,9 +176,16 @@ $(function () {
       filter.find('.js-renew-search-input-alone').val('')
       filter.find('.js-renew-multiple-search').hide()
       filter.find('.js-renew-multiple-search').children('.renew-multiple-part').remove()
+      filter.find('.renew-search-button').removeClass('is--disabled')
+
+      // 검색구분 리셋
+      const multipleSearchName = $(this).next().find('.js-renew-multiple-search').attr('id')
+      resetMultipleData(multipleSearchName)
+
       if ($(this).data('date') === 2) {
         $startDate2.datepicker('setDate', new Date())
         $endDate2.datepicker('setDate', new Date())
+
       } else if ($(this).data('date') === 3) {
         $startDate3.datepicker('setDate', new Date())
         $endDate3.datepicker('setDate', new Date())
@@ -195,6 +217,7 @@ $(function () {
 
     $(this).parent().css('transition', 'all .5s').removeClass('open')
     $(this).parent().next('.js-right-layer-bg').removeClass('open')
+
   })
 
 
@@ -579,161 +602,257 @@ $(function () {
     $(this).parent().parent().next().hide()
   })
 
-
-  const multipleSearch = () => {
-
-    $(document).on('click', '.js-renew-search-category', function () {
-      const select = $(this)
-      if ($(this).hasClass('is--open')) {
-        $(this).removeClass('is--open')
-      } else {
-        $(this).addClass('is--open')
-      }
-      const setting = $(this).find('.renew-select-box-list')
-      $(document).on('mouseup', function (e) {
-        if (setting.has(e.target).length === 0) {
-          if (e.target.className !== select[0].className) {
-            select.removeClass('is--open')
-          }
-        }
-      })
-    })
-    const listData = ['판매상태', '채널명', '인증정보']
-    let cutListData
-
-    // 다중 검색 검색구분 선택
-    $(document).on('click', '.js-renew-search-category .js-renew-select-item', function () {
-      $(this).parents('.js-renew-search-category').addClass('is--selected')
-      $(this).addClass('is--selected').siblings().removeClass('is--selected')
-      $($(this).parent().parent().find('.renew-select-box__label')).text($(this).text())
-      $($(this).parent().parent().find('.renew-select-box__label')).addClass('is--selected')
-
-      //
-      const child = $('#content-multiple-search').find('.js-renew-select-item').text()
-      console.log(child, $(this).text())
-
-      for (let i = 0; i < listData.length; i ++) {
-        if (listData[i] === $(this).text()) {
-          cutListData = listData.slice(i, i+1)
+  $(document).on('click', '.js-renew-search-category', function () {
+    const select = $(this)
+    if ($(this).hasClass('is--open')) {
+      $(this).removeClass('is--open')
+    } else {
+      $(this).addClass('is--open')
+    }
+    const setting = $(this).find('.renew-select-box-list')
+    $(document).on('mouseup', function (e) {
+      if (setting.has(e.target).length === 0) {
+        if (e.target.className !== select[0].className) {
+          select.removeClass('is--open')
         }
       }
-
-      console.log(listData, cutListData)
-
-      const category = $(this).attr('data-category')
-      const target = $(this).parent().parent().next().find('.js-renew-multiple-input')
-
-      switch (category) {
-        case 'condition':
-          if (!target.children().hasClass('condition')) {
-            target.html(`
-                <div class="select-box js-select renew condition">
-                  <strong class="select-box__label">판매중</strong><span class="select-box__icon"></span>
-                  <div class="select-box-list">
-                    <span class="select-box__item js-select-item">판매중</span>
-                    <span class="select-box__item js-select-item">품절</span>
-                    <span class="select-box__item js-select-item">판매중지</span>
-                  </div>
-                </div>
-                `)
-          }
-          break
-        case 'channelName':
-          if (!target.children().hasClass('js-multiple-select')) {
-            target.children().remove()
-            $('.multiselect-dropdown').remove()
-            target.html(`
-               <select name="field2" id="field2" class="js-multiple-select" style="width: 100%" multiple multiselect-search="true" multiselect-select-all="true" multiselect-max-items="6">
-                  <option>Abarth</option>
-                  <option>Alfa Romeo</option>
-                  <option>Aston Martin</option>
-                  <option>Audi</option>
-                  <option>Bentley</option>
-                  <option>BMW</option>
-                  <option>Bugatti</option>
-                </select>
-            `)
-            MultiselectDropdown(window.MultiselectDropdownOptions)
-          }
-          break
-
-        case 'authentication':
-          if (!target.children().hasClass('append-authentication')) {
-            target.html(`
-               <div class="select-box renew js-select js-select-filter append-authentication">
-                <strong class="select-box__label">인증 종류</strong><span class="select-box__icon"></span>
-                <div class="select-box-list">
-                  <span class="select-box__item js-select-item">KC인증</span>
-                  <span class="select-box__item js-select-item">전자파 인증</span>
-                  <span class="select-box__item js-select-item">어린이 인증</span>
-                </div>
-              </div>
-              <input type="text" class="multiple-input__text with--select" placeholder="검색 내용을 입력해 주세요.">
-              `)
-          }
-          break
-      }
     })
+  })
 
-    function appendFilter (current) {
-      console.log('ㅇㅇㅇㅇ', listData, cutListData, current)
-      current.after(`<div class="renew-multiple-part">
-              <div class="renew-select-box js-renew-search-category">
-                <strong class="renew-select-box__label">검색 구분</strong><span class="renew-select-box__icon"></span>
-                <div class="renew-select-box-list">
-                  <span class="renew-select-box__item js-renew-select-item" data-category="condition">판매상태</span>
-                  <span class="renew-select-box__item js-renew-select-item" data-category="channelName">채널명</span>
-                  <span class="renew-select-box__item js-renew-select-item" data-category="authentication">인증정보</span>
-                </div>
-              </div>
-              <div class="renew-multiple-input-area full">
-                <div class="renew-multiple-input js-renew-multiple-input">
-                  <input type="text" class="multiple-input__text" placeholder="검색 내용을 입력해 주세요.">
-                </div>
-              </div>
-              <div class="multiple-input-button-area">
-                <button class="multiple-input-button add js-renew-part-add"><span class="blind">추가</span></button>
-                <button class="multiple-input-button remove js-renew-part-remove"><span class="blind">제거</span></button>
-              </div>
-            </div>`)
+  // 검색구분 항목
+  const listData = [ '판매상태', '채널명', '인증정보' ]
+  const listData2 = [ '판매상태', '채널명', '인증정보' ]
+  const listData3 = [ '판매상태', '채널명', '인증정보' ]
+  let cutListData = []
+  let cutListData2 = []
+  let cutListData3 = []
 
-      switch (cutListData && cutListData[0]) {
-        case '판매상태':
-          current.parent().find('.js-renew-select-item').removeClass('is--disabled')
-          current.parent().find('.js-renew-select-item:first-child').addClass('is--disabled')
-          break
-        case '채널명':
-          current.parent().find('.js-renew-select-item').removeClass('is--disabled')
-          current.parent().find('.js-renew-select-item:nth-child(2)').addClass('is--disabled')
-          break;
-        case '인증정보':
-          current.parent().find('.js-renew-select-item').removeClass('is--disabled')
-          current.parent().find('.js-renew-select-item:nth-child(3)').addClass('is--disabled')
-          break;
+  // 다중 검색 검색구분 선택
+  $(document).on('click', '.js-renew-search-category .js-renew-select-item:not(.is--disabled)', function () {
+    $(this).parents('.js-renew-search-category').addClass('is--selected')
+    $(this).addClass('is--selected').siblings().removeClass('is--selected')
+    $($(this).parent().parent().find('.renew-select-box__label')).addClass('is--selected')
+    // 이전에 선택된 텍스트 : 선택된상태고, 검색구분이 아닐때 선택된 텍스트를 넣어줍니다.
+    const prevText = ($(this).parent().parent().find('.renew-select-box__label.is--selected')).text() === '검색 구분' ? '' : ($(this).parent().parent().find('.renew-select-box__label.is--selected')).text()
+    $($(this).parent().parent().find('.renew-select-box__label')).text($(this).text())
+
+    // 검색구분 리셋
+    const multipleSearchName = $(this).parent().parent().parent().parent().attr('id')
+    //전체 멀티 셀렉트(ex: .js-renew-multiple-search)
+    const currentSearchAncestor = $(this).parent().parent().parent().parent()
+    const hasClassCheck = $($(this).parent().parent().find('.renew-select-box__label')).hasClass('is--selected')
+
+    switch (multipleSearchName) {
+      case 'content-multiple-search':
+        setCurListData(listData, cutListData, $(this).text(), hasClassCheck)
+        updateSearchType(currentSearchAncestor, listData, cutListData)
+        break;
+      case 'layer-multiple-search':
+        setCurListData(listData2, cutListData2, $(this).text(), hasClassCheck)
+        updateSearchType(currentSearchAncestor, listData2, cutListData2)
+        break;
+      case 'layer-double-multiple-search':
+        setCurListData(listData3, cutListData3, $(this).text(), hasClassCheck)
+        updateSearchType(currentSearchAncestor, listData3, cutListData3)
+        break;
+    }
+    function setCurListData (allList, cutList, targetText, hasSelected) {
+      // 검색구분 항목
+      for (let i = 0; i < allList.length; i++) {
+        // 검색구분 항목 중에 하나가 지금 텍스트값(선택값)과 같다면
+        if (allList[i] === targetText) {
+          // 선택된 검색구분에 잘라 넣습니다
+          cutList.push(allList.slice(i, i + 1)[0])
+        }
       }
 
-
+      // 선택된 검색구분
+      for (let i = 0; i < cutList.length; i++) {
+        // 선택된 검색구분이 있다면
+        if (hasSelected) {
+          //선택된 검색구분들 중에 하나가 이전에 선택한 검색구분이 같다면, 그것을 제거합니다
+          if (cutList[i] === prevText) {
+            cutList.splice(i, 1)
+          }
+        }
+      }
     }
 
-    // 검색창에서 검색조건 추가버튼 눌렀을 경우
-    $(document).on('click', '.js-renew-part-add', function () {
-      appendFilter($(this).parents('.renew-multiple-part'))
+    const category = $(this).attr('data-category')
+    const target = $(this).parent().parent().next().find('.js-renew-multiple-input')
 
-    })
-    // 검색창에서 검색조건 삭제버튼 눌렀을 경우
-    $(document).on('click', '.js-renew-part-remove', function () {
-      $(this).parents('.renew-multiple-part').remove()
-    })
+    switch (category) {
+      case 'condition':
+        if (!target.children().hasClass('condition')) {
+          target.html(`
+              <div class="select-box js-select renew condition">
+                <strong class="select-box__label">판매중</strong><span class="select-box__icon"></span>
+                <div class="select-box-list">
+                  <span class="select-box__item js-select-item">판매중</span>
+                  <span class="select-box__item js-select-item">품절</span>
+                  <span class="select-box__item js-select-item">판매중지</span>
+                </div>
+              </div>
+              `)
+        }
+        break
+      case 'channelName':
+        if (!target.children().hasClass('js-multiple-select')) {
+          target.children().remove()
+          $('.multiselect-dropdown').remove()
+          target.html(`
+             <select name="field2" id="field2" class="js-multiple-select" style="width: 100%" multiple multiselect-search="true" multiselect-select-all="true" multiselect-max-items="6">
+                <option>Abarth</option>
+                <option>Alfa Romeo</option>
+                <option>Aston Martin</option>
+                <option>Audi</option>
+                <option>Bentley</option>
+                <option>BMW</option>
+                <option>Bugatti</option>
+              </select>
+          `)
+          MultiselectDropdown(window.MultiselectDropdownOptions)
+        }
+        break
+
+      case 'authentication':
+        if (!target.children().hasClass('append-authentication')) {
+          target.html(`
+             <div class="select-box renew js-select js-select-filter append-authentication">
+              <strong class="select-box__label">인증 종류</strong><span class="select-box__icon"></span>
+              <div class="select-box-list">
+                <span class="select-box__item js-select-item">KC인증</span>
+                <span class="select-box__item js-select-item">전자파 인증</span>
+                <span class="select-box__item js-select-item">어린이 인증</span>
+              </div>
+            </div>
+            <input type="text" class="multiple-input__text with--select" placeholder="검색 내용을 입력해 주세요.">
+            `)
+        }
+        break
+    }
+  })
+
+  function appendFilter (current) {
+
+    current.after(
+      `<div class="renew-multiple-part">
+        <div class="renew-select-box js-renew-search-category">
+          <strong class="renew-select-box__label">검색 구분</strong><span class="renew-select-box__icon"></span>
+          <div class="renew-select-box-list">
+            <span class="renew-select-box__item js-renew-select-item" data-category="condition">판매상태</span>
+            <span class="renew-select-box__item js-renew-select-item" data-category="channelName">채널명</span>
+            <span class="renew-select-box__item js-renew-select-item" data-category="authentication">인증정보</span>
+          </div>
+        </div>
+        <div class="renew-multiple-input-area full">
+          <div class="renew-multiple-input js-renew-multiple-input">
+            <input type="text" class="multiple-input__text" placeholder="검색 내용을 입력해 주세요.">
+          </div>
+        </div>
+        <div class="multiple-input-button-area">
+          <button class="multiple-input-button add js-renew-part-add"><span class="blind">추가</span></button>
+          <button class="multiple-input-button remove js-renew-part-remove"><span class="blind">제거</span></button>
+        </div>
+      </div>`
+    )
+
+    //전체 멀티 셀렉트(ex: .js-renew-multiple-search)
+    const currentSearchAncestor = current.parent()
+    const multipleSearchName = currentSearchAncestor.attr('id')
+
+    switch (multipleSearchName) {
+      case 'content-multiple-search':
+        updateSearchType(currentSearchAncestor, listData, cutListData)
+        break;
+      case 'layer-multiple-search':
+        updateSearchType(currentSearchAncestor, listData2, cutListData2)
+        break;
+      case 'layer-double-multiple-search':
+        updateSearchType(currentSearchAncestor, listData3, cutListData3)
+        break;
+    }
 
   }
 
-  multipleSearch()
+  // 검색창에서 검색조건 추가버튼 눌렀을 경우
+  $(document).on('click', '.js-renew-part-add', function () {
+    const searchPart = $(this).parent().parent()
+    appendFilter(searchPart)
+  })
+  // 검색창에서 검색조건 삭제버튼 눌렀을 경우
+  $(document).on('click', '.js-renew-part-remove', function () {
+    // 검색조건을 선택한 후 삭제한 경우 처리
+    const targetSearchCategory = $(this).parent().prev().prev()
+    const selectedCategory = targetSearchCategory.find('.renew-select-box__label.is--selected').text()
+
+    //전체 멀티 셀렉트(ex: .js-renew-multiple-search)
+    const currentSearchAncestor = $(this).parent().parent().parent()
+    const multipleSearchName = currentSearchAncestor.attr('id')
+
+    // 검색구분 리셋
+    console.log(multipleSearchName)
+
+    switch (multipleSearchName) {
+      case 'content-multiple-search':
+        setCurListData(cutListData, selectedCategory)
+        updateSearchType(currentSearchAncestor, listData, cutListData)
+        break;
+      case 'layer-multiple-search':
+        setCurListData(cutListData2, selectedCategory)
+        updateSearchType(currentSearchAncestor, listData2, cutListData2)
+        break;
+      case 'layer-double-multiple-search':
+        setCurListData(cutListData3, selectedCategory)
+        updateSearchType(currentSearchAncestor, listData3, cutListData3)
+        break;
+    }
+    function setCurListData (cutList, selectedCategory) {
+      if (selectedCategory) {
+        // 선택된 검색구분
+        for (let i = 0; i < cutList.length; i++) {
+          //선택된 검색구분들 중에 하나가 이전에 선택한 검색구분이 같다면, 그것을 제거합니다
+          if (cutList[i] === selectedCategory) {
+            cutList.splice(i, 1)
+          }
+        }
+      }
+    }
+    // 검색조건을 선택한 후 삭제한 경우 처리
+
+    $(this).parent().parent().remove()
+  })
+
+  // 검색구분 업데이트 함수
+  function updateSearchType (ancestor, allList, selectedList) {
+    if (selectedList.includes(allList[0])) {
+      //판매상태가 체크 상태 일때 is--disabled 처리
+      ancestor.find('.js-renew-select-item:first-child:not(.is--selected)').addClass('is--disabled')
+    } else {
+      ancestor.find('.js-renew-select-item:first-child').removeClass('is--disabled')
+    }
+
+    if (selectedList.includes(allList[1])) {
+      //채널명이 체크 상태 일때 is--disabled 처리
+      ancestor.find('.js-renew-select-item:nth-child(2):not(.is--selected)').addClass('is--disabled')
+    } else {
+      ancestor.find('.js-renew-select-item:nth-child(2)').removeClass('is--disabled')
+    }
+
+    if (selectedList.includes(allList[2])) {
+      //인증정보가 체크 상태 일때 is--disabled 처리
+      ancestor.find('.js-renew-select-item:nth-child(3):not(.is--selected)').addClass('is--disabled')
+    } else {
+      ancestor.find('.js-renew-select-item:nth-child(3)').removeClass('is--disabled')
+    }
+  }
+
 
   // 다중검색
-  $('.js-renew-multiple-search-button').on('click', function() {
+  $('.js-renew-multiple-search-button').on('click', function () {
     $(this).parent().toggleClass('is--open')
     $(this).next('.js-renew-multiple-search').toggle()
-    if($(this).next('.js-renew-multiple-search').is(':visible')) {
+    if ($(this).next('.js-renew-multiple-search').is(':visible')) {
       $(this).find('.js-search-button-text').text('less filters')
       $(this).parent().next().addClass('is--disabled')
     } else {
